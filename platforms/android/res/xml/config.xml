@@ -6,6 +6,9 @@
     <feature name="BackgroundMode">
         <param name="android-package" value="de.appplant.cordova.plugin.background.BackgroundMode" />
     </feature>
+    <feature name="Globalization">
+        <param name="android-package" value="org.apache.cordova.globalization.Globalization" />
+    </feature>
     <name>conecting</name>
     <description>Marca puntos dentro de un radio y dice cual es el mas cercano</description>
     <author email="ivonne@prismacm.com" href="http://phonegap.com">IVONNE</author>

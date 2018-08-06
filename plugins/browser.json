@@ -12,6 +12,9 @@
         },
         "cordova-plugin-background-mode": {
             "PACKAGE_NAME": "com.prismacm.connecting"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.prismacm.connecting"
         }
     },
     "dependent_plugins": {

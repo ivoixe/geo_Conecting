@@ -23,6 +23,10 @@
                         {
                             "xml": "<preference name=\"AndroidLaunchMode\" value=\"singleInstance\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Globalization\"><param name=\"android-package\" value=\"org.apache.cordova.globalization.Globalization\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -51,6 +55,9 @@
         },
         "cordova-plugin-background-mode": {
             "PACKAGE_NAME": "com.prismacm.connecting"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.prismacm.connecting"
         }
     },
     "dependent_plugins": {},
@@ -71,10 +78,27 @@
                 "cordova.plugins.backgroundMode",
                 "plugin.backgroundMode"
             ]
+        },
+        {
+            "id": "cordova-plugin-globalization.GlobalizationError",
+            "file": "plugins/cordova-plugin-globalization/www/GlobalizationError.js",
+            "pluginId": "cordova-plugin-globalization",
+            "clobbers": [
+                "window.GlobalizationError"
+            ]
+        },
+        {
+            "id": "cordova-plugin-globalization.globalization",
+            "file": "plugins/cordova-plugin-globalization/www/globalization.js",
+            "pluginId": "cordova-plugin-globalization",
+            "clobbers": [
+                "navigator.globalization"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-device": "2.0.2",
-        "cordova-plugin-background-mode": "0.7.2"
+        "cordova-plugin-background-mode": "0.7.2",
+        "cordova-plugin-globalization": "1.11.0"
     }
 }
