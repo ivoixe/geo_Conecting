@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.prismacm.connecting" version="3.7.1">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.prismacm.connecting" version="3.5.1">
   <name>conecting</name>
   <description>Marca puntos dentro de un radio y dice cual es el mas cercano</description>
   <author href="http://phonegap.com" email="ivonne@prismacm.com">IVONNE</author>
@@ -20,7 +20,7 @@
   <preference name="android-minSdkVersion" value="14"/>
   <preference name="android-installLocation" value="auto"/>
   <!--plugins para la geolocalizacion-->
-  <gap:plugin name="org.apache.cordova.geolocation"/>
+	<plugin name="org.apache.cordova.geolocation" spec="0.3.2" source="pgb" />
   <gap:plugin name="org.apache.cordova.globalization"/>
 
   <icon src="icon.jpg"/>
