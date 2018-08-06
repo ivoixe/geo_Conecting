@@ -21,7 +21,8 @@
   <preference name="android-installLocation" value="auto"/>
   <!--plugins para la geolocalizacion-->
 	<plugin name="org.apache.cordova.geolocation" spec="0.3.2" source="pgb" />
-  <gap:plugin name="org.apache.cordova.globalization"/>
+	<plugin name="org.apache.cordova.globalization" spec="0.3.2" source="pgb" />
+  
 
   <icon src="icon.jpg"/>
 
