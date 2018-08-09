@@ -1,22 +1,25 @@
 {
-    "prepare_queue": {
-        "installed": [],
-        "uninstalled": []
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "com.prismacm.connecting"
     },
-    "config_munge": {
-        "files": {}
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.prismacm.connecting"
     },
-    "installed_plugins": {
-        "cordova-plugin-background-mode": {
-            "PACKAGE_NAME": "com.prismacm.connecting"
-        },
-        "cordova-plugin-globalization": {
-            "PACKAGE_NAME": "com.prismacm.connecting"
-        }
-    },
-    "dependent_plugins": {
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.prismacm.connecting"
-        }
+    "org.apache.cordova.geolocation": {
+      "PACKAGE_NAME": "com.prismacm.connecting"
     }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.prismacm.connecting"
+    }
+  }
 }

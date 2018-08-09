@@ -15,6 +15,9 @@
         },
         "cordova-plugin-globalization": {
             "PACKAGE_NAME": "com.prismacm.connecting"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.prismacm.connecting"
         }
     },
     "dependent_plugins": {

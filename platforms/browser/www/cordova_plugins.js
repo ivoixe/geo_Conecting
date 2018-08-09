@@ -64,7 +64,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-background-mode": "0.7.2",
     "cordova-plugin-device": "2.0.2",
-    "cordova-plugin-globalization": "1.11.0"
+    "cordova-plugin-globalization": "1.11.0",
+    "cordova-plugin-geolocation": "4.0.1"
 }
 // BOTTOM OF METADATA
 });
