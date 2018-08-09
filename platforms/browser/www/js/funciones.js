@@ -42,7 +42,7 @@
 						mapTypeId: 'roadmap'
 					}
 				 
-			  alert(latlng);
+			
 				map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions );
 				marker = new google.maps.Marker({
 									position: latlng,
