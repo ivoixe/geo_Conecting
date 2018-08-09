@@ -21,7 +21,8 @@
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-				console.log('code: '    + error.code    + '\n' +
+			alert(error.message);
+				console.log('code ivonne: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
 			
 	    }
