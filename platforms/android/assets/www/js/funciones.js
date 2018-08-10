@@ -10,7 +10,9 @@
 
 		var marker_nearest =new google.maps.Marker();
 		var marker =new google.maps.Marker();
-	
+		function cargar(){
+			 watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+		}
 //Cuando conseguimos localizarnos ...
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
@@ -21,7 +23,7 @@
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-			
+			alert( "error succes: " + error.message);
 				console.log('code ivonne: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
 			
@@ -74,6 +76,7 @@
 						dir = "<p>No se ha podido obtener ninguna dirección en esas coordenadas.</p>";
 					}
 				}else{
+					alert( "error status: " + status);
 					dir = "<p>El Servicio de Codificación Geográfica ha fallado con el siguiente error: " + status + ".</p>";
 				}
 
