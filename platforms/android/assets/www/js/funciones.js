@@ -249,3 +249,31 @@
 							});
 		}//fin de la funcion cargar_mas_cercanos
 		
+function onWatchPositionSuccess(position) {
+    watchpositionErrorCount = 0;
+
+    // Reject if accuracy is not sufficient
+    if(position.coords.accuracy > MIN_ACCURACY_IN_METRES){
+      return;        
+    }
+
+    // If only single position is required, clear watcher
+    clearWatch();
+
+    // Do something with position
+    var lat = position.coords.latitude,   
+    lon = position.coords.longitude;
+}
+
+
+function onWatchPositionError(err) {
+    watchpositionErrorCount++;
+    if (err.code == 3 // TIMEOUT
+        && watchpositionErrorCount >= MAX_POSITION_ERRORS_BEFORE_RESET) {        
+        clearWatch();
+        addWatch();
+        watchpositionErrorCount = 0;
+    }
+
+}
+		
