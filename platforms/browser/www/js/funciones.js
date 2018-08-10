@@ -10,14 +10,12 @@
 
 		var marker_nearest =new google.maps.Marker();
 		var marker =new google.maps.Marker();
-		function cargar(){
-			 watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
-		}
+
 //Cuando conseguimos localizarnos ...
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
 				initialize(position.coords.latitude,position.coords.longitude);				
-				
+				guardarPosicion(lat_actual,log_actual); 
 				return position;
 		}
 			
@@ -262,7 +260,7 @@
 			// Limpiamos el select, para que muestre los lugares dentro del radio solicitado.
 
 			var dateCET = getDate(1); // Central European Time is GMT +1
-			alert(lat_actual + log_actual);
+
 			/*if (dateCET.getHours() < 12) {
 			  
 			} else {
