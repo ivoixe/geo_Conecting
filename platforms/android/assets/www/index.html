@@ -53,13 +53,13 @@
 			
 			initialize(lat_actual,log_actual);	
 			guardarPosicion(lat_actual,log_actual); 
-			navigator.geolocation.clearWatch(watchID);
+			
 		});
 		
 		
 		// Options: throw an error if no update is received every 30 seconds.
 		//var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {maximumAge: 60000, timeout: 5000, enableHighAccuracy: true }); // esta me mira cada momento
-		var watchID = navigator.geolocation.watchPosition(onSuccess, onError, 500000);
+		//var watchID = navigator.geolocation.watchPosition(onSuccess, onError, 500000);
 		/*Con esta variable mirará la posicion cuando se lo indique*/
 		/*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
 		
