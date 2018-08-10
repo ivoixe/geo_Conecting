@@ -248,9 +248,9 @@
 								}
 							});
 		}//fin de la funcion cargar_mas_cercanos
-		
+
 function onWatchPositionSuccess(position) {
-    watchpositionErrorCount = 0;
+   var watchpositionErrorCount = 0;
 
     // Reject if accuracy is not sufficient
     if(position.coords.accuracy > MIN_ACCURACY_IN_METRES){
@@ -263,11 +263,13 @@ function onWatchPositionSuccess(position) {
     // Do something with position
     var lat = position.coords.latitude,   
     lon = position.coords.longitude;
+  alert(lat,lon);
 }
 
 
 function onWatchPositionError(err) {
-    watchpositionErrorCount++;
+    var watchpositionErrorCount;
+    alert(err.code);
     if (err.code == 3 // TIMEOUT
         && watchpositionErrorCount >= MAX_POSITION_ERRORS_BEFORE_RESET) {        
         clearWatch();

@@ -60,8 +60,18 @@
 		//var watchID = navigator.geolocation.watchPosition(onSuccess, onError, 500000);
 		/*Con esta variable mirará la posicion cuando se lo indique*/
 		/*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
+		var MAX_POSITION_ERRORS_BEFORE_RESET = 3,
+MIN_ACCURACY_IN_METRES = 20,
+positionWatchId = null, 
+watchpositionErrorCount = 0,
+options = {
+    maximumAge: 60000, 
+    timeout: 15000, 
+    enableHighAccuracy: true
+};
 		var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 30000, timeout: 5000, enableHighAccuracy: true }); // esta me mira una vez
-		 positionWatchId = navigator.geolocation.watchPosition(onWatchPositionSuccess, onWatchPositionError, options);
+		 var positionWatchId = navigator.geolocation.watchPosition(onWatchPositionSuccess, onWatchPositionError, options);
+	
 		
 	});
     </script>
