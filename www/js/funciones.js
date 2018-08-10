@@ -262,7 +262,7 @@
 			// Limpiamos el select, para que muestre los lugares dentro del radio solicitado.
 
 			var dateCET = getDate(1); // Central European Time is GMT +1
-
+			alert(lat_actual + log_actual);
 			/*if (dateCET.getHours() < 12) {
 			  
 			} else {
