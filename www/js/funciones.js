@@ -42,7 +42,6 @@
 						mapTypeId: 'roadmap'
 					}
 				
-			
 				map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions );
 				marker = new google.maps.Marker({
 									position: latlng,
@@ -68,6 +67,8 @@
 						
 						lat_actual = lat;
 						log_actual = log;
+
+						guardarPosicionAtTime(lat,log,dir)
 				
 					
 					}else{
@@ -275,6 +276,42 @@
 						method: "POST",
 						url:'http://app-connecting.prismacm.com/save_host_nube.php',
 						data: ({lat:lat_actual,log:log_actual,hora:dateCET}),
+						dataType: "json",
+						success: function(resp){
+							alert('los datos han sido guardados');
+									
+									
+							},
+						error: function(){
+										// ocultamos el select.
+									$('#sitios_cercanos').addClass('hidden');
+									console.log('no nos conectamos con la nube.');
+								}
+							});
+		}
+		function guardarPosicionAtTime(lat_actual,log_actual,direccion){
+		  /*********Reseteamos valores********************************/
+			//circulo.setMap(null);
+			/*No se si sea lo correcto pero con esto vuelve a cargar el mapa resetado*/
+			//initialize(lat_actual,log_actual);	
+			// Limpiamos el select, para que muestre los lugares dentro del radio solicitado.
+
+			var dateCET = getDate(1); // Central European Time is GMT +1
+
+			/*if (dateCET.getHours() < 12) {
+			  
+			} else {
+			    alert ("Good afternoon.");
+			}*/
+
+					
+			//$("#sitio").find('option').remove();
+		/*********************************************/	
+				//cargar_circulos(distancia);
+				 $.ajax({
+						method: "POST",
+						url:'http://app-connecting.prismacm.com/get_position_at_time.php',
+						data: ({lat:lat_actual,log:log_actual,hora:dateCET,direccion:direccion}),
 						dataType: "json",
 						success: function(resp){
 							alert('los datos han sido guardados');
