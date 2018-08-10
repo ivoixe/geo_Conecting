@@ -15,7 +15,7 @@
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
 				initialize(position.coords.latitude,position.coords.longitude);				
-				
+				alert(position.coords.latitude ,position.coords.longitude);
 				return position;
 		}
 			
