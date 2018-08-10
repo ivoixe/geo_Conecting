@@ -15,7 +15,7 @@
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
 				initialize(position.coords.latitude,position.coords.longitude);				
-				alert(position.coords.latitude ,position.coords.longitude);
+				
 				return position;
 		}
 			
@@ -42,7 +42,7 @@
 						mapTypeId: 'roadmap'
 					}
 				
-			
+			alert(lat,log);
 				map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions );
 				marker = new google.maps.Marker({
 									position: latlng,
