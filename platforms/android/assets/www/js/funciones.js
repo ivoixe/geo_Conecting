@@ -290,7 +290,7 @@
 								}
 							});
 		}
-function getDate(offset){
+function getDate(offset){ 
   var now = new Date();
   var hour = 60*60*1000;
   var min = 60*1000;
