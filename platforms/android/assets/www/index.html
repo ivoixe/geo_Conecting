@@ -61,7 +61,51 @@
 		/*Con esta variable mirará la posicion cuando se lo indique*/
 		/*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
 		var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 30000, timeout: 5000, enableHighAccuracy: true }); // esta me mira una vez
-		alert(watchID);
+		var MAX_POSITION_ERRORS_BEFORE_RESET = 3,
+		MIN_ACCURACY_IN_METRES = 20,
+		positionWatchId = null, 
+		watchpositionErrorCount = 0,
+		options = {
+		    maximumAge: 60000, 
+		    timeout: 15000, 
+		    enableHighAccuracy: true
+		}
+		var positionWatchId = navigator.geolocation.watchPosition(onWatchPositionSuccess, onWatchPositionError, options);
+
+		alert(positionWatchId);
+			function clearWatch(){
+    navigator.geolocation.clearWatch(positionWatchId);
+}
+
+function onWatchPositionSuccess(position) {
+    watchpositionErrorCount = 0;
+
+    // Reject if accuracy is not sufficient
+    if(position.coords.accuracy > MIN_ACCURACY_IN_METRES){
+      return;        
+    }
+
+    // If only single position is required, clear watcher
+    clearWatch();
+
+    // Do something with position
+    var lat = position.coords.latitude,   
+    lon = position.coords.longitude;
+}
+
+
+function onWatchPositionError(err) {
+    watchpositionErrorCount++;
+    if (err.code == 3 // TIMEOUT
+        && watchpositionErrorCount >= MAX_POSITION_ERRORS_BEFORE_RESET) {        
+        clearWatch();
+        addWatch();
+        watchpositionErrorCount = 0;
+    }
+
+}
+};
+
 	});
     </script>
 	<style>
