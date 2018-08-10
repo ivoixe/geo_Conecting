@@ -21,7 +21,7 @@
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-			alert('error:'+error.message);
+			
 				console.log('code ivonne: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
 			
@@ -41,7 +41,7 @@
 						center: latlng,
 						mapTypeId: 'roadmap'
 					}
-				 
+				
 			
 				map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions );
 				marker = new google.maps.Marker({
@@ -248,34 +248,4 @@
 								}
 							});
 		}//fin de la funcion cargar_mas_cercanos
-
-function onWatchPositionSuccess(position) {
-   var watchpositionErrorCount = 0;
-
-    // Reject if accuracy is not sufficient
-    if(position.coords.accuracy > MIN_ACCURACY_IN_METRES){
-      return;        
-    }
-
-    // If only single position is required, clear watcher
-    clearWatch();
-
-    // Do something with position
-    var lat = position.coords.latitude,   
-    lon = position.coords.longitude;
-  alert(lat,lon);
-}
-
-
-function onWatchPositionError(err) {
-    var watchpositionErrorCount;
-    alert(err.code);
-    if (err.code == 3 // TIMEOUT
-        && watchpositionErrorCount >= MAX_POSITION_ERRORS_BEFORE_RESET) {        
-        clearWatch();
-        addWatch();
-        watchpositionErrorCount = 0;
-    }
-
-}
 		
