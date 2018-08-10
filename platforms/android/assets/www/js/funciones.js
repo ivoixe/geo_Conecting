@@ -23,7 +23,7 @@
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-			alert( "error succes: " + error.message);
+		
 				console.log('code ivonne: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
 			
@@ -44,7 +44,7 @@
 						mapTypeId: 'roadmap'
 					}
 				
-			alert(lat,log);
+			
 				map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions );
 				marker = new google.maps.Marker({
 									position: latlng,
@@ -251,4 +251,49 @@
 								}
 							});
 		}//fin de la funcion cargar_mas_cercanos
+
+		/*************FUNCION QUE GUARDA POSICIONES *********************************************/
+
+			function guardarPosicion(lat_actual,log_actual){
+		  /*********Reseteamos valores********************************/
+			//circulo.setMap(null);
+			/*No se si sea lo correcto pero con esto vuelve a cargar el mapa resetado*/
+			//initialize(lat_actual,log_actual);	
+			// Limpiamos el select, para que muestre los lugares dentro del radio solicitado.
+
+			var dateCET = getDate(1); // Central European Time is GMT +1
+
+			/*if (dateCET.getHours() < 12) {
+			  
+			} else {
+			    alert ("Good afternoon.");
+			}*/
+
+					
+			//$("#sitio").find('option').remove();
+		/*********************************************/	
+				//cargar_circulos(distancia);
+				 $.ajax({
+						method: "POST",
+						url:'http://app-connecting.prismacm.com/save_host_nube.php',
+						data: ({lat:lat_actual,log:log_actual,hora:dateCET}),
+						dataType: "json",
+						success: function(resp){
+							alert('los datos han sido guardados');
+									
+									
+							},
+						error: function(){
+										// ocultamos el select.
+									$('#sitios_cercanos').addClass('hidden');
+									console.log('no nos conectamos con la nube.');
+								}
+							});
+		}
+function getDate(offset){
+  var now = new Date();
+  var hour = 60*60*1000;
+  var min = 60*1000;
+  return new Date(now.getTime() + (now.getTimezoneOffset() * min) + (offset * hour));
+}
 		

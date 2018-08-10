@@ -1,6 +1,6 @@
 <?php
 			
 	$db['servername'] = "localhost";
-	$db['username'] = "neoprism_pruebas";
-	$db['dbname'] = "neoprism_pruebas";
-	$db['password'] = "E29hwCyr";
+	$db['username'] = "prisma_appconnec";
+	$db['dbname'] = "prisma_app_connecting";
+	$db['password'] = "4vMnmV2z";

@@ -37,4 +37,12 @@
 	
 	return $datos;
   }
+   function save_data($conn,$sql = 'SELECT * FROM direcciones_puntos_venta'){
+	$datos = array();
+	$stmt = $conn->prepare($sql); 
+	$stmt->execute();
+
+	
+  }
+  
   

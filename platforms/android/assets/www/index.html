@@ -49,9 +49,10 @@
 			}
 		});
 		$('#reset').click( function(){
-		 
 			$('#distancia').val('sel');
-			cargar();	
+			alert(lat_actual,lat_actual);
+			initialize(lat_actual,log_actual);	
+			guardarPosicion(lat_actual,log_actual); 
 		});
 		
 		
@@ -60,8 +61,8 @@
 		//var watchID = navigator.geolocation.watchPosition(onSuccess, onError, 500000);
 		/*Con esta variable mirará la posicion cuando se lo indique*/
 		/*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
-		cargar();
-	 // esta me mira una vez
+		
+		var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 3000, timeout: 50000, enableHighAccuracy: false }); // esta me mira una vez
 		
 	});
     </script>
