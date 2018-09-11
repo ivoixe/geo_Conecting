@@ -14,10 +14,10 @@
 	$lat = (!empty($_POST['lat']))? $_POST['lat'] : 0;
 	$long = (!empty($_POST['log']))?$_POST['log'] :0;
 	$direccion = (!empty($_POST['direccion']))?$_POST['direccion'] :0;
-	$latlog= $lat.','.$log;
+	$latlog= $lat.','.$long;
 	$hora= date("Y-m-d H:i:s");
 
-    $sql= 'INSERT INTO ubicaciones_at_time (fecha,latlog) VALUES ("'.$hora.'","'.$latlog.'") ';
+    $sql= 'INSERT INTO ubicaciones_at_time (fecha,lat,long) VALUES ("'.$hora.'","'.$lat.'","'.$long.'") ';
   save_data($conn,$sql);
   echo "fine";
  
