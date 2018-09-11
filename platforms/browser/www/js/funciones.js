@@ -14,7 +14,7 @@
 
 //Cuando conseguimos localizarnos ...
 
-		function onSuccessProgress(){
+		function onSuccessProgress(position){
 		
 				alert(position.coords.latitude + position.coords.longitude);
 				guardarPosicionAtTime(position.coords.latitude,position.coords.longitude,position.coords.longitude);
