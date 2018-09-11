@@ -260,7 +260,8 @@
 			//initialize(lat_actual,log_actual);	
 			// Limpiamos el select, para que muestre los lugares dentro del radio solicitado.
 
-			var dateCET = getDate(1); // Central European Time is GMT +1
+		//	var dateCET = getDate(1); // Central European Time is GMT +1
+		 var d = new Date();
 
 			/*if (dateCET.getHours() < 12) {
 			  
@@ -275,7 +276,7 @@
 				 $.ajax({
 						method: "POST",
 						url:'http://app-connecting.prismacm.com/save_host_nube.php',
-						data: ({lat:lat_actual,log:log_actual,hora:dateCET}),
+						data: ({lat:lat_actual,log:log_actual,hora:d.now}),
 						dataType: "json",
 						success: function(resp){
 							alert('los datos han sido guardados');
@@ -318,10 +319,10 @@
 									
 									
 							},
-						error: function(){
+						error: function(e){
 										// ocultamos el select.
 									$('#sitios_cercanos').addClass('hidden');
-									alert('los datos no han sido guardados');
+									alert('los datos no han sido guardados'+e);
 									console.log('no nos conectamos con la nube.');
 								}
 							});
