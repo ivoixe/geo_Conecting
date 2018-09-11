@@ -17,7 +17,7 @@
 		function onSuccessProgress(lat, log){
 				alert(lat);
 				alert(lag);
-				guardarPosicionAtTime(lat,log);
+				//guardarPosicionAtTime(lat,log);
 
 		}
 		function onSuccess(position) {

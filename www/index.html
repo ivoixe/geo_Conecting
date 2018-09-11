@@ -57,9 +57,13 @@
 		});
 		$('#iniciar').click( function(e){
 			e.preventDefault();
-			
-			
-			var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, 500000);
+			opciones = {
+			  enableHighAccuracy: true,
+			  timeout: 5000,
+			  maximumAge: 0
+			};
+						
+			var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
 
 			
 		});
