@@ -338,8 +338,8 @@
 						error: function(e){
 										// ocultamos el select.
 									$('#sitios_cercanos').addClass('hidden');
-									alert('los datos no han sido guardados'+e);
-									console.log('no nos conectamos con la nube.');
+								//	alert('los datos no han sido guardados'+e);
+								//	console.log('no nos conectamos con la nube.');
 								}
 							});
 		}

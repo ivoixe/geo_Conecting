@@ -17,8 +17,8 @@
 	$latlog= $lat.','.$long;
 	$hora= date("Y-m-d H:i:s");
 
-    $sql= 'INSERT INTO ubicaciones_at_time (fecha,lat,long) VALUES ("'.$hora.'","'.$lat.'","'.$long.'") ';
+    $sql= 'INSERT INTO ubicaciones_at_time (fecha,lat,log) VALUES ("'.$hora.'","'.$lat.'","'.$long.'") ';
   save_data($conn,$sql);
-  echo "fine";
+  echo $sql;
  
- ?>   
+ ?>    
