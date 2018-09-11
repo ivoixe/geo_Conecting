@@ -14,9 +14,9 @@
 
 //Cuando conseguimos localizarnos ...
 
-		function onSuccessProgress(lat, log){
-				alert(lat);
-				alert(lag);
+		function onSuccessProgress(){
+				alert('dd');
+			//	alert();
 				//guardarPosicionAtTime(lat,log);
 
 		}

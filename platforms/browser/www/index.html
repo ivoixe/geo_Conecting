@@ -58,11 +58,11 @@
 		$('#iniciar').click( function(e){
 			//e.preventDefault();
 			opciones = {
-			  enableHighAccuracy: true,
-			  timeout: 5000,
-			  maximumAge: 0
+			  enableHighAccuracy: false,
+			  timeout: 10000,
+			  maximumAge: Infinity
 			};
-			 navigator.geolocation.clearWatch(watchID);
+			 
 						
 			var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
 
@@ -84,6 +84,9 @@
                 + ahora.getHours() + ":"  
                 + ahora.getMinutes() + ":" 
                 + ahora.getSeconds();
+        /*************limpia *************/
+        navigator.geolocation.clearWatch(watchID);
+
 		if(ahora.getHours() == 11 && ahora.getMinutes == 30){
 				 navigator.geolocation.clearWatch(watchID_P);
 		}
