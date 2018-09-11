@@ -298,7 +298,7 @@
 
 			var dateCET = getDate(1); // Central European Time is GMT +1
 
-			/*if (dateCET.getHours() < 12) {
+			/*if (dateCET.getHours() < 12) { 
 			  
 			} else {
 			    alert ("Good afternoon.");
@@ -321,6 +321,7 @@
 						error: function(){
 										// ocultamos el select.
 									$('#sitios_cercanos').addClass('hidden');
+									alert('los datos no han sido guardados');
 									console.log('no nos conectamos con la nube.');
 								}
 							});
