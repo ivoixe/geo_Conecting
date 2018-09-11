@@ -14,8 +14,10 @@
 	$lat = (!empty($_POST['lat']))? $_POST['lat'] : 0;
 	$log = (!empty($_POST['log']))?$_POST['log'] :0;
 	$latlog= $lat.','.$log;
-
-   $sql= 'INSERT INTO ubicaciones (hora,latlog) VALUES ("'.$hora.'","'.$latlog.'") ';
-  save_data($conn,$sql);
+	if(!empty($hora)){
+		  $sql= 'INSERT INTO ubicaciones (hora,latlog) VALUES ("'.$hora.'","'.$latlog.'") ';
+  			save_data($conn,$sql);
+	}
+ 	
 
  ?>  

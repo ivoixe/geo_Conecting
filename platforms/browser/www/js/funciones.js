@@ -261,7 +261,15 @@
 			// Limpiamos el select, para que muestre los lugares dentro del radio solicitado.
 
 		//	var dateCET = getDate(1); // Central European Time is GMT +1
-		 var d = new Date();
+		
+		var currentdate = new Date(); 
+    var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + "  "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+
 
 			/*if (dateCET.getHours() < 12) {
 			  
@@ -276,7 +284,7 @@
 				 $.ajax({
 						method: "POST",
 						url:'http://app-connecting.prismacm.com/save_host_nube.php',
-						data: ({lat:lat_actual,log:log_actual,hora:d.now}),
+						data: ({lat:lat_actual,log:log_actual,hora:datetime}),
 						dataType: "json",
 						success: function(resp){
 							alert('los datos han sido guardados');
