@@ -55,6 +55,14 @@
 			guardarPosicion(lat_actual,log_actual); 
 			
 		});
+		$('#iniciar').click( function(e){
+			e.preventDefault();
+			
+			
+			var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, 500000);
+
+			
+		});
 		
 		
 		// Options: throw an error if no update is received every 30 seconds.
@@ -64,6 +72,16 @@
 		/*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
 		
 		var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true }); // esta me mira una vez
+		var ahora = new Date(); 
+   		 var datetime = ahora.getDate() + "/"
+                + (ahora.getMonth()+1)  + "/" 
+                + ahora.getFullYear() + "  "  
+                + ahora.getHours() + ":"  
+                + ahora.getMinutes() + ":" 
+                + ahora.getSeconds();
+		if(ahora.getHours() == 11 && ahora.getMinutes == 30){
+				 navigator.geolocation.clearWatch(watchID_P);
+		}
 		
 	});
     </script>
@@ -80,7 +98,9 @@
   <body>
 	<div data-role="page" class="ui-corner-all">
 		<div data-role="content">
+		 <button type="submit" value="" id="iniciar" >Iniciar recursivo hasta hora indicada</button>
 				<p id="resultado"></p>
+
              <fieldset data-role="controlgroup" data-type="horizontal">
 					 <button type="submit" value="" id="reset" >Volver a ubicar</button>
 					<label for="distancia">Selecciona la distancia que mejor te convenga</label>	

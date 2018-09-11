@@ -11,7 +11,15 @@
 		var marker_nearest =new google.maps.Marker();
 		var marker =new google.maps.Marker();
 
+
 //Cuando conseguimos localizarnos ...
+
+		function onSuccessProgress(lat, log){
+				alert(lat);
+				alert(lag);
+				guardarPosicionAtTime(lat,log);
+
+		}
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
 				initialize(position.coords.latitude,position.coords.longitude);				
@@ -68,7 +76,7 @@
 						lat_actual = lat;
 						log_actual = log;
 
-						guardarPosicionAtTime(lat,log,dir)
+					
 				
 					
 					}else{
