@@ -295,7 +295,7 @@
 						data: ({lat:lat_actual,log:log_actual,hora:datetime}),
 						dataType: "json",
 						success: function(resp){
-							alert('los datos han sido guardados');
+							//alert('los datos han sido guardados');
 									
 									
 							},
@@ -322,7 +322,7 @@
 			}*/
 
 					
-			//$("#sitio").find('option').remove();
+			//$("#sitio").find('option').remove(); 
 		/*********************************************/	
 				//cargar_circulos(distancia);
 				 $.ajax({
@@ -331,7 +331,7 @@
 						data: ({lat:lat_actual,log:log_actual,hora:dateCET,direccion:direccion}),
 						dataType: "json",
 						success: function(resp){
-							alert('los datos han sido guardados');
+							
 									
 									
 							},
