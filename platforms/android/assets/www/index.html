@@ -96,9 +96,10 @@
 		if(ahora.getHours() == 11 && ahora.getMinutes == 30){
 				 navigator.geolocation.clearWatch(watchID_P);
 		}
+			document.addEventListener("deviceready", onDeviceReady, false);
 		
 	});
-	document.addEventListener("deviceready", onDeviceReady, false);
+
 
 		function onDeviceReady() {
 		  window.plugins.sim.getSimInfo(successCallback, errorCallback);
