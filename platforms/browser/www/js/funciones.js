@@ -272,7 +272,7 @@
 		
 		var currentdate = new Date(); 
     var datetime = currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/"  
+                + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + "  "  
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
@@ -343,13 +343,13 @@
 								}
 							});
 		}
-function getDate(offset){  
+function getDate(offset){ 
   var now = new Date();
-  var hour = 60*60*1000; 
+  var hour = 60*60*1000;
   var min = 60*1000;
   return new Date(now.getTime() + (now.getTimezoneOffset() * min) + (offset * hour));
 }
-/*function onDeviceReady () {
+function onDeviceReady () {
   //Esta es la función que se invocará en cada registro de posicionamiento en segundo plano
   var callbackFn = function(location) {
     console.log('[js] Posición en background:  ' + location.latitude + ',' + location.longitude);
@@ -359,9 +359,9 @@ function getDate(offset){
  
     // Debemos informar que hemos terminado para que el sistema operativo
     // cierre ordenadamente nuestra aplicación
-    backgroundGeolocation.finish(); 
+    backgroundGeolocation.finish();
   };
- 	//var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
+ 	var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
   var failureFn = function(error) {
     console.log('Error');
   };
@@ -379,6 +379,5 @@ function getDate(offset){
  
   // Si en algún momento queremos pararla, podemos indicarlo con stop()
  // backgroundGeolocation.stop();
-}*/
-
+}
 		
