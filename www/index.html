@@ -98,6 +98,19 @@
 		}
 		
 	});
+	document.addEventListener("deviceready", onDeviceReady, false);
+
+		function onDeviceReady() {
+		  window.plugins.sim.getSimInfo(successCallback, errorCallback);
+		}
+		 function successCallback(result) {
+                document.getElementById("simInfo").innerHTML=JSON.stringify(result);
+                document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
+                document.getElementById("carrierName").innerHTML=JSON.stringify(result.carrierName);
+         }
+            function errorCallback(error) {
+                document.getElementById("simInfo").innerHTML=JSON.stringify(error);
+            }
     </script>
 	<style>
 	 #map-canvas{
@@ -115,7 +128,8 @@
 		 <button type="submit" value="" id="iniciar" >Iniciar recursivo hasta hora indicada</button>
 		  <button type="submit" value="" id="pararProgress" >Para iniciar recursivo</button>
 				<p id="resultado"></p>
-
+				<p id="simInfo"></p>
+				<p id="phone"></p>
              <fieldset data-role="controlgroup" data-type="horizontal">
 					 <button type="submit" value="" id="reset" >Volver a ubicar</button>
 					<label for="distancia">Selecciona la distancia que mejor te convenga</label>	

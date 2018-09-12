@@ -64,6 +64,14 @@ module.exports = [
         "clobbers": [
             "navigator.geolocation"
         ]
+    },
+    {
+        "id": "com.pbakondy.sim2.Sim",
+        "file": "plugins/com.pbakondy.sim2/www/sim.js",
+        "pluginId": "com.pbakondy.sim2",
+        "clobbers": [
+            "Sim"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -72,7 +80,8 @@ module.exports.metadata =
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-background-mode": "0.7.2",
     "cordova-plugin-globalization": "1.11.0",
-    "org.apache.cordova.geolocation": "0.3.6"
+    "org.apache.cordova.geolocation": "0.3.6",
+    "com.pbakondy.sim2": "1.0.16"
 };
 // BOTTOM OF METADATA
 });
