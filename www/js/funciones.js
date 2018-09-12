@@ -343,10 +343,41 @@
 								}
 							});
 		}
-function getDate(offset){ 
+function getDate(offset){  
   var now = new Date();
-  var hour = 60*60*1000;
+  var hour = 60*60*1000; 
   var min = 60*1000;
   return new Date(now.getTime() + (now.getTimezoneOffset() * min) + (offset * hour));
+}
+function onDeviceReady () {
+  //Esta es la función que se invocará en cada registro de posicionamiento en segundo plano
+  var callbackFn = function(location) {
+    console.log('[js] Posición en background:  ' + location.latitude + ',' + location.longitude);
+    // Aquí incluímos lo que queramos hacer con la información, incluso enviarla
+    // a un servidor si queremos.
+    // jQuery.post(url, JSON.stringify(location));
+ 
+    // Debemos informar que hemos terminado para que el sistema operativo
+    // cierre ordenadamente nuestra aplicación
+    backgroundGeolocation.finish(); 
+  };
+ 	var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
+  var failureFn = function(error) {
+    console.log('Error');
+  };
+ 
+  // Configuramos el plugin, indicando nuestra función callback y algunas opciones
+  backgroundGeolocation.configure(callbackFn, failureFn, {
+      desiredAccuracy: 10,
+      stationaryRadius: 20,
+      distanceFilter: 30,
+      interval: 60000
+  });
+ 
+  // Activamos la geolocalización en segundo plano
+  backgroundGeolocation.start();
+ 
+  // Si en algún momento queremos pararla, podemos indicarlo con stop()
+ // backgroundGeolocation.stop();
 }
 		
