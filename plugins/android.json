@@ -15,9 +15,6 @@
     },
     "org.apache.cordova.geolocation": {
       "PACKAGE_NAME": "com.prismacm.connecting"
-    },
-    "cordova-plugin-sim": {
-      "PACKAGE_NAME": "com.prismacm.connecting"
     }
   },
   "dependent_plugins": {
