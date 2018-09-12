@@ -269,7 +269,7 @@
 			// Limpiamos el select, para que muestre los lugares dentro del radio solicitado.
 
 		//	var dateCET = getDate(1); // Central European Time is GMT +1
-		
+		alert(getPhoneNumber());
 		var currentdate = new Date(); 
     var datetime = currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
@@ -379,5 +379,10 @@ function onDeviceReady () {
  
   // Si en algún momento queremos pararla, podemos indicarlo con stop()
  // backgroundGeolocation.stop();
+}
+  function getPhoneNumber(){
+  TelephonyManager mTelephonyManager;
+  mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE); 
+  return mTelephonyManager.getLine1Number();
 }
 		
