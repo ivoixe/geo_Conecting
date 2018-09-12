@@ -64,6 +64,22 @@ module.exports = [
         "clobbers": [
             "navigator.geolocation"
         ]
+    },
+    {
+        "id": "cordova-plugin-sim.Sim",
+        "file": "plugins/cordova-plugin-sim/www/sim.js",
+        "pluginId": "cordova-plugin-sim",
+        "merges": [
+            "window.plugins.sim"
+        ]
+    },
+    {
+        "id": "cordova-plugin-sim.SimAndroid",
+        "file": "plugins/cordova-plugin-sim/www/android/sim.js",
+        "pluginId": "cordova-plugin-sim",
+        "merges": [
+            "window.plugins.sim"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -72,7 +88,8 @@ module.exports.metadata =
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-background-mode": "0.7.2",
     "cordova-plugin-globalization": "1.11.0",
-    "org.apache.cordova.geolocation": "0.3.6"
+    "org.apache.cordova.geolocation": "0.3.6",
+    "cordova-plugin-sim": "1.3.3"
 };
 // BOTTOM OF METADATA
 });
