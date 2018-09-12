@@ -22,7 +22,7 @@
 	
 
 	$(document).ready(function() {
-			 $.mobile.allowCrossDomainPages = true;
+			
 		$("#ruta").click(function() {
 			var destino =  $('#sitio').val();
 			var mode =  $('#mode').val();
@@ -73,8 +73,6 @@
 				navigator.geolocation.clearWatch(watchID_P); 
 			
 		});
-		
-		
 		
 		// Options: throw an error if no update is received every 30 seconds.
 		//var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {maximumAge: 60000, timeout: 5000, enableHighAccuracy: true }); // esta me mira cada momento

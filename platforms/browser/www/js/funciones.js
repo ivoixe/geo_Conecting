@@ -22,6 +22,7 @@
 		}
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
+				alert('ddd');
 				initialize(position.coords.latitude,position.coords.longitude);				
 				//guardarPosicion(lat_actual,log_actual); 
 				return position;
