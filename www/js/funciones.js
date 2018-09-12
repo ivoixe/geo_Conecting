@@ -272,7 +272,7 @@
 		
 		var currentdate = new Date(); 
     var datetime = currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
+                + (currentdate.getMonth()+1)  + "/"  
                 + currentdate.getFullYear() + "  "  
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
@@ -380,9 +380,5 @@ function onDeviceReady () {
   // Si en algún momento queremos pararla, podemos indicarlo con stop()
  // backgroundGeolocation.stop();
 }
-  function getPhoneNumber(){
-  TelephonyManager mTelephonyManager;
-  mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE); 
-  return mTelephonyManager.getLine1Number();
-}
+
 		
