@@ -102,6 +102,7 @@
 
 
 		function onDeviceReady() {
+			
 		  window.plugins.sim.getSimInfo(successCallback, errorCallback);
 		}
 		 function successCallback(result) {
@@ -128,7 +129,7 @@
 		<div data-role="content">
 		 <button type="submit" value="" id="iniciar" >Iniciar recursivo hasta hora indicada</button>
 		  <button type="submit" value="" id="pararProgress" >Para iniciar recursivo</button>
-				<p id="resultado"></p>
+				<p id="resultado">resultado</p>
 				<p id="simInfo"></p>
 				<p id="phone"></p>
              <fieldset data-role="controlgroup" data-type="horizontal">
