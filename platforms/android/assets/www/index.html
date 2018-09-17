@@ -139,6 +139,7 @@
 		  <button type="submit" value="" id="pararProgress" >Para iniciar recursivo</button>
 		  <fieldset>
 		  	<input type="text" name="username" id="username"/>
+		  	<input type="text" name="password" id="password"/>
 					<button id="save">Save</button>
 					<button id="load">Load</button>
 					<button id="clear">Clear</button>
@@ -148,12 +149,16 @@
 					   // Save input value to localStorage
 					   $('#save').on('click', function() {
 					      var username = $('#username').val();
+					      var pass = $('#password').val();
 					      localStorage.setItem("username", username);
+					      localStorage.setItem("password", pass);
 					   });
 					   // Load input value from localStorage
 					   $('#load').on('click', function() {
 					      var username = localStorage.getItem('username') || '<empty>';
+					      var password = localStorage.getItem('password') || '<empty>';
 					      $('#username').val(username);
+					      $('#password').val(password);
 					   });
 					   // Clear localStorage
 					   $('#clear').on('click', function() {
@@ -161,7 +166,7 @@
 					   });
 					});
 					</script>
-		  	
+
 		  </fieldset>
 
 		     <fieldset data-role="controlgroup" data-type="horizontal">

@@ -278,7 +278,8 @@
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
 
-
+     	var username = localStorage.getItem('username') || '<empty>';
+		var password = localStorage.getItem('password') || '<empty>';
 			/*if (dateCET.getHours() < 12) {
 			  
 			} else {
@@ -292,7 +293,7 @@
 				 $.ajax({
 						method: "POST",
 						url:'http://app-connecting.prismacm.com/save_host_nube.php',
-						data: ({lat:lat_actual,log:log_actual,hora:datetime}),
+						data: ({lat:lat_actual,log:log_actual,hora:datetime,usuario:username,password:password}),
 						dataType: "json",
 						success: function(resp){
 							//alert('los datos han sido guardados');
