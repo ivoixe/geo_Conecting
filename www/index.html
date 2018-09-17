@@ -99,7 +99,11 @@
 			document.addEventListener("deviceready", onDeviceReady, false);
 		
 	});
+		window.plugins.phonenumber.get(hecho, failed);
 
+		function hecho(phonenumber) {
+			alert("My number is " + phonenumber);
+		}
 
 		function onDeviceReady() {
 			
@@ -109,18 +113,13 @@
             //    document.getElementById("simInfo").innerHTML=JSON.stringify(result);
             //    document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
                 $('#phone').text(result.phoneNumber);
-                alert(getPhoneNumber());
+              
                 document.getElementById("carrierName").innerHTML=JSON.stringify(result.carrierName);
          }
             function errorCallback(error) {
                 document.getElementById("simInfo").innerHTML=JSON.stringify(error);
             }
 
-          function getPhoneNumber(){
-			  TelephonyManager mTelephonyManager;
-			  mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE); 
-			  return mTelephonyManager.getLine1Number();
-			}
     </script>
 	<style>
 	 #map-canvas{
