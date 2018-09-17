@@ -106,7 +106,7 @@
 		  window.plugins.sim.getSimInfo(successCallback, errorCallback);
 		}
 		 function successCallback(result) {
-                document.getElementById("simInfo").innerHTML=JSON.stringify(result);
+            //    document.getElementById("simInfo").innerHTML=JSON.stringify(result);
                 document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
                 document.getElementById("carrierName").innerHTML=JSON.stringify(result.carrierName);
          }
@@ -175,8 +175,9 @@
 			   <div data-role="footer">
 			   <div class="datos-telefono">
 			   	<p id="resultado">resultado</p>
-				<p id="simInfo">donde iria el resultaso</p>
+				
 				<p id="phone">donde iria el telefono</p>
+				<p id="carrierName">donde iria el telefono</p>
 				</div>
         <div data-role="navbar">
             <ul>
