@@ -106,19 +106,16 @@
 		  window.plugins.sim.getSimInfo(successCallback, errorCallback);
 		}
 		 function successCallback(result) {
-             // var res_phone=  document.getElementById("simInfo").innerHTML=JSON.stringify(result);
+               document.getElementById("simInfo").innerHTML=JSON.stringify(result);
             //    document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
-         var res_phone=   JSON.stringify(result);
-            $.each(result, function(i, item) {
-			    alert(item);
-			});
+
                 $('#phone').text(result.phoneNumber);
               
                 document.getElementById("carrierName").innerHTML=JSON.stringify(result.carrierName);
          }
             function errorCallback(error) {
                 document.getElementById("simInfo").innerHTML=JSON.stringify(error);
-            }
+            } 
 
     </script>
 	<style>
