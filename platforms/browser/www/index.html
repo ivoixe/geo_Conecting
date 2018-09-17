@@ -109,7 +109,7 @@
              // var res_phone=  document.getElementById("simInfo").innerHTML=JSON.stringify(result);
             //    document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
          var res_phone=   JSON.stringify(result);
-            $.each(res_phone, function(i, item) {
+            $.each(result, function(i, item) {
 			    alert(item);
 			});
                 $('#phone').text(result.phoneNumber);
