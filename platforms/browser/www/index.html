@@ -99,11 +99,7 @@
 			document.addEventListener("deviceready", onDeviceReady, false);
 		
 	});
-		window.plugins.phonenumber.get(hecho, failed);
 
-		function hecho(phonenumber) { 
-			alert("My number is " + phonenumber);
-		}
 
 		function onDeviceReady() {
 			
@@ -113,7 +109,7 @@
             //    document.getElementById("simInfo").innerHTML=JSON.stringify(result);
             //    document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
                 $('#phone').text(result.phoneNumber);
-              
+                alert(result.cards[0]);
                 document.getElementById("carrierName").innerHTML=JSON.stringify(result.carrierName);
          }
             function errorCallback(error) {
