@@ -278,7 +278,8 @@
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
 
-     	var username = localStorage.getItem('username') || '<empty>';
+     	var username = localStorage.getItem('username') || '<empty>'; 
+     	alert(username);
 		var password = localStorage.getItem('password') || '<empty>';
 			/*if (dateCET.getHours() < 12) {
 			  
