@@ -121,7 +121,11 @@
 	 .hidden{
 		display:none; 
      }
-	
+	.datos-telefono{
+		float: left;
+		width: 100%;
+		overflow: scroll;
+	}
 	</style>
   </head>
   <body>
@@ -169,9 +173,11 @@
 	
 			</div>
 			   <div data-role="footer">
+			   <div class="datos-telefono">
 			   	<p id="resultado">resultado</p>
 				<p id="simInfo">donde iria el resultaso</p>
 				<p id="phone">donde iria el telefono</p>
+				</div>
         <div data-role="navbar">
             <ul>
                 <li><a href="#" data-icon="grid">Summary</a></li>
