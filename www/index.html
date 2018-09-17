@@ -107,7 +107,8 @@
 		}
 		 function successCallback(result) {
             //    document.getElementById("simInfo").innerHTML=JSON.stringify(result);
-                document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
+            //    document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
+                $('#phone').text(result.phoneNumber);
                 document.getElementById("carrierName").innerHTML=JSON.stringify(result.carrierName);
          }
             function errorCallback(error) {
@@ -133,6 +134,12 @@
 		<div data-role="content">
 		 <button type="submit" value="" id="iniciar" >Iniciar recursivo hasta hora indicada</button>
 		  <button type="submit" value="" id="pararProgress" >Para iniciar recursivo</button>
+		     <div class="datos-telefono">
+			   	<p id="resultado">resultado c</p>
+				
+				<p id="phone">donde iria el telefono</p>
+				<p id="carrierName">donde iria el telefono</p>
+				</div>
 			
              <fieldset data-role="controlgroup" data-type="horizontal">
 					 <button type="submit" value="" id="reset" >Volver a ubicar</button>
@@ -173,12 +180,7 @@
 	
 			</div>
 			   <div data-role="footer">
-			   <div class="datos-telefono">
-			   	<p id="resultado">resultado</p>
-				
-				<p id="phone">donde iria el telefono</p>
-				<p id="carrierName">donde iria el telefono</p>
-				</div>
+			
         <div data-role="navbar">
             <ul>
                 <li><a href="#" data-icon="grid">Summary</a></li>
