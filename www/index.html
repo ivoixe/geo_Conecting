@@ -162,7 +162,7 @@
 			<div data-role="content">
 			 
 				<label for="username">Usuario:</label><input type="text" name="username" id="username" placeholder="Escribe tu usuario" />
-	  			<label for="username">Contraseña:</label><input type="password" name="password" id="password"/>
+	  			<label for="password">Contraseña:</label><input type="password" name="password" id="password"/>
 				<button id="save">Guardar datos</button>
 				<button id="load">Ver datos</button>
 				<button id="clear">Borrar usuario y contraseña</button>
@@ -185,3 +185,26 @@
 	</body>
 </html>
 
+
+<script type="text/javascript">
+$(function() {
+   // Save input value to localStorage
+   $('#save').on('click', function() {
+      var username = $('#username').val();
+      var pass = $('#password').val();
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", pass);
+   });
+   // Load input value from localStorage
+   $('#load').on('click', function() {
+      var username = localStorage.getItem('username') || '<empty>';
+      var password = localStorage.getItem('password') || '<empty>';
+      $('#username').val(username);
+      $('#password').val(password);
+   });
+   // Clear localStorage
+   $('#clear').on('click', function() {
+      localStorage.clear();
+   });
+});
+</script>

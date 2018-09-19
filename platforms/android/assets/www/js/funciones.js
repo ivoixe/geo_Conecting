@@ -297,9 +297,8 @@
 						data: ({lat:lat_actual,log:log_actual,hora:datetime,usuario:username,password:password}),
 						dataType: "json",
 						success: function(resp){
-							//alert(resp);
-								$( ".mensaje" ).text(resp);
-								$( ".mensaje" ).dialog();
+							alert(resp);
+								
 							},
 						error: function(){
 										// ocultamos el select.
