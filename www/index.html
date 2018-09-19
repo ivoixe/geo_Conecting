@@ -29,10 +29,11 @@
 		    cordova.plugins.backgroundMode.onactivate = function () {
 		        setTimeout(function () {
 		            // Modify the currently displayed notification
+		            initialize(lat_actual,log_actual);	
 		            cordova.plugins.backgroundMode.configure({
 		                text:'Running in background for more than 5s now.'
 		            });
-		        }, 5000);
+		        }, 50000);
 		    }
 		}, false);
 
