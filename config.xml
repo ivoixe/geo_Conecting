@@ -50,5 +50,5 @@
     <feature name="PhoneNumberPlugin">
         <param name="android-package" value="at.oneminutedistraction.phonenumber.PhoneNumberPlugin" />
     </feature>
-    <plugin name="cordova-plugin-background-mode" spec="cordova-plugin-background-mode" />
+    <plugin name="cordova-plugin-background-mode" source="npm" />
 </widget>
