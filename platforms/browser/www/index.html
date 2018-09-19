@@ -117,29 +117,7 @@
                 document.getElementById("simInfo").innerHTML=JSON.stringify(error);
             } 
 
-            document.addEventListener('deviceready', function () {
-			   cordova.plugins.backgroundMode.enable();
-
-					// Get informed when the background mode has been activated
-					cordova.plugins.backgroundMode.onactivate = function () {
-					    var counter = 0;
-
-					    // Update badge number every second
-					    // and write update to log
-					    timer = setInterval(function () {
-					        counter++;
-					        alert('Running since ' + counter + ' sec');
-					        cordova.plugins.notification.badge.set(counter);
-					    }, 1000);
-					};
-
-					// Get informed when the background mode has been deactivated
-					cordova.plugins.backgroundMode.ondeactivate = function () {
-					    clearInterval(timer);
-					    cordova.plugins.notification.badge.clear();
-					};
-			}, false);
-
+  
     </script>
 	<style>
 	 #map-canvas{
