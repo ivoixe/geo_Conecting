@@ -27,9 +27,11 @@
 
 		    // Called when background mode has been activated
 		    cordova.plugins.backgroundMode.onactivate = function () {
+		       alert(lat_actual);
+		       alert(log_actual);
+		       initialize(lat_actual,log_actual);	
 		        setTimeout(function () {
 		            // Modify the currently displayed notification
-		            initialize(lat_actual,log_actual);	
 		            cordova.plugins.backgroundMode.configure({
 		                text:'Running in background for more than 5s now.'
 		            });
