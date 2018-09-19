@@ -18,6 +18,9 @@
     },
     "com.pbakondy.sim2": {
       "PACKAGE_NAME": "com.prismacm.connecting"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.prismacm.connecting"
     }
   },
   "dependent_plugins": {

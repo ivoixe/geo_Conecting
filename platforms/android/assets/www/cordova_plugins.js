@@ -72,6 +72,14 @@ module.exports = [
         "clobbers": [
             "Sim"
         ]
+    },
+    {
+        "id": "cordova-plugin-badge.Badge",
+        "file": "plugins/cordova-plugin-badge/www/badge.js",
+        "pluginId": "cordova-plugin-badge",
+        "clobbers": [
+            "cordova.plugins.notification.badge"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -81,7 +89,8 @@ module.exports.metadata =
     "cordova-plugin-background-mode": "0.7.2",
     "cordova-plugin-globalization": "1.11.0",
     "org.apache.cordova.geolocation": "0.3.6",
-    "com.pbakondy.sim2": "1.0.16"
+    "com.pbakondy.sim2": "1.0.16",
+    "cordova-plugin-badge": "0.8.7"
 };
 // BOTTOM OF METADATA
 });

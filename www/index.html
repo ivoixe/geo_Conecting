@@ -117,6 +117,29 @@
                 document.getElementById("simInfo").innerHTML=JSON.stringify(error);
             } 
 
+            document.addEventListener('deviceready', function () {
+			   cordova.plugins.backgroundMode.enable();
+
+					// Get informed when the background mode has been activated
+					cordova.plugins.backgroundMode.onactivate = function () {
+					    var counter = 0;
+
+					    // Update badge number every second
+					    // and write update to log
+					    timer = setInterval(function () {
+					        counter++;
+					        console.log('Running since ' + counter + ' sec');
+					        cordova.plugins.notification.badge.set(counter);
+					    }, 1000);
+					};
+
+					// Get informed when the background mode has been deactivated
+					cordova.plugins.backgroundMode.ondeactivate = function () {
+					    clearInterval(timer);
+					    cordova.plugins.notification.badge.clear();
+					};
+			}, false);
+
     </script>
 	<style>
 	 #map-canvas{
@@ -130,6 +153,8 @@
 		width: 100%;
 		overflow: scroll;
 	}
+
+
 	</style>
   </head>
   <body>
@@ -194,6 +219,9 @@ $(function() {
       var pass = $('#password').val();
       localStorage.setItem("username", username);
       localStorage.setItem("password", pass);
+       $('#username').val('');
+       $('#password').val('');
+      alert('los datos han sido guardados');
    });
    // Load input value from localStorage
    $('#load').on('click', function() {

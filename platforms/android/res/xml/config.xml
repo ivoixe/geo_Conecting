@@ -15,6 +15,9 @@
     <feature name="Sim">
         <param name="android-package" value="com.pbakondy.Sim" />
     </feature>
+    <feature name="Badge">
+        <param name="android-package" value="de.appplant.cordova.plugin.badge.Badge" />
+    </feature>
     <name>conecting</name>
     <description>Marca puntos dentro de un radio y dice cual es el mas cercano</description>
     <author email="ivonne@prismacm.com" href="http://phonegap.com">IVONNE</author>

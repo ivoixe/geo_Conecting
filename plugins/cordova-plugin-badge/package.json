@@ -1,0 +1,83 @@
+{
+  "name": "cordova-plugin-badge",
+  "version": "0.8.7",
+  "description": "Shows the count of unread messages as a badge on the app icon.",
+  "cordova": {
+    "id": "cordova-plugin-badge",
+    "platforms": [
+      "ios",
+      "osx",
+      "android",
+      "browser",
+      "windows"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katzer/cordova-plugin-badge.git"
+  },
+  "keywords": [
+    "appplant",
+    "badge",
+    "shortcutbadger",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-osx",
+    "cordova-android",
+    "cordova-browser",
+    "cordova-windows"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=6.0.0"
+    },
+    {
+      "name": "apple-ios",
+      "version": ">=10.0.0"
+    },
+    {
+      "name": "cordova-android",
+      "version": ">=4"
+    },
+    {
+      "name": "cordova-plugman",
+      "version": ">=4.2.0"
+    }
+  ],
+  "author": {
+    "name": "Sebastián Katzer"
+  },
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/katzer/cordova-plugin-badge/issues"
+  },
+  "homepage": "https://github.com/katzer/cordova-plugin-badge#readme",
+  "gitHead": "8d9da75f6faad24fdc904f1c1c5a3361cf030bdf",
+  "_id": "cordova-plugin-badge@0.8.7",
+  "_npmVersion": "5.6.0",
+  "_nodeVersion": "7.10.1",
+  "_npmUser": {
+    "name": "katzer",
+    "email": "katzer@appplant.de"
+  },
+  "dist": {
+    "integrity": "sha512-s+s4yusKdeJ4sMPhQs4zR3lR2UuROzSy14GFAp00pTHPiBfCtxeINSUYAZYnpuO3RGx6PPlVCwSJpVG0IdM58g==",
+    "shasum": "fe4942aa24af6822da85c01ccce6a831afff5931",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-badge/-/cordova-plugin-badge-0.8.7.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "katzer",
+      "email": "katzer@appplant.de"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-badge-0.8.7.tgz_1516785492632_0.6922836808953434"
+  },
+  "directories": {},
+  "_shasum": "fe4942aa24af6822da85c01ccce6a831afff5931",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-badge/-/cordova-plugin-badge-0.8.7.tgz",
+  "_from": "cordova-plugin-badge@latest"
+}
