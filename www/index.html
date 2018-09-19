@@ -27,6 +27,8 @@
 
 		    // Called when background mode has been activated
 		    cordova.plugins.backgroundMode.onactivate = function () {
+
+		     var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
 		       alert(lat_actual);
 		       alert(log_actual);
 		       initialize(lat_actual,log_actual);	
@@ -82,7 +84,7 @@
 			};
 			 
 						
-			var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
+			
 
 			
 		});
