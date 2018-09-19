@@ -279,7 +279,7 @@
                 + currentdate.getSeconds();
 
      	var username = localStorage.getItem('username') || '<empty>'; 
-     	alert(username);
+ 
 		var password = localStorage.getItem('password') || '<empty>';
 			/*if (dateCET.getHours() < 12) {
 			  
@@ -297,9 +297,9 @@
 						data: ({lat:lat_actual,log:log_actual,hora:datetime,usuario:username,password:password}),
 						dataType: "json",
 						success: function(resp){
-							//alert('los datos han sido guardados');
-									
-									
+							//alert(resp);
+								$( ".mensaje" ).text(resp);
+								$( ".mensaje" ).dialog();
 							},
 						error: function(){
 										// ocultamos el select.

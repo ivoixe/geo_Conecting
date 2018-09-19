@@ -9,13 +9,13 @@
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD6cz9NsGdNE_K-eXAsZedHCNEaZRku63s"></script>
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6cz9NsGdNE_K-eXAsZedHCNEaZRku63s"
   type="text/javascript"></script>-->
     <link  href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css"></link>
 	<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
 	
-    <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>   
    <script type="text/javascript" charset="utf-8">
 	
@@ -133,55 +133,101 @@
 	</style>
   </head>
   <body>
-		<div id="page-main" data-role="page" class="ui-corner-all">
-			<div data-role="content">
-			    <fieldset data-role="controlgroup" data-type="horizontal">
-					 <button type="submit" value="" id="reset" >Fichar</button>
-				</fieldset>
+	<div data-role="page" class="ui-corner-all">
+		<div data-role="content">
+		 <button type="submit" value="" id="iniciar" >Iniciar recursivo hasta hora indicada</button>
+		  <button type="submit" value="" id="pararProgress" >Para iniciar recursivo</button>
+		  <fieldset>
+		  	<input type="text" name="username" id="username"/>
+		  	<input type="text" name="password" id="password"/>
+					<button id="save">Save</button>
+					<button id="load">Load</button>
+					<button id="clear">Clear</button>
+					 
+					<script type="text/javascript">
+					$(function() {
+					   // Save input value to localStorage
+					   $('#save').on('click', function() {
+					      var username = $('#username').val();
+					      var pass = $('#password').val();
+					      localStorage.setItem("username", username);
+					      localStorage.setItem("password", pass);
+					   });
+					   // Load input value from localStorage
+					   $('#load').on('click', function() {
+					      var username = localStorage.getItem('username') || '<empty>';
+					      var password = localStorage.getItem('password') || '<empty>';
+					      $('#username').val(username);
+					      $('#password').val(password);
+					   });
+					   // Clear localStorage
+					   $('#clear').on('click', function() {
+					      localStorage.clear();
+					   });
+					});
+					</script>
+
+		  </fieldset>
+
+		     <fieldset data-role="controlgroup" data-type="horizontal">
+			   	<p id="resultado">resultado c</p>
+				
+				<p id="simInfo">donde iria el telefono</p>
+				<p id="phone">donde iria el telefono</p>
+				<p id="carrierName">donde iria el telefono</p>
+				</div>
+			 </fieldset>
+             <fieldset data-role="controlgroup" data-type="horizontal">
+					 <button type="submit" value="" id="reset" >Volver a ubicar</button>
+					<label for="distancia">Selecciona la distancia que mejor te convenga</label>	
+					<select id="distancia">
+					  <option value="sel">-selecciona-</option>
+					  <option value="1">a 1 km</option>
+					  <option value="2">a 2 km</option>
+					  <option value="3">a 3 km</option>
+					  <option value="4">a 4 km</option>
+					</select>
+			 </fieldset>
+					<p id="resultado_coordenadas"></p>
+	
+			<div id="sitios_cercanos" class="hidden">
+				<label for="sitio">Selecciona el sitio al que te quieres dirigir</label>	
+				<select id="sitio" class=""></select>
+			</div>
+			<div id="route" class="hidden">
+				<label for="mode">Selecciona modo de transporte</label>	
+				<select id="mode">
+				<option value="DRIVING">Coche</option>
+				<option value="WALKING">Andando</option>
+				<option value="BICYCLING">Bicicleta</option>
+				<option value="TRANSIT">Transporte público</option>
+				</select>
+
+
+				<button type="submit" value="" id="ruta" >Ruta</button>
+			</div>
+		
+				 <p id="directions-panel"></p>
+			
 				<div role="main" class="ui-content" id="map-canvas">
 				<!-- map loads here... -->
 				</div>
-		
+			
+	
 			</div>
-
-			 <div data-role="footer">
-					
-		        <div data-role="navbar">
-		            <ul>
-		                
-		                <li><a href="#page-main" data-icon="grid">Fichar</a></li>
-		             
-		                <li><a href="#page-config" data-icon="gear">Configuración</a></li>
-		            
-		            </ul>
-		        </div><!-- /navbar -->
-			</div><!-- /footer -->
-
-		</div>
-		<div id="page-config"data-role="page" class="ui-corner-all">
-			<div data-role="content">
-			 
-				<label for="username">Usuario:</label><input type="text" name="username" id="username" placeholder="Escribe tu usuario" />
-	  			<label for="username">Contraseña:</label><input type="password" name="password" id="password"/>
-				<button id="save">Guardar datos</button>
-				<button id="load">Ver datos</button>
-				<button id="clear">Borrar usuario y contraseña</button>
-			</div>
-
-			 <div data-role="footer">
-					
-		        <div data-role="navbar">
-		            <ul>
-		                <li><a href="#page-main" data-icon="grid">Fichar</a></li>
-		             
-		                <li><a href="#page-config" data-icon="gear">Configuración</a></li>
-		            </ul>
-		        </div><!-- /navbar -->
-			</div><!-- /footer -->
-
-		</div>
-		<div class="mensaje" style="display:none">
+			   <div data-role="footer">
+			
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-icon="grid">Summary</a></li>
+                <li><a href="#" data-icon="star" class="ui-btn-active">Favs</a></li>
+                <li><a href="#" data-icon="gear">Setup</a></li>
+            </ul>
+        </div><!-- /navbar -->
+</div><!-- /footer -->
 		</div>
 	</body>
 </html>
+
+
 

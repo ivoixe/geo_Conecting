@@ -14,7 +14,7 @@
 	 	);
    /**CONEXION A LA BASE DE DATOS*/
 	/***llegaria con su usuario y contraseña******************/
- 	$mensaje="Has fichado correctamente";
+ 	
 	$usuario = (!empty($_POST['usuario']))? $_POST['usuario']:''; 
 
 	$pass = (!empty($_POST['password']))? $_POST['password']:'';
@@ -29,10 +29,11 @@
 		if(!empty($hora) && !empty($latlog) && $latlog !=0){
 			  $sql= 'INSERT INTO ubicaciones (hora,latlog,user,ident_interno) VALUES ("'.$hora.'","'.$latlog.'","'.$usuario.'","'. $bd_usuarios[0]['ident_interno'].'") ';
 	  			save_data($conn,$sql);
+	  			$mensaje="Has fichado correctamente";
 		}
 
 	}else{
-		$mesanje="Tu clave o usuario no son correctos";
+		$mensaje="Tu clave o usuario no son correctos";
 	}
 	
  	echo json_encode($mensaje); 
