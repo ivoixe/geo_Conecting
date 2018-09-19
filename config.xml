@@ -46,9 +46,9 @@
     <plugin name="org.apache.cordova.geolocation" spec="0.3.6" />
     <plugin name="cordova-plugin-globalization" spec="1.11.0" />
     <plugin name="cordova-plugin-sim" source="npm" spec="1.3.3" />
-    
     <feature name="PhoneNumberPlugin">
         <param name="android-package" value="at.oneminutedistraction.phonenumber.PhoneNumberPlugin" />
     </feature>
-   <plugin name="cordova-plugin-background-mode" source="npm" />
+    <plugin name="cordova-plugin-background-mode" spec="~0.7.2" />
+    <plugin name="cordova-background-geolocation-lt" spec="~2.13.1" />
 </widget>

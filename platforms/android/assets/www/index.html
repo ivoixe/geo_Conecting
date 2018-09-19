@@ -20,7 +20,7 @@
    <script type="text/javascript" charset="utf-8">
 		document.addEventListener('deviceready', function () {
 		    // Android customization
-
+ 			 var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
 		    cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
 		    // Enable background mode
 		    cordova.plugins.backgroundMode.enable();
@@ -28,11 +28,12 @@
 		    // Called when background mode has been activated
 		    cordova.plugins.backgroundMode.onactivate = function () {
 
-		     var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
-		       alert(lat_actual);
-		       alert(log_actual);
-		       initialize(lat_actual,log_actual);	
-		        setTimeout(function () {
+		   
+		       setTimeout(function () {
+		       		initialize(lat_actual,log_actual);	
+		       		  alert(lat_actual);
+		      		 alert(log_actual);
+
 		            // Modify the currently displayed notification
 		            cordova.plugins.backgroundMode.configure({
 		                text:'Running in background for more than 5s now.'
