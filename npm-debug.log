@@ -43,30 +43,30 @@
 25 verbose addNameTag registry:https://registry.npmjs.org/de.appplant.cordova.plugin.background-mode not in flight; fetching
 26 verbose request uri https://registry.npmjs.org/de.appplant.cordova.plugin.background-mode
 27 verbose request no auth needed
-28 info attempt registry request try #1 at 12:36:46
-29 verbose request id e76c1d65b2d92608
+28 info attempt registry request try #1 at 12:39:11
+29 verbose request id 9abf46544a45c515
 30 http request GET https://registry.npmjs.org/de.appplant.cordova.plugin.background-mode
 31 http 404 https://registry.npmjs.org/de.appplant.cordova.plugin.background-mode
-32 verbose headers { date: 'Wed, 19 Sep 2018 10:36:53 GMT',
+32 verbose headers { date: 'Wed, 19 Sep 2018 10:39:18 GMT',
 32 verbose headers   'content-type': 'application/json',
 32 verbose headers   'content-length': '21',
 32 verbose headers   connection: 'keep-alive',
-32 verbose headers   'set-cookie': [ '__cfduid=d2e0eb54b1ab6898b3e24b1bccb88c7331537353413; expires=Thu, 19-Sep-19 10:36:53 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+32 verbose headers   'set-cookie': [ '__cfduid=dcd6e47d583d67cd653eeea0848030be31537353558; expires=Thu, 19-Sep-19 10:39:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
 32 verbose headers   'cf-cache-status': 'MISS',
 32 verbose headers   'cache-control': 'max-age=300',
-32 verbose headers   'cf-ray': '45cb69f09e295486-MAD',
+32 verbose headers   'cf-ray': '45cb6d79b9152f2f-MAD',
 32 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
 32 verbose headers   vary: 'accept-encoding, accept',
 32 verbose headers   server: 'cloudflare' }
 33 silly get cb [ 404,
-33 silly get   { date: 'Wed, 19 Sep 2018 10:36:53 GMT',
+33 silly get   { date: 'Wed, 19 Sep 2018 10:39:18 GMT',
 33 silly get     'content-type': 'application/json',
 33 silly get     'content-length': '21',
 33 silly get     connection: 'keep-alive',
-33 silly get     'set-cookie': [ '__cfduid=d2e0eb54b1ab6898b3e24b1bccb88c7331537353413; expires=Thu, 19-Sep-19 10:36:53 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+33 silly get     'set-cookie': [ '__cfduid=dcd6e47d583d67cd653eeea0848030be31537353558; expires=Thu, 19-Sep-19 10:39:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
 33 silly get     'cf-cache-status': 'MISS',
 33 silly get     'cache-control': 'max-age=300',
-33 silly get     'cf-ray': '45cb69f09e295486-MAD',
+33 silly get     'cf-ray': '45cb6d79b9152f2f-MAD',
 33 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
 33 silly get     vary: 'accept-encoding, accept',
 33 silly get     server: 'cloudflare' } ]

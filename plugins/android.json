@@ -18,14 +18,7 @@
     },
     "cordova-plugin-badge": {
       "PACKAGE_NAME": "com.prismacm.connecting"
-    },
-    "cordova-plugin-background-mode": {
-      "PACKAGE_NAME": "com.prismacm.connecting"
     }
   },
-  "dependent_plugins": {
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.prismacm.connecting"
-    }
-  }
+  "dependent_plugins": {}
 }
