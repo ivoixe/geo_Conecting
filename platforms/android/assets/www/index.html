@@ -128,7 +128,7 @@
 					    // and write update to log
 					    timer = setInterval(function () {
 					        counter++;
-					        console.log('Running since ' + counter + ' sec');
+					        alert('Running since ' + counter + ' sec');
 					        cordova.plugins.notification.badge.set(counter);
 					    }, 1000);
 					};
