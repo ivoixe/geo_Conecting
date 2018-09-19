@@ -87,7 +87,7 @@
 					dir = "<p>El Servicio de Codificación Geográfica ha fallado con el siguiente error: " + status + ".</p>";
 				}
 
-				element.innerHTML = dir;
+				//element.innerHTML = dir;
 				
 			});
 		}
