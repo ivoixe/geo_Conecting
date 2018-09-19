@@ -7,14 +7,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-background-mode": {
-    "source": {
-      "type": "local",
-      "path": "F:\\Almacen-Ivo\\Trabajos-ivo\\APP_GEOLOCALIZACION\\geo_Conecting\\node_modules\\cordova-plugin-background-mode"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-device": {
     "source": {
       "type": "registry",
@@ -63,10 +55,10 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-badge": {
+  "cordova-plugin-background-mode": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-badge"
+      "id": "cordova-plugin-background-mode"
     },
     "is_top_level": true,
     "variables": {}

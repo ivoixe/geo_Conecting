@@ -57,11 +57,20 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-badge.Badge",
-        "file": "plugins/cordova-plugin-badge/www/badge.js",
-        "pluginId": "cordova-plugin-badge",
+        "id": "cordova-plugin-device.device",
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "pluginId": "cordova-plugin-device",
         "clobbers": [
-            "cordova.plugins.notification.badge"
+            "device"
+        ]
+    },
+    {
+        "id": "cordova-plugin-background-mode.BackgroundMode",
+        "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
+        "pluginId": "cordova-plugin-background-mode",
+        "clobbers": [
+            "cordova.plugins.backgroundMode",
+            "plugin.backgroundMode"
         ]
     }
 ];
@@ -71,7 +80,8 @@ module.exports.metadata =
     "cordova-plugin-globalization": "1.11.0",
     "org.apache.cordova.geolocation": "0.3.6",
     "com.pbakondy.sim2": "1.0.16",
-    "cordova-plugin-badge": "0.8.7"
+    "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-background-mode": "0.7.2"
 };
 // BOTTOM OF METADATA
 });
