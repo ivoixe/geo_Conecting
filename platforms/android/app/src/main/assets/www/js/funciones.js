@@ -30,7 +30,7 @@
 			//Si algo fallase al localizarnos...
 		function onError(error) {
 		
-				console.log('code ivonne: '    + error.code    + '\n' +
+				alert('code ivonne: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
 			
 	    }

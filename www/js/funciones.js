@@ -20,8 +20,6 @@
 				guardarPosicionAtTime(position.coords.latitude,position.coords.longitude,position.coords.longitude);
 
 		}
-
-
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
 				initialize(position.coords.latitude,position.coords.longitude);				
@@ -30,18 +28,12 @@
 		}
 			
 			//Si algo fallase al localizarnos...
-	function onError(error) {
-		alert(error.code);
-		  switch(error.code) {
-		    case error.TIMEOUT:
-		      // Quick fallback when no cached position exists at all.
-		      doFallback();
-		      // Acquire a new position object.
-		      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-		      break;
-		  
-		  };
-}
+		function onError(error) {
+		
+				alert('code ivonne: '    + error.code    + '\n' +
+					  'message: ' + error.message + '\n');
+			
+	    }
 			
 //Posiciona el marcador en el MAPA basandose en nuestra geolocalización (vía clearWatch() o getCurrentPosition() al iniciar la app)
 		function initialize(lat,log) {
