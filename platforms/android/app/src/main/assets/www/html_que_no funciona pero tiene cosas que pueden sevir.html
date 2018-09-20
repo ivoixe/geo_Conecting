@@ -105,7 +105,7 @@
 		/*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
 		
 		var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 10000, timeout: 10000, enableHighAccuracy: true }); // esta me mira una vez
-
+		navigator.geolocation.clearWatch(watchID); 
 		var ahora = new Date(); 
    		 var datetime = ahora.getDate() + "/"
                 + (ahora.getMonth()+1)  + "/" 

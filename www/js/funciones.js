@@ -30,9 +30,9 @@
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-		 navigator.geolocation.getCurrentPosition(onSuccess, onError);
 				alert('code ivonne: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
+		 var idW=navigator.geolocation.getCurrentPosition(onSuccess, onError);
 			
 	    }
 			
