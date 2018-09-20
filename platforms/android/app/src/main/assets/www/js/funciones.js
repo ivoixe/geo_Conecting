@@ -30,7 +30,7 @@
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-		 navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: false });
+		 navigator.geolocation.getCurrentPosition(onSuccess, onError);
 				alert('code ivonne: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
 			
