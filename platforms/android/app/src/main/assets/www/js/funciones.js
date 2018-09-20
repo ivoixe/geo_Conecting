@@ -22,6 +22,7 @@
 		}
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
+				alert(position);
 				initialize(position.coords.latitude,position.coords.longitude);				
 				guardarPosicion(position.coords.latitude,position.coords.longitude); 
 				return position;
@@ -46,7 +47,7 @@
 				var infowindow = new google.maps.InfoWindow();	
 				var latlng = new google.maps.LatLng(lat,log);
 					var mapOptions = {
-						zoom:12,
+						zoom:12, 
 						center: latlng,
 						mapTypeId: 'roadmap'
 					}
