@@ -32,7 +32,7 @@ document.addEventListener('deviceready', function () {
             // Modify the currently displayed notification
             var algo = cordova.BackgroundGeolocation;
 			alert('del bk '+algo);  
-            var d= new date();
+           var d = new Date();
             navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
             cordova.plugins.backgroundMode.configure({
                 text:'Running '+d+' now.'
