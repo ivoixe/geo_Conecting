@@ -31,9 +31,10 @@ document.addEventListener('deviceready', function () {
     cordova.plugins.backgroundMode.onactivate = function () {
         setTimeout(function () {
             // Modify the currently displayed notification
+            var d= new date();
             navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
             cordova.plugins.backgroundMode.configure({
-                text:'Running in background for more than 5s now.'
+                text:'Running '+d+' now.'
             });
         }, 5000);
     }
