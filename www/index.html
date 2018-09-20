@@ -30,8 +30,8 @@ document.addEventListener('deviceready', function () {
     // Called when background mode has been activated
     cordova.plugins.backgroundMode.onactivate = function () {
         setTimeout(function () {
-            // Modify the currently displayed notification
-           
+            // Modify the currently displayed notification 
+
             navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
             cordova.plugins.backgroundMode.configure({
                 text:'Running in background for more than 5s now.'
