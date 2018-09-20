@@ -30,7 +30,15 @@
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-			initialize(position.coords.latitude,position.coords.longitude);	
+				opciones = {
+			  enableHighAccuracy: true,
+			
+			};
+			 
+						
+			navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
+
+			
 				alert('code ivonne: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
 			
