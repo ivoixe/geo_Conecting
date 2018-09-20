@@ -27,12 +27,11 @@ document.addEventListener('deviceready', function () {
     // Called when background mode has been activated
     cordova.plugins.backgroundMode.onactivate = function () {
         setTimeout(function () {
-        	alert('esta activo el background '+cordova.plugins.backgroundMode.isActive());
-           initialize(lat_actual,log_actual);	
+            // Modify the currently displayed notification
             cordova.plugins.backgroundMode.configure({
                 text:'Running in background for more than 5s now.'
             });
-        }, 5000); 
+        }, 5000);
     }
 }, false);
 
@@ -73,8 +72,9 @@ document.addEventListener('deviceready', function () {
 		$('#iniciar').click( function(e){
 			//e.preventDefault();
 			opciones = {
-			  enableHighAccuracy: true,
-			
+			  enableHighAccuracy: false,
+			  timeout: 10000,
+			  maximumAge: Infinity
 			};
 			 
 						
@@ -96,7 +96,7 @@ document.addEventListener('deviceready', function () {
 		/*Con esta variable mirará la posicion cuando se lo indique*/
 		/*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
 		
-		var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true }); // esta me mira una vez
+		var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true }); // esta me mira una vez
 		var ahora = new Date(); 
    		 var datetime = ahora.getDate() + "/"
                 + (ahora.getMonth()+1)  + "/" 
@@ -105,11 +105,11 @@ document.addEventListener('deviceready', function () {
                 + ahora.getMinutes() + ":" 
                 + ahora.getSeconds();
         /*************limpia *************/
-        navigator.geolocation.clearWatch(watchID);
+      //  navigator.geolocation.clearWatch(watchID);
 
-		if(ahora.getHours() == 11 && ahora.getMinutes == 30){
+		/*if(ahora.getHours() == 11 && ahora.getMinutes == 30){
 				 navigator.geolocation.clearWatch(watchID_P);
-		}
+		}*/
 			document.addEventListener("deviceready", onDeviceReady, false);
 		
 	});

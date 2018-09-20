@@ -22,19 +22,14 @@
 		}
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
-				initialize(position.coords.latitude,position.coords.longitude);	
-				alert(position);			
-				guardarPosicion(lat_actual,log_actual); 
+				initialize(position.coords.latitude,position.coords.longitude);				
+				//guardarPosicion(lat_actual,log_actual); 
 				return position;
 		}
 			
 			//Si algo fallase al localizarnos...
-	
-			 
-						
-			navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: false });
-
-			
+		function onError(error) {
+		
 				alert('code ivonne: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
 			
@@ -74,6 +69,7 @@
 				{ 
 					if (results[0]) //Salen 8 resultados; uno nuestra posición, la posición de nuestra provincia, país, ....
 					{   
+						alert(latlng);
 						ultimo_resultado = results[0];
 						dir = "<p><strong>localización actual: </strong>" + results[0].formatted_address + "</p>";
 				
@@ -88,10 +84,8 @@
 						dir = "<p>No se ha podido obtener ninguna dirección en esas coordenadas.</p>";
 					}
 				}else{
-					//alert( "error status: " + status);
-
-					navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: false });
-					//dir = "<p>El Servicio de Codificación Geográfica ha fallado con el siguiente error: " + status + ".</p>";
+					alert( "error status: " + status);
+					dir = "<p>El Servicio de Codificación Geográfica ha fallado con el siguiente error: " + status + ".</p>";
 				}
 
 				//element.innerHTML = dir;
