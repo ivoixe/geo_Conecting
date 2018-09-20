@@ -20,8 +20,7 @@
    <script type="text/javascript" charset="utf-8">
 document.addEventListener('deviceready', function () {
 
-	var algo = cordova.BackgroundGeolocation;
-			alert('del bk '+algo);  
+	
     // Android customization
     cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
     // Enable background mode
@@ -31,6 +30,8 @@ document.addEventListener('deviceready', function () {
     cordova.plugins.backgroundMode.onactivate = function () {
         setTimeout(function () {
             // Modify the currently displayed notification
+            var algo = cordova.BackgroundGeolocation;
+			alert('del bk '+algo);  
             var d= new date();
             navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
             cordova.plugins.backgroundMode.configure({
