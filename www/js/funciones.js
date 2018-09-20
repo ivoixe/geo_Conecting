@@ -41,6 +41,7 @@
 				Basado en un código en
 				https://developers.google.com/maps/documentation/javascript/geocoding?hl=es#GeocodingResponses
 			*/
+			alert(lat+log);
 				var geocoder;
 				var infowindow = new google.maps.InfoWindow();	
 				var latlng = new google.maps.LatLng(lat,log);
@@ -81,6 +82,7 @@
 				
 					
 					}else{
+						alert('esta llendo por un lado que no es');
 						dir = "<p>No se ha podido obtener ninguna dirección en esas coordenadas.</p>";
 					}
 				}else{
