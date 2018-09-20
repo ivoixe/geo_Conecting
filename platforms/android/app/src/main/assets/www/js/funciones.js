@@ -22,7 +22,7 @@
 		}
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
-				alert('posicion'+position);
+				//alert('posicion'+position);
 				initialize(position.coords.latitude,position.coords.longitude);				
 			
 				return position;
@@ -42,7 +42,7 @@
 				Basado en un código en
 				https://developers.google.com/maps/documentation/javascript/geocoding?hl=es#GeocodingResponses
 			*/
-			alert(lat+log);
+			//alert(lat+log);
 				var geocoder;
 				var infowindow = new google.maps.InfoWindow();	
 				var latlng = new google.maps.LatLng(lat,log);
@@ -72,7 +72,7 @@
 						guardarPosicion(lat,log); 
 					if (results[0]) //Salen 8 resultados; uno nuestra posición, la posición de nuestra provincia, país, ....
 					{   
-						alert(latlng);
+					//	alert(latlng);
 						ultimo_resultado = results[0];
 						dir = "<p><strong>localización actual: </strong>" + results[0].formatted_address + "</p>";
 				

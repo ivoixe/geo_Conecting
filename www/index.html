@@ -19,6 +19,9 @@
 	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>   
    <script type="text/javascript" charset="utf-8">
 document.addEventListener('deviceready', function () {
+
+	var algo = cordova.BackgroundGeolocation;
+			alert(algo);
     // Android customization
     cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
     // Enable background mode
