@@ -92,8 +92,9 @@
 						dir = "<p>No se ha podido obtener ninguna dirección en esas coordenadas.</p>";
 					}
 				}else{
-					alert( "error status: " + status);
-					dir = "<p>El Servicio de Codificación Geográfica ha fallado con el siguiente error: " + status + ".</p>";
+					//alert( "error status: " + status);
+					navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
+					//dir = "<p>El Servicio de Codificación Geográfica ha fallado con el siguiente error: " + status + ".</p>";
 				}
 
 				//element.innerHTML = dir;
