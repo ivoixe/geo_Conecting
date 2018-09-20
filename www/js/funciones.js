@@ -22,9 +22,9 @@
 		}
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
-				alert(position);
+				alert('posicion'+position);
 				initialize(position.coords.latitude,position.coords.longitude);				
-				guardarPosicion(position.coords.latitude,position.coords.longitude); 
+			
 				return position;
 		}
 			
@@ -69,6 +69,7 @@
 				
 				if (status == google.maps.GeocoderStatus.OK)
 				{ 
+						guardarPosicion(lat,log); 
 					if (results[0]) //Salen 8 resultados; uno nuestra posición, la posición de nuestra provincia, país, ....
 					{   
 						alert(latlng);
