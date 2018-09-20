@@ -73,8 +73,7 @@ document.addEventListener('deviceready', function () {
 			//e.preventDefault();
 			opciones = {
 			  enableHighAccuracy: true,
-			  timeout: 10000,
-			  maximumAge: Infinity
+			
 			};
 			 
 						
@@ -96,7 +95,7 @@ document.addEventListener('deviceready', function () {
 		/*Con esta variable mirará la posicion cuando se lo indique*/
 		/*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
 		
-		var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true }); // esta me mira una vez
+		var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true }); // esta me mira una vez
 		var ahora = new Date(); 
    		 var datetime = ahora.getDate() + "/"
                 + (ahora.getMonth()+1)  + "/" 
