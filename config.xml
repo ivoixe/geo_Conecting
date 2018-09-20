@@ -52,6 +52,4 @@
     </feature>
     <plugin name="cordova-plugin-background-mode" spec="~0.7.2" />
     <plugin name="cordova-background-geolocation-lt" source="npm" spec="~2.13.1" />
-        
-   
 </widget>
