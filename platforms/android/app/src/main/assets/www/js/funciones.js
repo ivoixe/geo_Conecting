@@ -22,14 +22,15 @@
 		}
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
-				initialize(position.coords.latitude,position.coords.longitude);				
-				//guardarPosicion(lat_actual,log_actual); 
+				initialize(position.coords.latitude,position.coords.longitude);	
+				alert(position);			
+				guardarPosicion(lat_actual,log_actual); 
 				return position;
 		}
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-		
+			initialize(position.coords.latitude,position.coords.longitude);	
 				alert('code ivonne: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n');
 			
