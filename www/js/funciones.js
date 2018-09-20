@@ -31,7 +31,7 @@
 			
 			//Si algo fallase al localizarnos...
 	function onError(error) {
-		alert(error);
+		alert(error.code);
 		  switch(error.code) {
 		    case error.TIMEOUT:
 		      // Quick fallback when no cached position exists at all.
