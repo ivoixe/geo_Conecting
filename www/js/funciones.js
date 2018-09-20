@@ -39,7 +39,7 @@
 		      // Acquire a new position object.
 		      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 		      break;
-		    case ... // treat the other error cases.
+		  
 		  };
 }
 			
