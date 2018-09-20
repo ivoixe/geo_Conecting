@@ -29,14 +29,10 @@
 		}
 			
 			//Si algo fallase al localizarnos...
-		function onError(error) {
-				opciones = {
-			  enableHighAccuracy: true,
-			
-			};
+	
 			 
 						
-			navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
+			navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: false });
 
 			
 				alert('code ivonne: '    + error.code    + '\n' +
@@ -93,7 +89,8 @@
 					}
 				}else{
 					//alert( "error status: " + status);
-					navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
+
+					navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: false });
 					//dir = "<p>El Servicio de Codificación Geográfica ha fallado con el siguiente error: " + status + ".</p>";
 				}
 
