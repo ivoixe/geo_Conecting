@@ -31,8 +31,8 @@ document.addEventListener('deviceready', function () {
         setTimeout(function () {
             // Modify the currently displayed notification 
  		  var d=new Date();
-           var get_since_nav = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
-            navigator.geolocation.clearWatch(get_since_nav);
+          //var get_since_nav = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
+          //  navigator.geolocation.clearWatch(get_since_nav);
             cordova.plugins.backgroundMode.configure({
                 text:'Running'+d+' now.'
             });
