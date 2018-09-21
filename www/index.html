@@ -30,17 +30,18 @@ document.addEventListener('deviceready', function () {
     cordova.plugins.backgroundMode.onactivate = function () {
         setTimeout(function () {
             // Modify the currently displayed notification 
- 
-            navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
+ 		  var d=new Date();
+           var get_since_nav = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
+            navigator.geolocation.clearWatch(get_since_nav);
             cordova.plugins.backgroundMode.configure({
-                text:'Running in background for more than 5s now.'
+                text:'Running'+d+' now.'
             });
         }, 5000);
     }
 }, false);
 
 	$(document).ready(function() {
-			alert('dfdf');
+			
 		$("#ruta").click(function() {
 			var destino =  $('#sitio').val();
 			var mode =  $('#mode').val();
@@ -109,7 +110,7 @@ document.addEventListener('deviceready', function () {
                 + ahora.getMinutes() + ":" 
                 + ahora.getSeconds();
         /*************limpia *************/
-      //  navigator.geolocation.clearWatch(watchID);
+        navigator.geolocation.clearWatch(watchID);
 
 		/*if(ahora.getHours() == 11 && ahora.getMinutes == 30){
 				 navigator.geolocation.clearWatch(watchID_P);
