@@ -19,8 +19,8 @@
 	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>   
    <script type="text/javascript" charset="utf-8">
 document.addEventListener('deviceready', function () {
-
-
+	 var bgGeo = window.BackgroundGeolocation;
+    alert('bi'+bgGeo);
     // Android customization
     cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
     // Enable background mode
@@ -30,11 +30,11 @@ document.addEventListener('deviceready', function () {
     cordova.plugins.backgroundMode.onactivate = function () {
         setTimeout(function () {
             // Modify the currently displayed notification 
- 		  var d=new Date();
+ 		 var hora_fichar= '8:00';
           //var get_since_nav = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
           //  navigator.geolocation.clearWatch(get_since_nav);
             cordova.plugins.backgroundMode.configure({
-                text:'Running'+d+' now.'
+                text:'Tienes que fichar'+hora_fichar+'.'
             });
         }, 5000);
     }

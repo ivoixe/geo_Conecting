@@ -283,7 +283,7 @@ bgGeo.ready({
 :warning: Do not execute *any* API method which will require accessing location-services until the callback to **`#ready*` executes (eg: `#getCurrentPosition`, `#watchPosition`, `#start`).
 
 ### Promise API
-
+BackgroundGeolocation
 The `BackgroundGeolocation` Javascript API supports [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) for *nearly* every method (the exceptions are **`#watchPosition`** and adding event-listeners via **`#on`** method.  For more information, see the [API Documentation](docs/README.md#large_blue_diamond-methods)
 
 ```javascript
