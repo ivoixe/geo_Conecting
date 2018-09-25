@@ -20,7 +20,9 @@
    <script type="text/javascript" charset="utf-8">
 document.addEventListener('deviceready', function () {
 
-	
+	cordova.plugins.notification.local.on("schedule", function(notification) {
+    alert("scheduled: " + notification.id);
+});
     // Android customization
     cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
     // Enable background mode
