@@ -32,7 +32,7 @@
 		function onError(error) {
 				alert('code ivonne: '    + error.code    + '\n' +
 					  'message: ' + error.message + '\n'); 
-		 var idW=navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge: Infinity, timeout: 20000, enableHighAccuracy: false });
+		 var idW=navigator.geolocation.getCurrentPosition(onSuccess, onError);
 			
 	    }
 			
