@@ -23,7 +23,8 @@ document.addEventListener('deviceready', function () {
 		cordova.plugins.notification.local.schedule({
 		    title: 'My first notification',
 		    text: 'Thats pretty easy...',
-		    foreground: true
+		    foreground: true,
+		     every: { month: 9, day: 25, hour: 16 ,min :10}
 		});
     // Android customization
     cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
