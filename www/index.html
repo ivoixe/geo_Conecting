@@ -19,8 +19,10 @@
 	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>   
    <script type="text/javascript" charset="utf-8">
 document.addEventListener('deviceready', function () {
-	 var bgGeo = window.BackgroundGeolocation;
-    alert('bi'+bgGeo);
+
+	cordova.plugins.notification.local.on("schedule", function(notification) {
+    alert("scheduled: " + notification.id);
+});
     // Android customization
     cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
     // Enable background mode
