@@ -20,6 +20,18 @@
    <script type="text/javascript" charset="utf-8">
 document.addEventListener('deviceready', function () {
 
+	var alarmTime = new Date();
+	alarmTime.setMinutes(alarmTime.getMinutes() + 1);
+	cordova.plugins.notification.local.schedule(
+	{
+	id: 1,
+	title: 'test 1',
+	text: 'This is a test notification message!',
+	at: alarmTime
+	});
+	
+
+/*
 		cordova.plugins.notification.local.schedule({
 		    title: 'My first notification',
 		    text: 'Thats pretty easy...',
@@ -42,7 +54,7 @@ document.addEventListener('deviceready', function () {
                 text:'Tienes que fichar'+hora_fichar+'.'
             });
         }, 5000);
-    }
+    }*/
 }, false);
 
 	$(document).ready(function() {
