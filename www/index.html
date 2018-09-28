@@ -24,7 +24,7 @@ document.addEventListener('deviceready', function () {
 		    title: 'My first notification',
 		    text: 'Thats pretty easy...',
 		    foreground: true,
-		     every: { month: 9, day: 28, hour: 9,minute:50 }
+		     trigger: { at: new Date(2018, 09, 15, 16) }
 		});
     // Android customization
     cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
