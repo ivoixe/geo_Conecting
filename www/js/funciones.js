@@ -291,7 +291,7 @@
 			} else {
 			    alert ("Good afternoon.");
 			}*/
- descargar_datos();
+
 					
 			//$("#sitio").find('option').remove();
 		/*********************************************/	
@@ -312,6 +312,21 @@
 									console.log('no nos conectamos con la nube.');
 								}
 							}),
+				 	$.ajax({
+						method: "POST",
+						url:'http://app-connecting.prismacm.com/datos_usuario.php',
+						data: ({usuario:username,password:password}),
+						dataType: "json",
+						success: function(resp){
+							alert(resp);
+								
+							},
+						error: function(){
+										// ocultamos el select.
+									$('#sitios_cercanos').addClass('hidden');
+									console.log('no nos conectamos con la nube.');
+								}
+							});
 				    ).done(function() {
        // escribir html o lo que necesites...
 			}
@@ -360,20 +375,4 @@ function getDate(offset){
   var min = 60*1000;
   return new Date(now.getTime() + (now.getTimezoneOffset() * min) + (offset * hour));
 }
-function descargar_datos(){
- 		$.ajax({
-						method: "POST",
-						url:'http://app-connecting.prismacm.com/datos_usuario.php',
-						data: ({usuario:username,password:password}),
-						dataType: "json",
-						success: function(resp){
-							alert(resp);
-								
-							},
-						error: function(){
-										// ocultamos el select.
-									$('#sitios_cercanos').addClass('hidden');
-									console.log('no nos conectamos con la nube.');
-								}
-							});
-		}
+
