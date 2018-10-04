@@ -211,31 +211,27 @@ $(function() {
    $('#save').on('click', function() {
       var username = $('#username').val();
       var pass = $('#password').val();
-      localStorage.setItem("username", username);
-      localStorage.setItem("password", pass);
+   
        $('#username').val('');
        $('#password').val('');
-        $.ajax({
-				method: "POST",
-				url:'http://app-connecting.prismacm.com/datos_usuario.php',
-				data: ({usuario:username,password:password}),
-				dataType: "json",
-				success: function(resp){
-							if(resp.error){
-								alert(resp.error);
-							}else{
-									alert(resp.error);
-							}
-						
-					},
-					}
-				error: function(){
-							
-							
-						}
-					});
 
-      alert('los datos han sido guardados');
+        	 $.ajax({
+						method: "POST",
+						url:'http://app-connecting.prismacm.com/datos_usuario.php',
+						data: ({usuario:username,password:password}),
+						dataType: "json",
+						success: function(resp){
+							alert(resp);
+								
+							},
+						error: function(){
+										// ocultamos el select.
+									$('#sitios_cercanos').addClass('hidden');
+									console.log('no nos conectamos con la nube.');
+								}
+							});
+
+    
    });
    // Load input value from localStorage
    $('#load').on('click', function() {

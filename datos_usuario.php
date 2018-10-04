@@ -12,8 +12,8 @@
 	$usuario = (!empty($_POST['usuario']))? $_POST['usuario']:''; 
 
 	$pass = (!empty($_POST['password']))? $_POST['password']:'';
+	$conn = connect_db($db); 
 	var_dump($pass);
-	$conn = connect_db($db);
 	$sql= 'SELECT * FROM usuario WHERE usuario = '.$usuario.' AND password='.$pass;
 	$bd_usuarios	= save_data($conn,$sql);
 
@@ -27,4 +27,4 @@
 		$mensaje['error']="No existe o no coincide la contraseña con el usuario";
  		echo json_encode($mensaje); 
 	}
-	
+	 
