@@ -18,43 +18,23 @@
     <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>   
    <script type="text/javascript" charset="utf-8">
+  cordova.plugins.notification.local.registerPermission( function(granted){
+
+  });
 document.addEventListener('deviceready', function () {
+	var date = new Date();
+	cordova.plugins.notification.local.schedule({
 
-	var alarmTime = new Date();
-	alarmTime.setMinutes(alarmTime.getMinutes() + 1);
-	cordova.plugins.notification.local.schedule(
-	{
-	id: 1,
-	title: 'test 1',
-	text: 'This is a test notification message!',
-	at: alarmTime
+		id:1,
+		title:"jdjdj",
+		at:date,
+		firstAt:date,
+		every:25,
+		icon:'https://www.connectingeurope.es/favicon.ico'
+
+
 	});
-	
 
-/*
-		cordova.plugins.notification.local.schedule({
-		    title: 'My first notification',
-		    text: 'Thats pretty easy...',
-		    foreground: true,
-		    at: new Date(2018, 9, 16,05 ) 
-		});
-    // Android customization
-    cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
-    // Enable background mode
-    cordova.plugins.backgroundMode.enable();
-
-    // Called when background mode has been activated
-    cordova.plugins.backgroundMode.onactivate = function () {
-        setTimeout(function () {
-            // Modify the currently displayed notification 
- 		 var hora_fichar= '8:00';
-          //var get_since_nav = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
-          //  navigator.geolocation.clearWatch(get_since_nav);
-            cordova.plugins.backgroundMode.configure({
-                text:'Tienes que fichar'+hora_fichar+'.'
-            });
-        }, 5000);
-    }*/
 }, false);
 
 	$(document).ready(function() {
