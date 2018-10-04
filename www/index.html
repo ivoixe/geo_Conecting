@@ -98,7 +98,7 @@ document.addEventListener('deviceready', function () {
 		/*Con esta variable mirará la posicion cuando se lo indique*/
 		/*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
 		
-		var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
+		/*var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
 		var ahora = new Date(); 
    		 var datetime = ahora.getDate() + "/"
                 + (ahora.getMonth()+1)  + "/" 
@@ -107,7 +107,7 @@ document.addEventListener('deviceready', function () {
                 + ahora.getMinutes() + ":" 
                 + ahora.getSeconds();
         /*************limpia *************/
-        navigator.geolocation.clearWatch(watchID);
+      /*  navigator.geolocation.clearWatch(watchID);
 
 		/*if(ahora.getHours() == 11 && ahora.getMinutes == 30){
 				 navigator.geolocation.clearWatch(watchID_P);
@@ -211,27 +211,11 @@ $(function() {
    $('#save').on('click', function() {
       var username = $('#username').val();
       var pass = $('#password').val();
-   
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", pass);
        $('#username').val('');
        $('#password').val('');
-
-        	 $.ajax({
-						method: "POST",
-						url:'http://app-connecting.prismacm.com/datos_usuario.php',
-						data: ({usuario:username,password:password}),
-						dataType: "json",
-						success: function(resp){
-							alert(resp);
-								
-							},
-						error: function(){
-										// ocultamos el select.
-									$('#sitios_cercanos').addClass('hidden');
-									console.log('no nos conectamos con la nube.');
-								}
-							});
-
-    
+    alert('tus datos han sido guardados');
    });
    // Load input value from localStorage
    $('#load').on('click', function() {

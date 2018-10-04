@@ -291,11 +291,12 @@
 			} else {
 			    alert ("Good afternoon.");
 			}*/
-
+ descargar_datos();
 					
 			//$("#sitio").find('option').remove();
 		/*********************************************/	
 				//cargar_circulos(distancia);
+				$.when(
 				 $.ajax({
 						method: "POST",
 						url:'http://app-connecting.prismacm.com/save_host_nube.php',
@@ -310,7 +311,10 @@
 									$('#sitios_cercanos').addClass('hidden');
 									console.log('no nos conectamos con la nube.');
 								}
-							});
+							}),
+				    ).done(function() {
+       // escribir html o lo que necesites...
+			}
 		}
 		function guardarPosicionAtTime(lat_actual,log_actual,direccion){
 		  /*********Reseteamos valores********************************/
@@ -348,6 +352,7 @@
 								//	console.log('no nos conectamos con la nube.');
 								}
 							});
+
 		}
 function getDate(offset){ 
   var now = new Date();
@@ -355,4 +360,20 @@ function getDate(offset){
   var min = 60*1000;
   return new Date(now.getTime() + (now.getTimezoneOffset() * min) + (offset * hour));
 }
-		
+function descargar_datos(){
+ 		$.ajax({
+						method: "POST",
+						url:'http://app-connecting.prismacm.com/datos_usuario.php',
+						data: ({usuario:username,password:password}),
+						dataType: "json",
+						success: function(resp){
+							alert(resp);
+								
+							},
+						error: function(){
+										// ocultamos el select.
+									$('#sitios_cercanos').addClass('hidden');
+									console.log('no nos conectamos con la nube.');
+								}
+							});
+		}
