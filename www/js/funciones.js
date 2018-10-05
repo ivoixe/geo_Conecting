@@ -306,7 +306,7 @@
 							if(resp.error){
 									alert(resp.error);
 							}else{
-								var datos =[];
+								var datos =[]; 
 								alert('se supone no hay error');
 
 								$.each(resp.datas, function(i, item) {
