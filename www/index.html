@@ -47,15 +47,17 @@ document.addEventListener('deviceready', function () {
 			});
 	}
 	
-	   cordova.plugins.notification.local.schedule({
+	  	var inicio = new Date();
+	cordova.plugins.notification.local.schedule({
 
-						id:i,
-						title:'hora:'+ date,
-						at:date_s,
-						icon:'https://www.connectingeurope.es/favicon.ico'
+		id:1,
+		title:"jdjdj",
+		at:inicio,
+		firstAt:inicio,
+		icon:'https://www.connectingeurope.es/favicon.ico'
 
 
-		});
+	});
 
 	
 
