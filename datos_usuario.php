@@ -13,7 +13,7 @@
 
 	$pass = (!empty($_POST['password']))? $_POST['password']:'';
 	$conn = connect_db($db); 
-	var_dump($pass);
+	
 	$sql= 'SELECT * FROM usuario WHERE usuario = '.$usuario.' AND password='.$pass;
 	$bd_usuarios	= save_data($conn,$sql);
 

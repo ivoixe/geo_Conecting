@@ -304,10 +304,13 @@
 						success: function(resp){
 
 							if(resp.error){
-
+									alert(resp.error);
 							}else{
-    
-								 localStorage.setItem( horario,resp.datas);
+								$.each(resp.datas, function(i, item) {
+								 		alert(item.horario_entrada);
+								});
+								    							
+								// localStorage.setItem( horario,resp.datas);
 							}
      							
 							},
