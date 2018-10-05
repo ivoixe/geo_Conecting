@@ -307,7 +307,7 @@ function guardarPosicion(lat_actual,log_actual){
 						success: function(resp){
 							//alert('ha hecho');
 							if(resp.error){
-									alert(resp.error);
+									alert('res'+resp.error);
 							}else{
 								var datos =[]; 
 								

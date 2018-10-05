@@ -34,16 +34,22 @@
 						unset($mensaje['error']);
 		  				
 		  				$mensaje['datas']=$UsuarioHorario;
+		  				
 		  			}else{
 		  				$mensaje['error']="Aún no tienes horario asignado";
 		  			}
 
-			}
+			}else{
 
+			 $mensaje['error']= "usuarios bien localizacion u hora mal".$lat.$latlog;
+			}
+			}
 
 		}else{
 			$mensaje['error']="Tu clave o usuario no son correctos";
 		}
+}else{
+		$mensaje['error']="No hay datos con tu usuario y contraseña";
 }
  		echo json_encode($mensaje); 
 	
