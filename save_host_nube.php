@@ -27,7 +27,7 @@
 				  $sql= 'INSERT INTO ubicaciones (hora,latlog,user) VALUES ("'.$hora.'","'.$latlog.'","'.$usuario.'") ';
 		  			save_data($conn,$sql);
 		  	//descargamos los datos en la app para que los guarde en el movil
-				$sql= 'SELECT * FROM usuario_horarios WHERE id_usuario= "'.$bd_usuarios[0]['id'].'"';
+				$sql= 'SELECT * FROM usuario_horarios WHERE id_usuario= "'.$bd_usuarios[0]['id'].'" ORDER BY horario_entrada ASC';
 				$UsuarioHorario	= make_query($conn,$sql);
 		  			if(!empty($UsuarioHorario)){
 		  				$mensaje['mensaje']="Has fichado correctamente";

@@ -46,6 +46,16 @@ document.addEventListener('deviceready', function () {
 					
 			});
 	}
+	
+	   cordova.plugins.notification.local.schedule({
+
+						id:i,
+						title:'hora:'+ date,
+						at:date_s,
+						icon:'https://www.connectingeurope.es/favicon.ico'
+
+
+		});
 
 	
 
