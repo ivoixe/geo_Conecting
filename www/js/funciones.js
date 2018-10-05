@@ -68,6 +68,7 @@
 				geocoder.geocode({"latLng": latlng}, function(results, status){
 				
 						guardarPosicion(lat,log); 
+
 				if (status == google.maps.GeocoderStatus.OK)
 				{ 
 					if (results[0]) //Salen 8 resultados; uno nuestra posición, la posición de nuestra provincia, país, ....
@@ -302,25 +303,26 @@ function guardarPosicion(lat_actual,log_actual){
 						data: ({lat:lat_actual,log:log_actual,hora:datetime,usuario:username,password:password}),
 						dataType: "json",
 						success: function(resp){
-
+							//alert('ha hecho');
 							if(resp.error){
 									alert(resp.error);
 							}else{
 								var datos =[]; 
-								alert('se supone no hay error');
+								
 
 								$.each(resp.datas, function(i, item) {
 								 		datos.push(item);
 								 		 localStorage.setItem('horario_'+item,item.horario_entrada);
 								});
-
+								 localStorage.removeItem('horarios');
 								 localStorage.setItem('horarios',JSON.stringify(datos));
-								   
+								  recargarHorarios();
 							}
      							
 							},
 						error: function(){
 										// ocultamos el select.
+										alert('errro?');
 									$('#sitios_cercanos').addClass('hidden');
 									console.log('no nos conectamos con la nube.');
 								}
@@ -368,5 +370,15 @@ function getDate(offset){
   var hour = 60*60*1000;
   var min = 60*1000;
   return new Date(now.getTime() + (now.getTimezoneOffset() * min) + (offset * hour));
+}
+function recargarHorarios(){
+	$('#page-horario .horarios').html('');
+		var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
+	 		if(horario_descargado){
+						$('#page-horario .horarios').append('<ul class="list-horarios"></ul>');
+	 			$.each(horario_descargado, function(i, item) {
+						$('#page-horario .horarios ul.list-horarios').append('<li>'+item.horario_entrada+'</li>');
+				});
+	 		}
 }
 		

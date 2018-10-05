@@ -105,6 +105,8 @@ document.addEventListener('deviceready', function () {
 			//$('#distancia').val('sel');
 			
 			initialize(lat_actual,log_actual);	
+
+		//	recargarHorarios();
 			//guardarPosicion(lat_actual,log_actual); 
 			
 		});
@@ -127,13 +129,7 @@ document.addEventListener('deviceready', function () {
 			
 		});
 		
-		var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
-			 		if(horario_descargado){
-								$('#page-horario .horarios').append('<ul class="list-horarios"></ul>');
-			 			$.each(horario_descargado, function(i, item) {
-								$('#page-horario .horarios ul.list-horarios').append('<li>'+item.horario_entrada+'</li>');
-						});
-			 		}
+		recargarHorarios();
 		
 		
 		
