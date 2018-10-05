@@ -101,11 +101,11 @@ document.addEventListener('deviceready', function () {
 				$('#route').addClass('hidden');
 			}
 		});
-		$('#reset').click( function(){
-			$('#distancia').val('sel');
+		$('#fichar').click( function(){
+			//$('#distancia').val('sel');
 			
 			initialize(lat_actual,log_actual);	
-			guardarPosicion(lat_actual,log_actual); 
+			//guardarPosicion(lat_actual,log_actual); 
 			
 		});
 		$('#iniciar').click( function(e){
@@ -200,7 +200,7 @@ document.addEventListener('deviceready', function () {
 		<div id="page-main" data-role="page" class="ui-corner-all">
 			<div data-role="content">
 			    <fieldset data-role="controlgroup" data-type="horizontal">
-					 <button type="submit" value="" id="reset" >Fichar</button>
+					 <button type="submit" value="" id="fichar" >Fichar</button>
 				</fieldset>
 				<div role="main" class="ui-content" id="map-canvas">
 				<!-- map loads here... -->

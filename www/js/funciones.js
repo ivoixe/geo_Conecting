@@ -67,9 +67,9 @@
 				geocoder = new google.maps.Geocoder();
 				geocoder.geocode({"latLng": latlng}, function(results, status){
 				
+						guardarPosicion(lat,log); 
 				if (status == google.maps.GeocoderStatus.OK)
 				{ 
-						guardarPosicion(lat,log); 
 					if (results[0]) //Salen 8 resultados; uno nuestra posición, la posición de nuestra provincia, país, ....
 					{   
 					//	alert(latlng);
@@ -266,7 +266,7 @@
 
 		/*************FUNCION QUE GUARDA POSICIONES *********************************************/
 
-			function guardarPosicion(lat_actual,log_actual){
+function guardarPosicion(lat_actual,log_actual){
 		  /*********Reseteamos valores********************************/
 			//circulo.setMap(null);
 			/*No se si sea lo correcto pero con esto vuelve a cargar el mapa resetado*/
