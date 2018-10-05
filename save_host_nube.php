@@ -34,7 +34,7 @@
 						unset($mensaje['error']);
 		  				
 		  				$mensaje['datas']=$UsuarioHorario;
-		  				
+
 		  			}else{
 		  				$mensaje['error']="Aún no tienes horario asignado";
 		  			}
@@ -42,7 +42,7 @@
 			}else{
 
 			 $mensaje['error']= "usuarios bien localizacion u hora mal".$lat.$latlog;
-			}
+			
 			}
 
 		}else{

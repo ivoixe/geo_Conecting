@@ -67,7 +67,7 @@
 				geocoder = new google.maps.Geocoder();
 				geocoder.geocode({"latLng": latlng}, function(results, status){
 				
-						guardarPosicion(lat,log); 
+			    guardarPosicion(lat,log); 
 
 				if (status == google.maps.GeocoderStatus.OK)
 				{ 
@@ -275,7 +275,7 @@ function guardarPosicion(lat_actual,log_actual){
 			// Limpiamos el select, para que muestre los lugares dentro del radio solicitado.
 
 		//	var dateCET = getDate(1); // Central European Time is GMT +1
-		
+	
 		var currentdate = new Date(); 
     var datetime = currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
@@ -297,7 +297,7 @@ function guardarPosicion(lat_actual,log_actual){
 			//$("#sitio").find('option').remove();
 		/*********************************************/	
 				//cargar_circulos(distancia);
-				  var date="";
+				 // var date="";
 				   var date_s=new Date();
 				 $.ajax({
 						method: "POST",
@@ -305,37 +305,24 @@ function guardarPosicion(lat_actual,log_actual){
 						data: ({lat:lat_actual,log:log_actual,hora:datetime,usuario:username,password:password}),
 						dataType: "json",
 						success: function(resp){
-							//alert('ha hecho');
+							
 							if(resp.error){
 									alert('res'+resp.error);
 							}else{
 								var datos =[]; 
 								
 								var last="";
-								 cordova.plugins.notification.local.registerPermission( function(granted){
-
-  								});
+							
+							
 								$.each(resp.datas, function(i, item) {
 								 		datos.push(item);
 								 		 localStorage.setItem('horario_'+item,item.horario_entrada);
-								 		 last= item.horario_entrada;
+								 		
+
 								});
-								 localStorage.removeItem('horarios');
-								 localStorage.setItem('horarios',JSON.stringify(datos));
-								  date = new Date(item.horario_entrada).toLocaleString("es-EU", {timeZone: item.zona_horaria});
-								  	/***********************************/
-								  		cordova.plugins.notification.local.schedule({
-
-											id:i,
-											title:"jdjdj"+date,
-											at:date,
-											firstAt:date,
-											icon:'https://www.connectingeurope.es/favicon.ico'
-
-
-										});
-								  	/***********************************/
-								  recargarHorarios();
+								localStorage.removeItem('horarios');
+								localStorage.setItem('horarios',JSON.stringify(datos));
+								recargarHorarios();
 
 
 								 
@@ -397,11 +384,15 @@ function getDate(offset){
 function recargarHorarios(){
 	$('#page-horario .horarios').html('');
 		var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
+
 	 		if(horario_descargado){
 						$('#page-horario .horarios').append('<ul class="list-horarios"></ul>');
 	 			$.each(horario_descargado, function(i, item) {
 						$('#page-horario .horarios ul.list-horarios').append('<li>'+item.horario_entrada+'</li>');
 				});
 	 		}
+
+
+	 		
 }
 		

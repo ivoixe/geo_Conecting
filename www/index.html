@@ -18,8 +18,34 @@
     <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>   
    <script type="text/javascript" charset="utf-8">
+
 document.addEventListener('deviceready', function () {
-	
+	var date = new Date();
+	var date_f = new Date();
+
+
+		var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
+		if(horario_descargado){
+			
+			$.each(horario_descargado, function(i, item) {
+				
+					
+				date = new Date(item.horario_entrada);
+				//alert(date);
+					
+			});
+		}
+
+	cordova.plugins.notification.local.schedule({
+
+		id:1,
+		title:"jdjdj",
+		at:date_f,
+		firstAt:date,
+	     icon:'https://www.connectingeurope.es/favicon.ico'
+
+
+	});
 
 	
 
@@ -104,7 +130,7 @@ document.addEventListener('deviceready', function () {
 			
 		});
 		
-		recargarHorarios();
+		
 		
 		
 		
