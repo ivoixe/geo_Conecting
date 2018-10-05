@@ -316,6 +316,17 @@ function guardarPosicion(lat_actual,log_actual){
 								});
 								 localStorage.removeItem('horarios');
 								 localStorage.setItem('horarios',JSON.stringify(datos));
+								 
+								 cordova.plugins.notification.local.schedule({
+
+										id:1,
+										title:"jdjdj",
+										at:item.horario_entrada,
+										firstAt:item.horario_entrada,
+										icon:'https://www.connectingeurope.es/favicon.ico'
+
+
+									});
 								  recargarHorarios();
 							}
      							
