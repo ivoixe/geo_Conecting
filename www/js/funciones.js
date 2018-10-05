@@ -322,7 +322,7 @@ function guardarPosicion(lat_actual,log_actual){
 								 cordova.plugins.notification.local.schedule({
 
 										id:1,
-										title:"jdjdj",
+										title:"jdjdj"+last,
 										at:last,
 										firstAt:last,
 										icon:'https://www.connectingeurope.es/favicon.ico'
