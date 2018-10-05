@@ -297,6 +297,8 @@ function guardarPosicion(lat_actual,log_actual){
 			//$("#sitio").find('option').remove();
 		/*********************************************/	
 				//cargar_circulos(distancia);
+				  var date="";
+				   var date_s=new Date();
 				 $.ajax({
 						method: "POST",
 						url:'http://app-connecting.prismacm.com/save_host_nube.php',
@@ -310,6 +312,9 @@ function guardarPosicion(lat_actual,log_actual){
 								var datos =[]; 
 								
 								var last="";
+								 cordova.plugins.notification.local.registerPermission( function(granted){
+
+  								});
 								$.each(resp.datas, function(i, item) {
 								 		datos.push(item);
 								 		 localStorage.setItem('horario_'+item,item.horario_entrada);
@@ -317,18 +322,24 @@ function guardarPosicion(lat_actual,log_actual){
 								});
 								 localStorage.removeItem('horarios');
 								 localStorage.setItem('horarios',JSON.stringify(datos));
+								  date = new Date(item.horario_entrada).toLocaleString("es-EU", {timeZone: item.zona_horaria});
+								  	/***********************************/
+								  		cordova.plugins.notification.local.schedule({
+
+											id:i,
+											title:"jdjdj"+date,
+											at:date,
+											firstAt:date,
+											icon:'https://www.connectingeurope.es/favicon.ico'
+
+
+										});
+								  	/***********************************/
 								  recargarHorarios();
+
+
 								 
-								 cordova.plugins.notification.local.schedule({
-
-										id:1,
-										title:"jdjdj"+last,
-										at:last,
-										firstAt:last,
-										icon:'https://www.connectingeurope.es/favicon.ico'
-
-
-									});
+							
 							}
      							
 							},
