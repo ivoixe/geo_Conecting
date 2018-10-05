@@ -343,9 +343,9 @@ function guardarPosicion(lat_actual,log_actual){
 							}
      							
 							},
-						error: function(){
+						error: function(e){
 										// ocultamos el select.
-										alert('errro?');
+										alert('error en la conexion?'+e.message);
 									$('#sitios_cercanos').addClass('hidden');
 									console.log('no nos conectamos con la nube.');
 								}
