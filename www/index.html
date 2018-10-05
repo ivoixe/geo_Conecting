@@ -32,28 +32,18 @@ document.addEventListener('deviceready', function () {
 			$.each(horario_descargado, function(i, item) {
 					
 				 date = new Date(item.horario_entrada).toLocaleString("es-EU", {timeZone: item.zona_horaria});
-				 	cordova.plugins.notification.local.schedule({
-
-						id:i,
-						title:'hora:'+ date,
-						at:date_s,
-						firstAt:date,
-						icon:'https://www.connectingeurope.es/favicon.ico'
-
-
-					});
 				
 					
 			});
 	}
 	
-	  	var inicio = new Date();
+	 var inicio = new Date();
 	cordova.plugins.notification.local.schedule({
 
 		id:1,
 		title:"jdjdj",
-		at:inicio,
-		firstAt:inicio,
+		at:date,
+		firstAt:date,
 		icon:'https://www.connectingeurope.es/favicon.ico'
 
 
