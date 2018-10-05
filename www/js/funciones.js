@@ -309,25 +309,26 @@ function guardarPosicion(lat_actual,log_actual){
 							}else{
 								var datos =[]; 
 								
-
+								var last="";
 								$.each(resp.datas, function(i, item) {
 								 		datos.push(item);
 								 		 localStorage.setItem('horario_'+item,item.horario_entrada);
+								 		 last= item.horario_entrada;
 								});
 								 localStorage.removeItem('horarios');
 								 localStorage.setItem('horarios',JSON.stringify(datos));
+								  recargarHorarios();
 								 
 								 cordova.plugins.notification.local.schedule({
 
 										id:1,
 										title:"jdjdj",
-										at:item.horario_entrada,
-										firstAt:item.horario_entrada,
+										at:last,
+										firstAt:last,
 										icon:'https://www.connectingeurope.es/favicon.ico'
 
 
 									});
-								  recargarHorarios();
 							}
      							
 							},
