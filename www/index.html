@@ -19,12 +19,13 @@
 	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>   
    <script type="text/javascript" charset="utf-8">
 document.addEventListener('deviceready', function () {
-	  /*cordova.plugins.notification.local.registerPermission( function(granted){
+	  cordova.plugins.notification.local.registerPermission( function(granted){
 
-  		});*/
+  		});
 
  
 	  var date="";
+	  var date_s=new Date();
 	var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
 		if(horario_descargado){
 			
@@ -35,8 +36,7 @@ document.addEventListener('deviceready', function () {
 
 						id:i,
 						title:'hora:'+ date,
-						at:date,
-						 foreground: true,
+						at:date_s,
 						firstAt:date,
 						icon:'https://www.connectingeurope.es/favicon.ico'
 
@@ -275,20 +275,8 @@ $(function() {
       localStorage.setItem("password", pass);
        $('#username').val('');
        $('#password').val('');
-       cordova.plugins.notification.local.registerPermission( function(granted){
 
-  		});
-       	var date = new Date();
-				 	cordova.plugins.notification.local.schedule({
-
-						id:i,
-						title:'hora:'+ date,
-						at:date,
-						firstAt:date,
-						icon:'https://www.connectingeurope.es/favicon.ico'
-
-
-					});
+ 
       alert('los datos han sido guardados');
    });
    // Load input value from localStorage
