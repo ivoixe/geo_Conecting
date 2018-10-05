@@ -302,9 +302,10 @@
 						data: ({lat:lat_actual,log:log_actual,hora:datetime,usuario:username,password:password}),
 						dataType: "json",
 						success: function(resp){
-
+							
 							alert(resp);
-								
+								 localStorage.setItem("username", username);
+     							 localStorage.setItem("password", pass);
 							},
 						error: function(){
 										// ocultamos el select.
