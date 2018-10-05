@@ -5,37 +5,47 @@
 
 	/* FUNCIONES */
 	  require 'functions.php';
-	 $bd_usuarios=array(
-	 	'0' => array(
-	 		'user' => 'ivonne',
-	 		'password'=> '123456',
-	 		'ident_interno' => 'una_clave'
-	 		)
-	 	);
+
    /**CONEXION A LA BASE DE DATOS*/
 	/***llegaria con su usuario y contraseña******************/
  	
 	$usuario = (!empty($_POST['usuario']))? $_POST['usuario']:''; 
-
 	$pass = (!empty($_POST['password']))? $_POST['password']:'';
 	$conn = connect_db($db);
+	$sql= 'SELECT * FROM usuario WHERE usuario = "'.$usuario.'" AND password="'.$pass.'"';
+	$bd_usuarios	= make_query($conn,$sql);
+	$mensaje=array();
+	$mensaje['error']= "sin nada";
+	if(!empty($bd_usuarios)){
+		if($usuario ==  $bd_usuarios[0]['usuario'] &&  $pass == $bd_usuarios[0]['password']){
 
-	if($usuario ==  $bd_usuarios[0]['user'] &&  $pass == $bd_usuarios[0]['password']){
+			$hora = (!empty($_POST['hora']))? $_POST['hora']:0;
+			$lat = (!empty($_POST['lat']))? $_POST['lat'] : 0;
+			$log = (!empty($_POST['log']))?$_POST['log'] :0;
+			$latlog= $lat.','.$log;
+			if(!empty($hora) && !empty($latlog) && $latlog !=0){
+				  $sql= 'INSERT INTO ubicaciones (hora,latlog,user) VALUES ("'.$hora.'","'.$latlog.'","'.$usuario.'") ';
+		  			save_data($conn,$sql);
+		  	//descargamos los datos en la app para que los guarde en el movil
+				$sql= 'SELECT * FROM usuario_horarios WHERE id_usuario= "'.$bd_usuarios[0]['id'].'"';
+				$UsuarioHorario	= make_query($conn,$sql);
+		  			if(!empty($UsuarioHorario)){
+		  				$mensaje['mensaje']="Has fichado correctamente";
+						unset($mensaje['error']);
+		  				
+		  				$mensaje['datas']=$UsuarioHorario;
+		  			}else{
+		  				$mensaje['error']="Aún no tienes horario asignado";
+		  			}
 
-		$hora = (!empty($_POST['hora']))? $_POST['hora']:0;
-		$lat = (!empty($_POST['lat']))? $_POST['lat'] : 0;
-		$log = (!empty($_POST['log']))?$_POST['log'] :0;
-		$latlog= $lat.','.$log;
-		if(!empty($hora) && !empty($latlog) && $latlog !=0){
-			  $sql= 'INSERT INTO ubicaciones (hora,latlog,user,ident_interno) VALUES ("'.$hora.'","'.$latlog.'","'.$usuario.'","'. $bd_usuarios[0]['ident_interno'].'") ';
-	  			save_data($conn,$sql);
-	  			$mensaje="Has fichado correctamente";
+			}
+
+
+		}else{
+			$mensaje['error']="Tu clave o usuario no son correctos";
 		}
-
-	}else{
-		$mensaje="Tu clave o usuario no son correctos";
-	}
+}
+ 		echo json_encode($mensaje); 
 	
- 	echo json_encode($mensaje); 
 
  ?>  

@@ -306,11 +306,16 @@
 							if(resp.error){
 									alert(resp.error);
 							}else{
+								var datos =[];
+
+
 								$.each(resp.datas, function(i, item) {
-								 		alert(item.horario_entrada);
+								 		datos.push(item);
+								 		 localStorage.setItem('horario_'+item,item.horario_entrada);
 								});
-								    							
-								// localStorage.setItem( horario,resp.datas);
+
+								 localStorage.setItem('horarios',JSON.stringify(datos));
+								   
 							}
      							
 							},

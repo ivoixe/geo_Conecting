@@ -19,16 +19,33 @@
 	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>   
    <script type="text/javascript" charset="utf-8">
 document.addEventListener('deviceready', function () {
+	  cordova.plugins.notification.local.registerPermission( function(granted){
 
-	var alarmTime = new Date();
-	alarmTime.setMinutes(alarmTime.getMinutes() + 1);
-	cordova.plugins.notification.local.schedule(
-	{
-	id: 1,
-	title: 'test 1',
-	text: 'This is a test notification message!',
-	at: alarmTime
-	});
+  		});
+
+
+	  var date="";
+	var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
+		if(horario_descargado){
+			
+			$.each(horario_descargado, function(i, item) {
+					
+				 date = new Date(item.horario_entrada).toLocaleString("es-EU", {timeZone: item.zona_horaria});
+				 	cordova.plugins.notification.local.schedule({
+
+						id:i,
+						title:'hora:'+ date,
+						at:date,
+						firstAt:date,
+						icon:'https://www.connectingeurope.es/favicon.ico'
+
+
+					});
+				
+					
+			});
+	}
+
 	
 
 /*
@@ -110,6 +127,14 @@ document.addEventListener('deviceready', function () {
 			
 		});
 		
+		var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
+			 		if(horario_descargado){
+								$('#page-horario .horarios').append('<ul class="list-horarios"></ul>');
+			 			$.each(horario_descargado, function(i, item) {
+								$('#page-horario .horarios ul.list-horarios').append('<li>'+item.horario_entrada+'</li>');
+						});
+			 		}
+		
 		
 		
 		// Options: throw an error if no update is received every 30 seconds.
@@ -190,6 +215,7 @@ document.addEventListener('deviceready', function () {
 		                
 		                <li><a href="#page-main" data-icon="grid">Fichar</a></li>
 		             
+		                <li><a href="#page-horario" data-icon="gear">Horario</a></li>
 		                <li><a href="#page-config" data-icon="gear">Configuración</a></li>
 		            
 		            </ul>
@@ -197,7 +223,24 @@ document.addEventListener('deviceready', function () {
 			</div><!-- /footer -->
 
 		</div>
-		<div id="page-config"data-role="page" class="ui-corner-all">
+		<div id="page-horario" data-role="page" class="ui-corner-all">
+			<div data-role="content" class="horarios">
+				<h2>Horarios de entrada</h2>
+			</div>
+
+			 <div data-role="footer">
+					
+		        <div data-role="navbar">
+		            <ul>
+		                <li><a href="#page-main" data-icon="grid">Fichar</a></li>
+		                <li><a href="#page-horario" data-icon="gear">Horario</a></li>
+		                <li><a href="#page-config" data-icon="gear">Configuración</a></li>
+		            </ul>
+		        </div><!-- /navbar -->
+			</div><!-- /footer -->
+
+		</div>
+	    <div id="page-config" data-role="page" class="ui-corner-all">
 			<div data-role="content">
 			 
 				<label for="username">Usuario:</label><input type="text" name="username" id="username" placeholder="Escribe tu usuario" />
@@ -212,7 +255,7 @@ document.addEventListener('deviceready', function () {
 		        <div data-role="navbar">
 		            <ul>
 		                <li><a href="#page-main" data-icon="grid">Fichar</a></li>
-		             
+		                <li><a href="#page-horario" data-icon="gear">Horario</a></li>
 		                <li><a href="#page-config" data-icon="gear">Configuración</a></li>
 		            </ul>
 		        </div><!-- /navbar -->
