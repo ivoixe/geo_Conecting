@@ -1,0 +1,18 @@
+  cordova.plugins.notification.local.registerPermission( function(granted){
+
+  });
+document.addEventListener('deviceready', function () {
+	var date = new Date();
+	cordova.plugins.notification.local.schedule({
+
+		id:1,
+		title:"jdjdj",
+		at:date,
+		firstAt:date,
+		every:25,
+		icon:'https://www.connectingeurope.es/favicon.ico'
+
+
+	});
+
+}, false);

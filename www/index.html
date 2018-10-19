@@ -6,18 +6,19 @@
 <html>
   <head>
     <title>Geolocalización </title>
-
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD6cz9NsGdNE_K-eXAsZedHCNEaZRku63s"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>   
+
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6cz9NsGdNE_K-eXAsZedHCNEaZRku63s"
   type="text/javascript"></script>-->
     <link  href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css"></link>
 	<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
 	
-    <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script>
-	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>   
-   <script type="text/javascript" charset="utf-8">
+       <script type="text/javascript" charset="utf-8">
 
 document.addEventListener('deviceready', function () {
 	var date = new Date();
@@ -160,22 +161,16 @@ document.addEventListener('deviceready', function () {
 
 
 		function onDeviceReady() {
-			
-		  window.plugins.sim.getSimInfo(successCallback, errorCallback);
+			console.log('(1)Is active? '+cordova.plugins.backgroundMode.isActive());
+			cordova.plugins.backgroundMode.setEnabled(true);
+			console.log('(2)Is active? '+cordova.plugins.backgroundMode.isActive());
+			cordova.plugins.backgroundMode.on('activate', function () {
+			    setInterval(function () {
+			        cordova.plugins.notification.badge.increase();
+			    }, 1000);
+			});
 		}
-		 function successCallback(result) {
-               document.getElementById("simInfo").innerHTML=JSON.stringify(result);
-            // document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
 
-                $('#phone').text(result.phoneNumber);
-              
-                document.getElementById("carrierName").innerHTML=JSON.stringify(result.carrierName);
-         }
-            function errorCallback(error) {
-                document.getElementById("simInfo").innerHTML=JSON.stringify(error);
-            } 
-
-  
     </script>
 	<style>
 	 #map-canvas{
