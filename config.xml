@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.prismacm.connecting" version="4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.prismacm.connecting" version="3.9" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>conecting</name>
     <description>Marca puntos dentro de un radio y dice cual es el mas cercano</description>
     <author email="ivonne@prismacm.com" href="http://phonegap.com">IVONNE</author>
@@ -60,5 +60,4 @@
         <variable name="LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION" value="Background location-tracking is required" />
         <variable name="MOTION_USAGE_DESCRIPTION" value="Using the accelerometer increases battery-efficiency by intelligently toggling location-tracking only when the device is detected to be moving" />
     </plugin>
-    <plugin name="de.appplant.cordova.plugin.local-notification" spec="~0.8.2dev" />
 </widget>
