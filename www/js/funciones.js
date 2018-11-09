@@ -30,11 +30,12 @@
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-
+				alert('code ivonne: '    + error.code    + '\n' +
+					  'message: ' + error.message + '\n');
 		 var idW=navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge: Infinity, timeout: 20000, enableHighAccuracy: false });
 			
 	    }
-			
+			 
 //Posiciona el marcador en el MAPA basandose en nuestra geolocalización (vía clearWatch() o getCurrentPosition() al iniciar la app)
 		function initialize(lat,log) {
 			/*
