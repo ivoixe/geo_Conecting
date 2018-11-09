@@ -30,8 +30,8 @@
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-				alert('code ivonne: '    + error.code    + '\n' +
-					  'message: ' + error.message + '\n'); 
+				//alert('code ivonne: '    + error.code    + '\n' +
+					  //'message: ' + error.message + '\n');
 		 var idW=navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge: Infinity, timeout: 20000, enableHighAccuracy: false });
 			
 	    }
@@ -302,7 +302,7 @@
 						data: ({lat:lat_actual,log:log_actual,hora:datetime,usuario:username,password:password}),
 						dataType: "json",
 						success: function(resp){
-							alert(resp);
+							//alert(resp);
 								
 							},
 						error: function(){
