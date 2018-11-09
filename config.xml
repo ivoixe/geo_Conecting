@@ -51,7 +51,7 @@
     <feature name="PhoneNumberPlugin">
         <param name="android-package" value="at.oneminutedistraction.phonenumber.PhoneNumberPlugin" />
     </feature>
-    <plugin name="cordova-plugin-background-mode" spec="~0.7.2" />
+    <plugin name="cordova-plugin-background-mode" spec="~0.7.1" />
     <plugin name="cordova-background-geolocation-lt">
         <variable name="LICENSE" value="YOUR_LICENSE_KEY" />
         <variable name="GOOGLE_API_VERSION" value="15.0.1" />
@@ -61,5 +61,5 @@
         <variable name="LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION" value="Background location-tracking is required" />
         <variable name="MOTION_USAGE_DESCRIPTION" value="Using the accelerometer increases battery-efficiency by intelligently toggling location-tracking only when the device is detected to be moving" />
     </plugin>
-    <plugin name="de.appplant.cordova.plugin.local-notification" spec="npm" />
+    <plugin name="de.appplant.cordova.plugin.local-notification" spec="~0.7.1" />
 </widget>
