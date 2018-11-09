@@ -24,7 +24,6 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-installLocation" value="auto" />
     <preference name="android-minSdkVersion" value="14" />
-
     <icon src="icon.jpg" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
