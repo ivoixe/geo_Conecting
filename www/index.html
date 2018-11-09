@@ -18,36 +18,32 @@
     <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>   
    <script type="text/javascript" charset="utf-8">
-document.addEventListener('deviceready', function () {
-	/* var bgGeo = window.BackgroundGeolocation;
-    alert('bi'+bgGeo);
-    // Android customization*/
-    cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
-    // Enable background mode
-    cordova.plugins.backgroundMode.enable();
 
-    // Called when background mode has been activated
-    /*cordova.plugins.backgroundMode.onactivate = function () {
-        setTimeout(function () {
-            // Modify the currently displayed notification 
- 		 var hora_fichar= '8:00';
-          //var get_since_nav = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
-          //  navigator.geolocation.clearWatch(get_since_nav);
-            cordova.plugins.backgroundMode.configure({
-                text:'Tienes que fichar'+hora_fichar+'.'
-            });
-        }, 5000);
-    }*/
-    cordova.plugins.notification.local.schedule({
-        foreground: true,
-        title: 'Design team meeting',
-        text: '3:00 - 4:00 PM',
-        trigger: { at: new Date(2018, 11, 09, 10, 40) }
-    });
+	   document.addEventListener('deviceready', function () {
+
+               // Handle the Cordova pause and resume events
+               document.addEventListener('pause', onPause.bind(this), false);
+               document.addEventListener('resume', onResume.bind(this), false);
+
+               // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
+               var element = document.getElementById("deviceready");
+               element.innerHTML = 'Device Ready';
+               element.className += ' ready';
+               var now = new Date().getTime(),
+                   _5_sec_from_now = new Date(now + 5 * 1000);
+
+               cordova.plugins.notification.local.schedule({
+                   id: 5,
+                   title: "Sample Notification",
+                   text: "kill the batman ",
+                   at: _5_sec_from_now,
+                   icon: 'res://icon',
+                   smallIcon: 'res://icon',
+                   every: 87600
+               });
 
 
-
-}, false);
+       }, false);
 
 	$(document).ready(function() {
 			
