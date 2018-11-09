@@ -23,10 +23,8 @@
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-installLocation" value="auto" />
-    <platform name="android">
-        <preference name="android-minSdkVersion" value="27" />
-        <preference name="android-targetSdkVersion" value="27" />
-    </platform>
+    <preference name="android-minSdkVersion" value="14" />
+
     <icon src="icon.jpg" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
