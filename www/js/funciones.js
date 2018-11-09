@@ -23,41 +23,38 @@
 		function onSuccess(position) {
 				var element = document.getElementById('geolocation');
 				//alert('posicion'+position);
-				initialize(position.coords.latitude,position.coords.longitude);				
-			
+
+				initialize(position.coords.latitude,position.coords.longitude);
+
 				return position;
 		}
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-				alert('code ivonne: '    + error.code    + '\n' +
-					  'message: ' + error.message + '\n');
+				///alert('code ivonne: '    + error.code    + '\n' +
+				//	  'message: ' + error.message + '\n');
 		 var idW=navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge: Infinity, timeout: 20000, enableHighAccuracy: false });
 			
 	    }
 
 //Posiciona el marcador en el MAPA basandose en nuestra geolocalización (vía clearWatch() o getCurrentPosition() al iniciar la app)
 		function initialize(lat,log) {
-			/*
-				Basado en un código en
-				https://developers.google.com/maps/documentation/javascript/geocoding?hl=es#GeocodingResponses
-			*/
-			//alert(lat+log);
+
 				var geocoder;
-				var infowindow = new google.maps.InfoWindow();	
+				var infowindow = new google.maps.InfoWindow();
 				var latlng = new google.maps.LatLng(lat,log);
 					var mapOptions = {
-						zoom:12, 
+						zoom:12,
 						center: latlng,
 						mapTypeId: 'roadmap'
 					}
-				
+
 				map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions );
 				marker = new google.maps.Marker({
 									position: latlng,
 									icon: 'img/man.png',
 									map: map,
-									title: 'Estas aquí!'
+									title: 'Estas daquí!'
 								  });
 				/*Con esto marcamos la ruta en el mapa*/
 				directionsDisplay.setMap(map);
@@ -66,12 +63,12 @@
 				var element = document.getElementById('resultado');
 				geocoder = new google.maps.Geocoder();
 				geocoder.geocode({"latLng": latlng}, function(results, status){
-				
+
 				if (status == google.maps.GeocoderStatus.OK)
-				{ 
+				{
 						//guardarPosicion(lat,log);
 					if (results[0]) //Salen 8 resultados; uno nuestra posición, la posición de nuestra provincia, país, ....
-					{   
+					{
 					//	alert(latlng);
 						ultimo_resultado = results[0];
 						dir = "<p><strong>localización actual: </strong>" + results[0].formatted_address + "</p>";
@@ -87,7 +84,7 @@
 				}
 
 				//element.innerHTML = dir;
-				
+
 			});
 		}
 
