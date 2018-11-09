@@ -30,8 +30,7 @@
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-				//alert('code ivonne: '    + error.code    + '\n' +
-					  //'message: ' + error.message + '\n');
+
 		 var idW=navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge: Infinity, timeout: 20000, enableHighAccuracy: false });
 			
 	    }
@@ -69,20 +68,14 @@
 				
 				if (status == google.maps.GeocoderStatus.OK)
 				{ 
-						guardarPosicion(lat,log); 
+						//guardarPosicion(lat,log);
 					if (results[0]) //Salen 8 resultados; uno nuestra posición, la posición de nuestra provincia, país, ....
 					{   
 					//	alert(latlng);
 						ultimo_resultado = results[0];
 						dir = "<p><strong>localización actual: </strong>" + results[0].formatted_address + "</p>";
-				
-						
 						lat_actual = lat;
 						log_actual = log;
-
-					
-				
-					
 					}else{
 						alert('esta llendo por un lado que no es');
 						dir = "<p>No se ha podido obtener ninguna dirección en esas coordenadas.</p>";

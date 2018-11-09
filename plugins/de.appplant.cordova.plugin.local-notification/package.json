@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Salesfloor/cordova-plugin-local-notifications.git"
+    "url": "git+https://github.com/Salesfloor/cordova-plugin-local-notifications.git"
   },
   "author": "",
   "license": "ISC",
@@ -37,5 +37,6 @@
     }
   ],
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-local-notifications/-/cordova-plugin-local-notifications-1.0.0.tgz"
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-local-notifications/-/cordova-plugin-local-notifications-1.0.0.tgz",
+  "readme": "ERROR: No README data found!"
 }
