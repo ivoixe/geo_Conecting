@@ -31,8 +31,7 @@
 			
 			//Si algo fallase al localizarnos...
 		function onError(error) {
-				///alert('code ivonne: '    + error.code    + '\n' +
-				//	  'message: ' + error.message + '\n');
+				alert('code ivonne: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
 		 var idW=navigator.geolocation.getCurrentPosition(onSuccess, onError,{maximumAge: Infinity, timeout: 20000, enableHighAccuracy: false });
 			
 	    }
@@ -54,7 +53,7 @@
 									position: latlng,
 									icon: 'img/man.png',
 									map: map,
-									title: 'Estas daquí!'
+									title: 'Estas aquí!'
 								  });
 				/*Con esto marcamos la ruta en el mapa*/
 				directionsDisplay.setMap(map);
