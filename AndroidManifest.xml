@@ -6,4 +6,4 @@
 <Uses-permission android:name = "android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 <Uses-permission android:name = "android.permission.WAKE_LOCK" />
 <Uses-permission android:name = "android.hardware.location" />
-<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19" />
+<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="27" />
