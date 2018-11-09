@@ -1,7 +1,7 @@
+
 <!DOCTYPE html>
 <!--
     Copyright (c) ivonne . All rights reserved.
-
 -->
 <html>
 <head>
@@ -19,27 +19,51 @@
 	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>
 	<script type="text/javascript" charset="utf-8">
         document.addEventListener('deviceready', function () {
-            var bgGeo = window.BackgroundGeolocation;
-           // alert('bi'+bgGeo);
-            // Android customization   
-            cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
-            // Enable background mode
-            cordova.plugins.backgroundMode.enable();
+            var date = new Date();
+            var date_f = new Date();
+            var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
+            if(horario_descargado){
 
-            // Called when background mode has been activated
-            cordova.plugins.backgroundMode.onactivate = function () {
-                setTimeout(function () {
-                    // Modify the currently displayed notification
-                    var hora_fichar= '8:00';
-                    //var get_since_nav = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
-                    //  navigator.geolocation.clearWatch(get_since_nav);
-                    cordova.plugins.backgroundMode.configure({
-                        text:'Tienes que fichar'+hora_fichar+'.'
-                    });
-                }, 5000);
+                $.each(horario_descargado, function(i, item) {
+
+
+                    date = new Date(item.horario_entrada);
+                    //alert(date);
+
+                });
             }
-        }, false);
+            cordova.plugins.notification.local.schedule({
+                id:1,
+                title:"jdjdj",
+                at:date_f,
+                firstAt:date,
+                icon:'https://www.connectingeurope.es/favicon.ico'
+            });
 
+            /*
+                    cordova.plugins.notification.local.schedule({
+                        title: 'My first notification',
+                        text: 'Thats pretty easy...',
+                        foreground: true,
+                        at: new Date(2018, 9, 16,05 )
+                    });
+                // Android customization
+                cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
+                // Enable background mode
+                cordova.plugins.backgroundMode.enable();
+                // Called when background mode has been activated
+                cordova.plugins.backgroundMode.onactivate = function () {
+                    setTimeout(function () {
+                        // Modify the currently displayed notification
+                      var hora_fichar= '8:00';
+                      //var get_since_nav = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 10000, enableHighAccuracy: true });
+                      //  navigator.geolocation.clearWatch(get_since_nav);
+                        cordova.plugins.backgroundMode.configure({
+                            text:'Tienes que fichar'+hora_fichar+'.'
+                        });
+                    }, 5000);
+                }*/
+        }, false);
         $(document).ready(function() {
 
             $("#ruta").click(function() {
@@ -67,11 +91,12 @@
                     $('#route').addClass('hidden');
                 }
             });
-            $('#reset').click( function(){
-                $('#distancia').val('sel');
+            $('#fichar').click( function(){
+                //$('#distancia').val('sel');
 
                 initialize(lat_actual,log_actual);
-                guardarPosicion(lat_actual,log_actual);
+                //	recargarHorarios();
+                //guardarPosicion(lat_actual,log_actual);
 
             });
             $('#iniciar').click( function(e){
@@ -85,13 +110,14 @@
 
                 var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
 
-
             });
             $('#pararProgress').click( function(e){
                 //e.preventDefault();
                 navigator.geolocation.clearWatch(watchID_P);
 
             });
+
+
 
 
 
@@ -111,15 +137,12 @@
                 + ahora.getSeconds();
             /*************limpia *************/
             navigator.geolocation.clearWatch(watchID);
-
             /*if(ahora.getHours() == 11 && ahora.getMinutes == 30){
                      navigator.geolocation.clearWatch(watchID_P);
             }*/
             document.addEventListener("deviceready", onDeviceReady, false);
 
         });
-
-
         function onDeviceReady() {
 
             window.plugins.sim.getSimInfo(successCallback, errorCallback);
@@ -127,7 +150,6 @@
         function successCallback(result) {
             document.getElementById("simInfo").innerHTML=JSON.stringify(result);
             // document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
-
             $('#phone').text(result.phoneNumber);
 
             document.getElementById("carrierName").innerHTML=JSON.stringify(result.carrierName);
@@ -135,7 +157,6 @@
         function errorCallback(error) {
             document.getElementById("simInfo").innerHTML=JSON.stringify(error);
         }
-
 
 	</script>
 	<style>
@@ -150,15 +171,13 @@
 			width: 100%;
 			overflow: scroll;
 		}
-
-
 	</style>
 </head>
 <body>
 <div id="page-main" data-role="page" class="ui-corner-all">
 	<div data-role="content">
 		<fieldset data-role="controlgroup" data-type="horizontal">
-			<button type="submit" value="" id="reset" >Fichar</button>
+			<button type="submit" value="" id="fichar" >Fichar</button>
 		</fieldset>
 		<div role="main" class="ui-content" id="map-canvas">
 			<!-- map loads here... -->
@@ -173,6 +192,7 @@
 
 				<li><a href="#page-main" data-icon="grid">Fichar</a></li>
 
+				<li><a href="#page-horario" data-icon="gear">Horario</a></li>
 				<li><a href="#page-config" data-icon="gear">Configuración</a></li>
 
 			</ul>
@@ -180,10 +200,27 @@
 	</div><!-- /footer -->
 
 </div>
-<div id="page-config"data-role="page" class="ui-corner-all">
+<div id="page-horario" data-role="page" class="ui-corner-all">
+	<div data-role="content" class="horarios">
+		<h2>Horarios de entrada</h2>
+	</div>
+
+	<div data-role="footer">
+
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#page-main" data-icon="grid">Fichar</a></li>
+				<li><a href="#page-horario" data-icon="gear">Horario</a></li>
+				<li><a href="#page-config" data-icon="gear">Configuración</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+
+</div>
+<div id="page-config" data-role="page" class="ui-corner-all">
 	<div data-role="content">
 
-		<label for="username">Usuarioss:</label><input type="text" name="username" id="username" placeholder="Escribe tu usuario" />
+		<label for="username">Usuario:</label><input type="text" name="username" id="username" placeholder="Escribe tu usuario" />
 		<label for="password">Contraseña:</label><input type="password" name="password" id="password"/>
 		<button id="save">Guardar datos</button>
 		<button id="load">Ver datos</button>
@@ -195,7 +232,7 @@
 		<div data-role="navbar">
 			<ul>
 				<li><a href="#page-main" data-icon="grid">Fichar</a></li>
-
+				<li><a href="#page-horario" data-icon="gear">Horario</a></li>
 				<li><a href="#page-config" data-icon="gear">Configuración</a></li>
 			</ul>
 		</div><!-- /navbar -->
@@ -218,6 +255,7 @@
             localStorage.setItem("password", pass);
             $('#username').val('');
             $('#password').val('');
+
             alert('los datos han sido guardados');
         });
         // Load input value from localStorage
@@ -233,3 +271,4 @@
         });
     });
 </script>
+
