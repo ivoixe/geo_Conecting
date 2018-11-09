@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.prismacm.connecting" version="3.5.5" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <preference name="phonegap-version" value="cli-7.1.0" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
     <name>conecting</name>
     <description>Marca puntos dentro de un radio y dice cual es el mas cercano</description>
     <author email="ivonne@prismacm.com" href="http://phonegap.com">IVONNE</author>
