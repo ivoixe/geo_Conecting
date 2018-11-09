@@ -31,7 +31,7 @@
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" /> 
+    <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
         <preference name="loadUrlTimeoutValue" value="700000" />
@@ -60,5 +60,5 @@
         <variable name="LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION" value="Background location-tracking is required" />
         <variable name="MOTION_USAGE_DESCRIPTION" value="Using the accelerometer increases battery-efficiency by intelligently toggling location-tracking only when the device is detected to be moving" />
     </plugin>
-    <plugin name="de.appplant.cordova.plugin.local-notification" spec="~0.8.2dev" />
+  
 </widget>
