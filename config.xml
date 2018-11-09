@@ -4,7 +4,6 @@
     <description>Marca puntos dentro de un radio y dice cual es el mas cercano</description>
     <author email="ivonne@prismacm.com" href="http://phonegap.com">IVONNE</author>
     <content src="index.html" />
-
     <preference name="phonegap-version" value="cli-6.5.0" />
     <access origin="*" />
     <feature name="Geolocation">
@@ -23,17 +22,13 @@
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
-
     <preference name="android-installLocation" value="auto" />
-
-
     <platform name="android">
         <preference name="android-minSdkVersion" value="27" />
         <preference name="android-targetSdkVersion" value="27" />
     </platform>
     <icon src="icon.jpg" />
     <access origin="*" />
-
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -68,5 +63,5 @@
         <variable name="LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION" value="Background location-tracking is required" />
         <variable name="MOTION_USAGE_DESCRIPTION" value="Using the accelerometer increases battery-efficiency by intelligently toggling location-tracking only when the device is detected to be moving" />
     </plugin>
-
+    <plugin name="cordova-plugin-dialogs" spec="cordova-plugin-dialogs" />
 </widget>
