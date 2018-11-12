@@ -22,7 +22,7 @@
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
-    <preference name="android-minSdkVersion" value="15"/>
+    <preference name="android-minSdkVersion" value="15" />
     <preference name="android-installLocation" value="auto" />
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" spec="1.3.3" />
@@ -32,7 +32,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-
     <platform name="android">
         <resource-file src="google-services.json" target="google-services.json" />
         <allow-intent href="market:*" />
@@ -63,5 +62,5 @@
         <variable name="LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION" value="Background location-tracking is required" />
         <variable name="MOTION_USAGE_DESCRIPTION" value="Using the accelerometer increases battery-efficiency by intelligently toggling location-tracking only when the device is detected to be moving" />
     </plugin>
-    <plugin name="phonegap-plugin-push" spec="https://github.com/phonegap/phonegap-plugin-push" />
+    <plugin name="cordova-plugin-firebase-messaging" spec="~1.1.4" />
 </widget>

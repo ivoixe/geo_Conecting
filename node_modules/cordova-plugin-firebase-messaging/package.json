@@ -1,0 +1,72 @@
+{
+  "name": "cordova-plugin-firebase-messaging",
+  "version": "1.1.4",
+  "description": "Cordova plugin for Firebase Messaging",
+  "cordova": {
+    "id": "cordova-plugin-firebase-messaging",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chemerisuk/cordova-plugin-firebase-messaging.git"
+  },
+  "author": {
+    "name": "Maksim Chemerisuk",
+    "email": "chemerisuk@gmail.com",
+    "url": "https://github.com/chemerisuk"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chemerisuk/cordova-plugin-firebase-messaging/issues"
+  },
+  "homepage": "https://github.com/chemerisuk/cordova-plugin-firebase-messaging#readme",
+  "keywords": [
+    "cordova",
+    "firebase",
+    "push",
+    "fcm",
+    "gcm",
+    "messaging",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "scripts": {
+    "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml",
+    "postversion": "git push && git push --tags"
+  },
+  "gitHead": "d227422269b548a5a095f23387cda518e877ccf0",
+  "_id": "cordova-plugin-firebase-messaging@1.1.4",
+  "_npmVersion": "5.6.0",
+  "_nodeVersion": "8.11.2",
+  "_npmUser": {
+    "name": "chemerisuk",
+    "email": "chemerisuk@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "chemerisuk",
+      "email": "chemerisuk@gmail.com"
+    }
+  ],
+  "dist": {
+    "integrity": "sha512-ff9uM6CxwGmZXLEyht/jinPVtS+m3mtXAiw9WARtx1U4bAV7E9RoC5whS6chCGbKQCh1maYZwm9LJ8FVO21jrg==",
+    "shasum": "3479955f4cb410ad9274dfe8c90d0e8ea4b77ee6",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-firebase-messaging/-/cordova-plugin-firebase-messaging-1.1.4.tgz",
+    "fileCount": 11,
+    "unpackedSize": 37604,
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbk3jeCRA9TVsSAnZWagAAhyMP/0z8iLygfYZxxUR9kHXF\nNXr0XTVIN6FVIvdfdSXk18tszbz9jvak6Nz/65ZYJXwHziSbiV2rs63B3f9G\nL4cZxPW2fGebEUQZFMe6ADCcT2nLeEGIohoI6Rw4MaSaWVo6R6WmS9s1k6GA\nz1MF6FE2YFmPqZ8sdNKJFdi8F8Q1FynUmKdcNB4FIDu4Ib4tZ2TLjyZYBz4E\n4CYGHMLBGnJLMRmDFBa3GnC8qcl42DW3jgMV8bUyiEaR4RNxAP/Y2ho3q0sm\nrb5Vihvh/Bd9iKCUuH1cBauUr5v8FTy7HLPq71CsgvPcYcnng0Ir0etSdUWs\nFtsOVriTWYRieC/vUbw0I8Wu+dlQHyKfFe1IHYG3i3Dvb3kejZgfYgoO1Ltp\nl2awBgMoYPfsoAJe1ah5AKB4om09eaRmc4b0BRpdZ0F2y0GRdSWiQl1FCRc2\nNNFyUSyygEAX4aG8l50XkEfVOsKZgOKE7GzjJcWu54NxVEI2b5YumfE6qp7b\n/YLsq8Tk5hw8WUw41goPgfB1LsQra9kkhcsS74J1mKjm2oDPDXbp5onP7poh\nDy/DtHClsq3PzLBtAM10TNmzumcO9Ckh/XwpsK9Y7TqsKLk6Ebc/X93LslpL\ngsyo1A77WmnUTDzP7yzR2RA3EnenLZ/P53WTMua6EUwQ1RA7nIRwolpx7g0T\nHN/+\r\n=pwZu\r\n-----END PGP SIGNATURE-----\r\n"
+  },
+  "directories": {},
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-firebase-messaging_1.1.4_1536391389797_0.03341364859774254"
+  },
+  "_hasShrinkwrap": false,
+  "_shasum": "3479955f4cb410ad9274dfe8c90d0e8ea4b77ee6",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-firebase-messaging/-/cordova-plugin-firebase-messaging-1.1.4.tgz",
+  "_from": "cordova-plugin-firebase-messaging@latest"
+}
