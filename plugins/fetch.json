@@ -115,17 +115,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-firebase-messaging": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-firebase-messaging"
-    },
-    "is_top_level": true,
-    "variables": {
-      "FIREBASE_MESSAGING_VERSION": "17.3.+",
-      "ANDROID_SUPPORT_VERSION": "27.+"
-    }
-  },
   "cordova-support-android-plugin": {
     "source": {
       "type": "registry",
@@ -140,6 +129,14 @@
       "id": "cordova-support-google-services@~1.2.0"
     },
     "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-fcm": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-fcm"
+    },
+    "is_top_level": true,
     "variables": {}
   }
 }
