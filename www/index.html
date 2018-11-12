@@ -37,7 +37,7 @@
         document.addEventListener('deviceready', function () {
             firebase.initializeApp(config);
             cordova.plugins.firebase.messaging.requestPermission().then(function(token) {
-                alert("APNS device token: ", token);
+                console.log("APNS device token: ", token);
             });
             var date = new Date();
             var date_f = new Date();
