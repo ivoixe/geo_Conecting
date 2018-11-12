@@ -32,7 +32,18 @@
 	<script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>
 	<script type="text/javascript" charset="utf-8">
-
+        cordova.plugins.firebase.messaging.onMessage(function(payload) {
+            alert("New foreground FCM message: ", payload);
+        });
+        cordova.plugins.firebase.messaging.onBackgroundMessage(function(payload) {
+            alert("New background FCM message: ", payload);
+        });
+        cordova.plugins.firebase.messaging.requestPermission().then(function(token) {
+            alert.log("APNS device token: ", token);
+        });
+        cordova.plugins.firebase.messaging.getToken().then(function(token) {
+            alert.log("Got device token: ", token);
+        });
 
         document.addEventListener('deviceready', function () {
             var date = new Date();
