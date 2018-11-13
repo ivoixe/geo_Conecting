@@ -35,9 +35,7 @@
             cordova.plugins.firebase.messaging.requestPermission().then(function(token) {
                 console.log("APNS device token: ", token);
             });
-            cordova.plugins.firebase.onTokenRefresh(function(token){
-                alert( token );
-            });
+
 
             var date = new Date();
             var date_f = new Date();
@@ -86,7 +84,7 @@
         }, false);
         $(document).ready(function() {
 
-
+            alert(FirebaseInstanceId.getInstance().getToken());
             $("#ruta").click(function() {
                 var destino =  $('#sitio').val();
                 var mode =  $('#mode').val();
