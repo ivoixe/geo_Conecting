@@ -8,18 +8,6 @@
 	<title>Geolocalización </title>
 
 	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-	<script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyCzfZw9Vm9e8ztaumvTQsTX1qaBZSfr99U",
-            authDomain: "connecting-e5377.firebaseapp.com",
-            databaseURL: "https://connecting-e5377.firebaseio.com",
-            projectId: "connecting-e5377",
-            storageBucket: "connecting-e5377.appspot.com",
-            messagingSenderId: "953842536904"
-        };
-
-	</script>
 
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/jquery-1.12.4.min.js"></script>
@@ -35,13 +23,22 @@
 
 
         document.addEventListener('deviceready', function () {
-            firebase.initializeApp(config);
+            var config = {
+                apiKey: "AIzaSyCzfZw9Vm9e8ztaumvTQsTX1qaBZSfr99U",
+                authDomain: "connecting-e5377.firebaseapp.com",
+                databaseURL: "https://connecting-e5377.firebaseio.com",
+                projectId: "connecting-e5377",
+                storageBucket: "connecting-e5377.appspot.com",
+                messagingSenderId: "953842536904"
+            };
+            cordova.plugins.firebase.initializeApp(config);
             cordova.plugins.firebase.messaging.requestPermission().then(function(token) {
                 console.log("APNS device token: ", token);
             });
-            firebase.getToken(function(token){
-                alert(token);
+            cordova.plugins.firebase.onTokenRefresh(function(token){
+                alert( token );
             });
+
             var date = new Date();
             var date_f = new Date();
             var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
