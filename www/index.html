@@ -18,7 +18,7 @@
             storageBucket: "connecting-e5377.appspot.com",
             messagingSenderId: "953842536904"
         };
-
+        firebase.initializeApp(config);
     </script>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -35,10 +35,7 @@
 
 
         document.addEventListener('deviceready', function () {
-            firebase.initializeApp(config);
-            cordova.plugins.firebase.messaging.requestPermission().then(function(token) {
-                console.log("APNS device token: ", token);
-            });
+
 
             var date = new Date();
             var date_f = new Date();
