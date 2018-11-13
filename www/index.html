@@ -11,14 +11,14 @@
     <script>
         // Initialize Firebase
         var config = {
-            apiKey: "AAAA3hVyEcg:APA91bEVGE9VdmXFVGl2FIKyZpOqe9p8Gku2zJ2BO2dgDZVR_Q-UI7nu7sqF-pVRhcsUpMO6DLIzzCdl5q9EDFfZl94yVtmSS6VEkd1C7JU2pRwXEVKovN_QL9DhWzRpXoFFNjPsFyta",
+            apiKey: "AIzaSyCzfZw9Vm9e8ztaumvTQsTX1qaBZSfr99U",
             authDomain: "connecting-e5377.firebaseapp.com",
             databaseURL: "https://connecting-e5377.firebaseio.com",
             projectId: "connecting-e5377",
             storageBucket: "connecting-e5377.appspot.com",
             messagingSenderId: "953842536904"
         };
-        firebase.initializeApp(config);
+
     </script>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -36,7 +36,7 @@
 
         document.addEventListener('deviceready', function () {
 
-
+            firebase.initializeApp(config);
             var date = new Date();
             var date_f = new Date();
             var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
