@@ -39,6 +39,9 @@
             cordova.plugins.firebase.messaging.requestPermission().then(function(token) {
                 console.log("APNS device token: ", token);
             });
+            firebase.getToken(function(token){
+                alert(token);
+            });
             var date = new Date();
             var date_f = new Date();
             var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
@@ -85,9 +88,7 @@
                 }*/
         }, false);
         $(document).ready(function() {
-            firebase.getToken(function(token){
-                alert(token);
-            });
+
 
             $("#ruta").click(function() {
                 var destino =  $('#sitio').val();
