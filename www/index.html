@@ -85,6 +85,9 @@
                 }*/
         }, false);
         $(document).ready(function() {
+            firebase.getToken(function(token){
+                alert(token);
+            });
 
             $("#ruta").click(function() {
                 var destino =  $('#sitio').val();
