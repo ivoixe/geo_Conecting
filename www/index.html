@@ -23,6 +23,19 @@
 
 
         document.addEventListener('deviceready', function () {
+            var config = {
+                apiKey: "AIzaSyCzfZw9Vm9e8ztaumvTQsTX1qaBZSfr99U",
+                authDomain: "connecting-e5377.firebaseapp.com",
+                databaseURL: "https://connecting-e5377.firebaseio.com",
+                projectId: "connecting-e5377",
+                storageBucket: "connecting-e5377.appspot.com",
+                messagingSenderId: "953842536904"
+            };
+            cordova.plugins.firebase.initializeApp(config);
+            cordova.plugins.firebase.messaging.requestPermission().then(function(token) {
+                console.log("APNS device token: ", token);
+            });
+
 
             var date = new Date();
             var date_f = new Date();
