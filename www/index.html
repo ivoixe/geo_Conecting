@@ -11,7 +11,7 @@
     <script>
         // Initialize Firebase
         var config = {
-            apiKey: "AIzaSyCzfZw9Vm9e8ztaumvTQsTX1qaBZSfr99U",
+            apiKey: "AAAA3hVyEcg:APA91bEVGE9VdmXFVGl2FIKyZpOqe9p8Gku2zJ2BO2dgDZVR_Q-UI7nu7sqF-pVRhcsUpMO6DLIzzCdl5q9EDFfZl94yVtmSS6VEkd1C7JU2pRwXEVKovN_QL9DhWzRpXoFFNjPsFyta",
             authDomain: "connecting-e5377.firebaseapp.com",
             databaseURL: "https://connecting-e5377.firebaseio.com",
             projectId: "connecting-e5377",
@@ -39,9 +39,7 @@
             cordova.plugins.firebase.messaging.requestPermission().then(function(token) {
                 console.log("APNS device token: ", token);
             });
-            firebase.getToken(function(token){
-                alert(token);
-            });
+
             var date = new Date();
             var date_f = new Date();
             var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
