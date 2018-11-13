@@ -18,7 +18,8 @@
             storageBucket: "connecting-e5377.appspot.com",
             messagingSenderId: "953842536904"
         };
-
+        firebase.initializeApp(config);
+       alert(firebase.messaging.isSupported());
     </script>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -36,7 +37,7 @@
 
         document.addEventListener('deviceready', function () {
 
-            firebase.initializeApp(config);
+
             var date = new Date();
             var date_f = new Date();
             var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
@@ -50,12 +51,8 @@
 
                 });
             }
-            cordova.plugins.notification.local.schedule({
-                id:1,
-                title:"jdjdj",
-                at:date_f,
-                firstAt:date,
-                icon:'https://www.connectingeurope.es/favicon.ico'
+            FCMPlugin.onTokenRefresh(function(token){
+                alert( token );
             });
 
             /*
