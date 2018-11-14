@@ -114,5 +114,6 @@
         <splash height="480" platform="ios" src="res/screens/ios/Default~iphone.png" width="320" />
     </platform>
     <preference name="SplashShowOnlyFirstTime" value="true" />
+    <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashScreenDelay" value="80000" />
 </widget>
