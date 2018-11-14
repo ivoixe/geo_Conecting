@@ -27,7 +27,7 @@
                  return messaging.getToken();
              })
              .then(function (token){
-                 alert(token);
+                 localStorage.setItem("token", token);
              })
              .catch(function(err){
                  alert('no hay permiso');
@@ -226,6 +226,7 @@
         <label for="password">Contraseña:</label><input type="password" name="password" id="password"/>
         <button id="save">Guardar datos</button>
         <button id="load">Ver datos</button>
+        <p class="token_prov"></p>
         <button id="clear">Borrar usuario y contraseña</button>
     </div>
 
@@ -263,8 +264,11 @@
         $('#load').on('click', function() {
             var username = localStorage.getItem('username') || '<empty>';
             var password = localStorage.getItem('password') || '<empty>';
+            var token_guardado = localStorage.getItem('token') || '<empty>';
             $('#username').val(username);
             $('#password').val(password);
+            $('p.token_prov').text(token_guardado);
+            
         });
         // Clear localStorage
         $('#clear').on('click', function() {
