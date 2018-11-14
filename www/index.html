@@ -23,7 +23,7 @@
         const messaging = firebase.messaging();
          messaging.requestPermission()
              .then(function(){
-                 alert('hay permiso');
+
                  return messaging.getToken();
              })
              .then(function (token){
@@ -61,7 +61,7 @@
                 });
             }
             FCMPlugin.onTokenRefresh(function(token){
-                alert( token );
+                localStorage.setItem("token", token);
             });
             /*
                     cordova.plugins.notification.local.schedule({
