@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
     Copyright (c) ivonne . All rights reserved.
@@ -18,8 +17,26 @@
             storageBucket: "connecting-e5377.appspot.com",
             messagingSenderId: "953842536904"
         };
-        firebase.initializeApp(config);
-       alert(firebase.messaging.isSupported());
+        //token del server : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmaXJlYmFzZS1hZG1pbnNkay1xZjJzYkBjb25uZWN0aW5nLWU1Mzc3LmlhbS5nc2VydmljZWFjY291bnQuY29tIiwic3ViIjoiZmlyZWJhc2UtYWRtaW5zZGstcWYyc2JAY29ubmVjdGluZy1lNTM3Ny5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsImF1ZCI6Imh0dHBzOlwvXC9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb21cL2dvb2dsZS5pZGVudGl0eS5pZGVudGl0eXRvb2xraXQudjEuSWRlbnRpdHlUb29sa2l0IiwiaWF0IjoxNTQyMTE5MTc4LCJleHAiOjE1NDIxMjI3NzgsInVpZCI6Iml2b25uZUBwcmlzbWFjbS5jb20ifQ.4Y8QOD_YZ3LCk6zte21T5i6g4aTb3V_hCq4utsAl7RA
+       var app=  firebase.initializeApp(config);
+         var aut= app.auth();
+        const messaging = firebase.messaging();
+         messaging.requestPermission()
+             .then(function(){
+                 alert('hay permiso');
+                 return messaging.getToken();
+             })
+             .then(function (token){
+                 alert(token);
+             })
+             .catch(function(err){
+                 alert('no hay permiso');
+             })
+
+
+
+
+
     </script>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -33,28 +50,19 @@
     <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>
     <script type="text/javascript" charset="utf-8">
-
-
         document.addEventListener('deviceready', function () {
-
-
             var date = new Date();
             var date_f = new Date();
             var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
             if(horario_descargado){
-
                 $.each(horario_descargado, function(i, item) {
-
-
                     date = new Date(item.horario_entrada);
                     //alert(date);
-
                 });
             }
             FCMPlugin.onTokenRefresh(function(token){
                 alert( token );
             });
-
             /*
                     cordova.plugins.notification.local.schedule({
                         title: 'My first notification',
@@ -80,17 +88,11 @@
                 }*/
         }, false);
         $(document).ready(function() {
-
-
             $("#ruta").click(function() {
                 var destino =  $('#sitio').val();
                 var mode =  $('#mode').val();
-
                 calculateAndDisplayRoute(directionsService, directionsDisplay,destino,mode);
-
             });
-
-
             //cuando selecciona el medio de transporte
             $( "#mode" ).on('change', function() {
                 var destino =  $('#sitio').val();
@@ -109,11 +111,9 @@
             });
             $('#fichar').click( function(){
                 //$('#distancia').val('sel');
-
                 initialize(lat_actual,log_actual);
                 //	recargarHorarios();
                 //guardarPosicion(lat_actual,log_actual);
-
             });
             $('#iniciar').click( function(e){
                 //e.preventDefault();
@@ -122,27 +122,17 @@
                     timeout: 10000,
                     maximumAge: Infinity
                 };
-
-
                 var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
-
             });
             $('#pararProgress').click( function(e){
                 //e.preventDefault();
                 navigator.geolocation.clearWatch(watchID_P);
-
             });
-
-
-
-
-
             // Options: throw an error if no update is received every 30 seconds.
             //var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {maximumAge: 60000, timeout: 5000, enableHighAccuracy: true }); // esta me mira cada momento
             //var watchID = navigator.geolocation.watchPosition(onSuccess, onError, 500000);
             /*Con esta variable mirará la posicion cuando se lo indique*/
             /*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
-
             var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
             var ahora = new Date();
             var datetime = ahora.getDate() + "/"
@@ -157,23 +147,19 @@
                      navigator.geolocation.clearWatch(watchID_P);
             }*/
             document.addEventListener("deviceready", onDeviceReady, false);
-
         });
         function onDeviceReady() {
-
             window.plugins.sim.getSimInfo(successCallback, errorCallback);
         }
         function successCallback(result) {
             document.getElementById("simInfo").innerHTML=JSON.stringify(result);
             // document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
             $('#phone').text(result.phoneNumber);
-
             document.getElementById("carrierName").innerHTML=JSON.stringify(result.carrierName);
         }
         function errorCallback(error) {
             document.getElementById("simInfo").innerHTML=JSON.stringify(error);
         }
-
     </script>
     <style>
         #map-canvas{
@@ -271,7 +257,6 @@
             localStorage.setItem("password", pass);
             $('#username').val('');
             $('#password').val('');
-
             alert('los datos han sido guardados');
         });
         // Load input value from localStorage
@@ -287,4 +272,3 @@
         });
     });
 </script>
-
