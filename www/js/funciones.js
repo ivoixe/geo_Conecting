@@ -82,7 +82,7 @@ function initialize(lat,log) {
                 log_actual = log;
 
 
-
+                navigator.splashscreen.hide();
 
             }else{
                 alert('esta llendo por un lado que no es');
@@ -140,6 +140,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay,destino,m
                     /*DISTANCIA NUMERICA PARA PODER HACER OPERACIONES */
                     distancia1= route.legs[i].distance.value;
                 }
+
             } else {
                 console.log('Ha fallado el sistema debido a ' + status);
             }

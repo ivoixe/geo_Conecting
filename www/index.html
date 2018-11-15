@@ -101,9 +101,12 @@
     <script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>
 
     <script type="text/javascript" charset="utf-8">
+        document.addEventListener('init', function(event) {
+            navigator.splashscreen.show();
+        });
 
         document.addEventListener('deviceready', function () {
-
+            navigator.splashscreen.show();
             var date = new Date();
 
             var date_f = new Date();
@@ -121,7 +124,6 @@
                 });
 
             }
-            navigator.splashscreen.show();
             FCMPlugin.onTokenRefresh(function(token){
 
                 localStorage.setItem("token", token);
