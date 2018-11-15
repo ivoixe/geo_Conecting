@@ -82,7 +82,6 @@
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
-    <script type="text/javascript" charset="utf-8" src="js/onsenui.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/jquery-1.12.4.min.js"></script>
 
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD6cz9NsGdNE_K-eXAsZedHCNEaZRku63s"></script>
@@ -95,31 +94,21 @@
 
      <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
 
-    <link rel="stylesheet" href="css/onsen/material-design-iconic-font/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="css/onsen/onsen-css-components.min.css">
     <link  href="css/onsen/onsenui.min.css" rel="stylesheet" type="text/css">
-
+    <script type="text/javascript" charset="utf-8" src="js/onsenui.min.js"></script>
 
     <!--<script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script> -->
 
    <script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>
 
    <script type="text/javascript" charset="utf-8">
-       window.fn = {};
+       document.addEventListener('init', function(event) {
+         //navigator.splashscreen.show();
+       });
 
-       window.fn.open = function() {
-           var menu = document.getElementById('menu');
-           menu.open();
-       };
-
-       window.fn.load = function(page) {
-           var content = document.getElementById('content');
-           var menu = document.getElementById('menu');
-           content.load(page)
-               .then(menu.close.bind(menu));
-       };
        document.addEventListener('deviceready', function () {
-
+        //   navigator.splashscreen.show();
            var date = new Date();
 
            var date_f = new Date();
@@ -145,11 +134,10 @@
 
 
 
-
        }, false);
 
        $(document).ready(function() {
-         //  navigator.splashscreen.hide();
+
            $("#ruta").click(function() {
 
                var destino =  $('#sitio').val();
@@ -159,19 +147,6 @@
                calculateAndDisplayRoute(directionsService, directionsDisplay,destino,mode);
 
            });
-           window.fn = {};
-
-           window.fn.open = function() {
-               var menu = document.getElementById('menu');
-               menu.open();
-           };
-
-           window.fn.load = function(page) {
-               var content = document.getElementById('content');
-               var menu = document.getElementById('menu');
-               content.load(page)
-                   .then(menu.close.bind(menu));
-           };
 
            //cuando selecciona el medio de transporte
 
@@ -213,7 +188,7 @@
 
                //	recargarHorarios();
 
-               guardarPosicion(lat_actual,log_actual);
+               //guardarPosicion(lat_actual,log_actual);
 
            });
 
@@ -253,7 +228,7 @@
 
            /*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
 
-         var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
+           var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
 
            var ahora = new Date();
 
@@ -271,7 +246,7 @@
 
            /*************limpia *************/
 
-          navigator.geolocation.clearWatch(watchID);
+           navigator.geolocation.clearWatch(watchID);
 
            /*if(ahora.getHours() == 11 && ahora.getMinutes == 30){
 
@@ -339,101 +314,149 @@
     <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
         <ons-page>
             <ons-list>
-                <ons-list-item onclick="fn.load('home.html')" tappable>
-                    Home
-                </ons-list-item>
-                <ons-list-item onclick="fn.load('horarios.html')" tappable>
-                   Temas de interés
-                </ons-list-item>
-                <ons-list-item onclick="fn.load('configuracion.html')" tappable>
-                    Configuración
-                </ons-list-item>
+              
+
             </ons-list>
         </ons-page>
     </ons-splitter-side>
     <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
 </ons-splitter>
 
-<template id="home.html">
-    <ons-page>
-        <ons-toolbar>
-            <div class="left">
-                <ons-toolbar-button onclick="fn.open()">
-                    <ons-icon icon="md-menu"></ons-icon>
-                </ons-toolbar-button>
-            </div>
-            <div class="center">
-                Main
-            </div>
-        </ons-toolbar>
+<div id="page-main" data-role="page" class="ui-corner-all">
 
+   <div data-role="content">
 
-        <div  id="map-canvas">
+       <fieldset data-role="controlgroup" data-type="horizontal">
 
-            <!-- map loads here... -->
+           <button type="submit" value="" id="fichar" >Fichar</button>
+
+       </fieldset>
+
+       <div role="main" class="ui-content" id="map-canvas">
+
+           <!-- map loads here... -->
 
         </div>
-        <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-            Swipe right to open the menu!
-        </p>
-    </ons-page>
-</template>
-
-<template id="horarios.html">
-    <ons-page>
-        <ons-toolbar>
-            <div class="left">
-                <ons-toolbar-button onclick="fn.open()">
-                    <ons-icon icon="md-menu"></ons-icon>
-                </ons-toolbar-button>
-            </div>
-            <div class="center">
-                Horarios
-            </div>
-        </ons-toolbar>
-
-        <div data-role="content" class="horarios">
-
-            <h2>Horarios de entrada</h2>
-
-        </div>
-    </ons-page>
-</template>
-
-<template id="configuracion.html">
-    <ons-page>
-        <ons-toolbar>
-            <div class="left">
-                <ons-toolbar-button onclick="fn.open()">
-                    <ons-icon icon="md-menu"></ons-icon>
-                </ons-toolbar-button>
-            </div>
-            <div class="center">
-              Configuración
-            </div>
-        </ons-toolbar>
-
-        <div style="text-align: center; margin-top: 30px;">
-            <p>
-                <ons-input id="username" modifier="underbar" placeholder="Usuario" float></ons-input>
-            </p>
-            <p>
-                <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
-            </p>
-            <p style="margin-top: 30px;">
-                <ons-button id="save"   onclick="save()" >guardar datos</ons-button>
-            </p>
-            <ons-button  onclick="ver_datos()" id="load">Ver datos</ons-button >
-            <ons-button  onclick="limpiar()" id="load">Borrar datos guardados</ons-button >
-            <p class="token_prov"></p>
-        </div>
 
 
 
+    </div>
 
 
-    </ons-page>
-</template>
+
+    <div data-role="footer">
+
+
+
+        <div data-role="navbar">
+
+            <ul>
+
+
+
+                <li><a href="#page-main" data-icon="grid">Fichar</a></li>
+
+
+
+                <li><a href="#page-horario" data-icon="gear">Horario</a></li>
+
+                <li><a href="#page-config" data-icon="gear">Configuración</a></li>
+
+
+
+            </ul>
+
+        </div><!-- /navbar -->
+
+    </div><!-- /footer -->
+
+
+
+</div>
+
+<div id="page-horario" data-role="page" class="ui-corner-all">
+
+    <div data-role="content" class="horarios">
+
+        <h2>Horarios de entrada</h2>
+
+    </div>
+
+
+
+    <div data-role="footer">
+
+
+
+        <div data-role="navbar">
+
+            <ul>
+
+                <li><a href="#page-main" data-icon="grid">Fichar</a></li>
+
+                <li><a href="#page-horario" data-icon="gear">Horario</a></li>
+
+                <li><a href="#page-config" data-icon="gear">Configuración</a></li>
+
+            </ul>
+
+        </div><!-- /navbar -->
+
+    </div><!-- /footer -->
+
+
+
+</div>
+
+<div id="page-config" data-role="page" class="ui-corner-all">
+
+    <div data-role="content">
+
+
+
+        <label for="username">Usuario:</label><input type="text" name="username" id="username" placeholder="Escribe tu usuario" />
+
+        <label for="password">Contraseña:</label><input type="password" name="password" id="password"/>
+
+        <button id="save">Guardar datos</button>
+
+        <button id="load">Ver datos</button>
+
+        <p class="token_prov"></p>
+
+        <button id="clear">Borrar usuario y contraseña</button>
+
+    </div>
+
+
+
+    <div data-role="footer"  >
+
+
+
+        <div data-role="navbar" data-iconpos="bottom">
+
+            <ul>
+
+                <li><a href="#page-main" data-icon="grid">Fichar</a></li>
+
+                <li><a href="#page-horario" data-icon="gear">Horario</a></li>
+
+                <li><a href="#page-config" data-icon="gear">Configuración</a></li>
+
+            </ul>
+
+        </div><!-- /navbar -->
+
+    </div><!-- /footer -->
+
+
+
+</div>
+
+<div class="mensaje" style="display:none">
+
+</div>
 
 </body>
 
@@ -442,39 +465,59 @@
 
 
 
+
 <script type="text/javascript">
 
-    function save(){
-        var username = $('#username').val();
+    $(function() {
 
-        var pass = $('#password').val();
+        // Save input value to localStorage
 
-        localStorage.setItem("username", username);
+        $('#save').on('click', function() {
 
-        localStorage.setItem("password", pass);
+            var username = $('#username').val();
 
-        $('#username').val('');
+            var pass = $('#password').val();
 
-        $('#password').val('');
+            localStorage.setItem("username", username);
 
-        ons.notification.alert('Datos guardados en el dispoistivo');
-    }
-    function ver_datos(){
-        var username = localStorage.getItem('username') || '<empty>';
+            localStorage.setItem("password", pass);
 
-        var password = localStorage.getItem('password') || '<empty>';
+            $('#username').val('');
 
-        var token_guardado = localStorage.getItem('token') || '<empty>';
+            $('#password').val('');
 
-        $('#username').val(username);
+            alert('los datos han sido guardados');
 
-        $('#password').val(password);
+        });
 
-        $('p.token_prov').text(token_guardado);
-    }
-    function limpiar(){
-        localStorage.clear();
-    }
+        // Load input value from localStorage
 
+        $('#load').on('click', function() {
+
+            var username = localStorage.getItem('username') || '<empty>';
+
+            var password = localStorage.getItem('password') || '<empty>';
+
+            var token_guardado = localStorage.getItem('token') || '<empty>';
+
+            $('#username').val(username);
+
+            $('#password').val(password);
+
+            $('p.token_prov').text(token_guardado);
+
+
+
+        });
+
+        // Clear localStorage
+
+        $('#clear').on('click', function() {
+
+            localStorage.clear();
+
+        });
+
+    });
 
 </script>
