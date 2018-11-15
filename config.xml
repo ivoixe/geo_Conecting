@@ -32,7 +32,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <plugin name = "org.apache.cordova.splashscreen" />
+    <plugin name = "cordova-plugin-splashscreen" />
     <platform name="android">
         <resource-file src="google-services.json" target="google-services.json" />
         <allow-intent href="market:*" />
