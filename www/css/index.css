@@ -113,3 +113,7 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+#content .page__content {
+    padding:0 15px;
+    padding-top:20px;
+}

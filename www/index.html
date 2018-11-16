@@ -1,100 +1,40 @@
-s (288 sloc) 12.2 KB
-
 <!DOCTYPE html>
-
-
-
 <!--
-
-
-
     Copyright (c) ivonne . All rights reserved.
-
-
-
 -->
 
-
-
 <html>
-
-
-
 <head>
-
-
 
     <title>Geolocalización </title>
 
-
-
-
-
-
-
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-
-
 
     <script>
 
-
-
         // Initialize Firebase
-
-
 
         var config = {
 
-
-
             apiKey: "AIzaSyCzfZw9Vm9e8ztaumvTQsTX1qaBZSfr99U",
-
-
 
             authDomain: "connecting-e5377.firebaseapp.com",
 
-
-
             databaseURL: "https://connecting-e5377.firebaseio.com",
-
-
 
             projectId: "connecting-e5377",
 
-
-
             storageBucket: "connecting-e5377.appspot.com",
 
-
-
             messagingSenderId: "953842536904"
-
-
-
         };
-
-
-
-        //token del server : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmaXJlYmFzZS1hZG1pbnNkay1xZjJzYkBjb25uZWN0aW5nLWU1Mzc3LmlhbS5nc2VydmljZWFjY291bnQuY29tIiwic3ViIjoiZmlyZWJhc2UtYWRtaW5zZGstcWYyc2JAY29ubmVjdGluZy1lNTM3Ny5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsImF1ZCI6Imh0dHBzOlwvXC9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb21cL2dvb2dsZS5pZGVudGl0eS5pZGVudGl0eXRvb2xraXQudjEuSWRlbnRpdHlUb29sa2l0IiwiaWF0IjoxNTQyMTE5MTc4LCJleHAiOjE1NDIxMjI3NzgsInVpZCI6Iml2b25uZUBwcmlzbWFjbS5jb20ifQ.4Y8QOD_YZ3LCk6zte21T5i6g4aTb3V_hCq4utsAl7RA
-
-
 
         var app=  firebase.initializeApp(config);
 
-
-
         var aut= app.auth();
-
-
-
         const messaging = firebase.messaging();
 
-
-
         messaging.requestPermission()
-
-
 
             .then(function(){
 
@@ -104,109 +44,38 @@ s (288 sloc) 12.2 KB
 
             })
 
-
-
             .then(function (token){
 
                 localStorage.setItem("token", token);
 
             })
 
-
-
             .catch(function(err){
 
-
-
                 alert('no hay permiso');
-
-
-
             })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </script>
 
-
-
-
-
-
-
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-
-
-
     <script type="text/javascript" charset="utf-8" src="js/onsenui.min.js"></script>
-
     <script type="text/javascript" charset="utf-8" src="js/jquery-1.12.4.min.js"></script>
-
-
-
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD6cz9NsGdNE_K-eXAsZedHCNEaZRku63s"></script>
 
-
-
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6cz9NsGdNE_K-eXAsZedHCNEaZRku63s"
-
-
-
-      type="text/javascript"></script>-->
-
-
-
-    <!-- <link  href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css"></link> -->
-
-
-
     <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
-
-
-
     <link rel="stylesheet" href="css/onsen/material-design-iconic-font/css/material-design-iconic-font.min.css">
-
     <link rel="stylesheet" href="css/onsen/onsen-css-components.min.css">
-
     <link  href="css/onsen/onsenui.min.css" rel="stylesheet" type="text/css">
-
-
-
-
-
-    <!--<script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script> -->
-
-
+    <link  href="css/index.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>
-
-
-
     <script type="text/javascript" charset="utf-8">
-
+        document.addEventListener('init', function(event) {
+            if (event.target.matches('#horas')) {
+                recargarHorarios();
+            }
+        }, false);
         window.fn = {};
-
-
 
         window.fn.open = function() {
 
@@ -216,71 +85,24 @@ s (288 sloc) 12.2 KB
 
         };
 
-
-
         window.fn.load = function(page) {
-
             var content = document.getElementById('content');
-
             var menu = document.getElementById('menu');
 
             content.load(page)
 
-                .then(menu.close.bind(menu));
+                .then(
+                    menu.close.bind(menu)
+                );
 
         };
 
         document.addEventListener('deviceready', function () {
 
-            var date = new Date();
-
-            ons.notification.alert('entra');
-
-            var date_f = new Date();
-
-
-
-            var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
-
-
-
-            if(horario_descargado){
-
-
-
-                $.each(horario_descargado, function(i, item) {
-
-
-
-                    date = new Date(item.horario_entrada);
-
-
-
-                    //alert(date);
-
-
-
-                });
-
-            }
 
             FCMPlugin.onTokenRefresh(function(token){
-
-
-
                 localStorage.setItem("token", token);
-
-
-
             });
-
-
-
-
-
-
-
-
 
         }, false);
 
@@ -290,28 +112,18 @@ s (288 sloc) 12.2 KB
 
             //  navigator.splashscreen.hide();
 
+            recargarHorarios();
             $("#ruta").click(function() {
-
-
 
                 var destino =  $('#sitio').val();
 
-
-
                 var mode =  $('#mode').val();
 
-
-
                 calculateAndDisplayRoute(directionsService, directionsDisplay,destino,mode);
-
-
 
             });
 
             window.fn = {};
-
-
-
             window.fn.open = function() {
 
                 var menu = document.getElementById('menu');
@@ -336,11 +148,7 @@ s (288 sloc) 12.2 KB
 
             FCMPlugin.onTokenRefresh(function(token){
 
-                alert(token);
-
                 localStorage.setItem("token", token);
-
-
 
             });
 
@@ -542,65 +350,20 @@ s (288 sloc) 12.2 KB
 
             navigator.geolocation.clearWatch(watchID);
 
-
-
-            /*if(ahora.getHours() == 11 && ahora.getMinutes == 30){
-
-
-
-                     navigator.geolocation.clearWatch(watchID_P);
-
-
-
-            }*/
-
-
-
             document.addEventListener("deviceready", onDeviceReady, false);
 
 
 
         });
 
-
-
         function onDeviceReady() {
-
-
-
             window.plugins.sim.getSimInfo(successCallback, errorCallback);
-
-
-
         }
-
-
 
         function successCallback(result) {
 
-
-
-
-
-            // document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
-
-
-
-
-
-
-
         }
-
-
-
         function errorCallback(error) {
-
-
-
-
-
-
 
         }
 
@@ -778,11 +541,11 @@ s (288 sloc) 12.2 KB
 
 
 
-        <ons-tabbar swipeable position="auto">
+        <ons-tabbar swipeable position="bottom">
 
 
 
-            <ons-tab page="tab1.html" label="Tab 1" icon="ion-home, material:md-home" badge="7" active>
+            <ons-tab page="horas.html" label="Tab 1" icon="ion-home, material:md-home" badge="7" active>
 
             </ons-tab>
 
@@ -867,15 +630,23 @@ s (288 sloc) 12.2 KB
 
 </template>
 
-<template id="tab1.html">
+<template id="horas.html">
 
-    <ons-page id="Tab1"  class="horarios">
+    <ons-page id="horas" >
         <ons-button  onclick="recarga_horarios()" id="load">Recargar horarios</ons-button >
 
 
-        <div data-role="content" class="horarios">
+        <div data-role="content">
 
             <h2>Horarios de entrada</h2>
+
+
+            <ons-row>
+                <ons-col width="50%">
+                    <ons-list id="lista_horarios"></ons-list>
+                </ons-col>
+                <ons-col>Text</ons-col>
+            </ons-row>
 
 
 
@@ -922,31 +693,6 @@ s (288 sloc) 12.2 KB
 
 
 
-    function ver_datos(){
-
-        var username = localStorage.getItem('username') || '<empty>';
-
-
-
-        var password = localStorage.getItem('password') || '<empty>';
-
-
-
-        var token_guardado = localStorage.getItem('token') || '<empty>';
-
-
-
-        $('#username').val(username);
-
-
-
-        $('#password').val(password);
-
-
-
-        $('p.token_prov').text(token_guardado);
-
-    }
 
     function limpiar(){
 

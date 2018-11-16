@@ -383,18 +383,37 @@ function getDate(offset){
     var min = 60*1000;
     return new Date(now.getTime() + (now.getTimezoneOffset() * min) + (offset * hour));
 }
+function recarga_horarios(){
+    recargarHorarios();
+}
 function recargarHorarios(){
-    $('#page-horario .horarios').html('');
+
     var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
 
     if(horario_descargado){
-        $('.horarios').append('<ons-list></ons-list>');
+        var onsList = $(document).find("#lista_horarios");
+        var content = $(document).find("#horas");
+        onsList.html('');
         $.each(horario_descargado, function(i, item) {
-            $('.horarios ons-list').append('<ons-list-item>'+item.horario_entrada+'</ons-list-item>');
+            /******************************************************/
+            var elem = $('<ons-list-item modifier="tappable">'+item.horario_entrada+'</ons-list-item>');
+            onsList.append(elem);
         });
+
     }
 
 
+
+}
+
+function ver_datos(){
+
+    var username = localStorage.getItem('username') || '';
+    var password = localStorage.getItem('password') || '';
+    var token_guardado = localStorage.getItem('token') || '';
+    $('#username').val(username);
+    $('#password').val(password);
+    $('p.token_prov').text(token_guardado);
 
 }
 function save(){
@@ -430,10 +449,10 @@ function save(){
                     localStorage.setItem('horario_'+item,item.horario_entrada);
 
                 });
+                recargarHorarios();
                 localStorage.removeItem('horarios');
                 localStorage.setItem('horarios',JSON.stringify(datos));
-                recargarHorarios();
-                ons.notification.alert(resp.mensaje+datos);
+                ons.notification.alert(resp.mensaje);
             }
 
         },
