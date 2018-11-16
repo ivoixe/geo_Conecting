@@ -471,9 +471,9 @@ function save(){
                 var datos =[];
 
                 var last="";
-                if(!token_fmc){
+         
                     pedir_token();
-                }
+
 
                 $.each(resp.datas, function(i, item) {
                     datos.push(item);
