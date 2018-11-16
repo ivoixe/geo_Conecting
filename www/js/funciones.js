@@ -397,3 +397,53 @@ function recargarHorarios(){
 
 
 }
+function save(){
+    var username = $('#username').val();
+
+    var pass = $('#password').val();
+
+    localStorage.setItem("username", username);
+
+    localStorage.setItem("password", pass);
+
+    $('#username').val('');
+
+    $('#password').val('');
+
+    $.ajax({
+        method: "POST",
+        url:'http://app-connecting.prismacm.com/solo_configuracion.php',
+        data: ({lat:lat_actual,log:log_actual,hora:datetime,usuario:username,password:password,token_fmc:token_fmc}),
+        dataType: "json",
+        success: function(resp){
+
+            if(resp.error){
+                alert('res'+resp.error);
+            }else{
+                var datos =[];
+
+                var last="";
+
+
+                $.each(resp.datas, function(i, item) {
+                    datos.push(item);
+                    localStorage.setItem('horario_'+item,item.horario_entrada);
+
+                });
+                localStorage.removeItem('horarios');
+                localStorage.setItem('horarios',JSON.stringify(datos));
+                recargarHorarios();
+            }
+
+        },
+        error: function(e){
+            // ocultamos el select.
+            alert('error en la conexion?'+e.message);
+            $('#sitios_cercanos').addClass('hidden');
+            console.log('No nos conectamos con la nube.');
+        }
+    });
+
+
+    ons.notification.alert('Datos guardados en el dispoistivo y en servidor');
+}

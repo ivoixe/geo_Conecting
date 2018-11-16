@@ -463,21 +463,7 @@
 
 <script type="text/javascript">
 
-    function save(){
-        var username = $('#username').val();
 
-        var pass = $('#password').val();
-
-        localStorage.setItem("username", username);
-
-        localStorage.setItem("password", pass);
-
-        $('#username').val('');
-
-        $('#password').val('');
-
-        ons.notification.alert('Datos guardados en el dispoistivo');
-    }
     function ver_datos(){
         var username = localStorage.getItem('username') || '<empty>';
 
