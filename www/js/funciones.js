@@ -413,7 +413,7 @@ function save(){
     $.ajax({
         method: "POST",
         url:'http://app-connecting.prismacm.com/solo_configuracion.php',
-        data: ({lat:lat_actual,log:log_actual,hora:datetime,usuario:username,password:password,token_fmc:token_fmc}),
+        data: ({usuario:username,password:password,token_fmc:token_fmc}),
         dataType: "json",
         success: function(resp){
 
