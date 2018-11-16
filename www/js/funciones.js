@@ -82,7 +82,7 @@ function initialize(lat,log) {
                 log_actual = log;
 
 
-                navigator.splashscreen.hide();
+                //navigator.splashscreen.hide();
 
             }else{
                 alert('esta llendo por un lado que no es');
@@ -418,7 +418,7 @@ function save(){
         success: function(resp){
 
             if(resp.error){
-                alert('res'+resp.error);
+                ons.notification.alert(resp.error);
             }else{
                 var datos =[];
 
@@ -433,6 +433,7 @@ function save(){
                 localStorage.removeItem('horarios');
                 localStorage.setItem('horarios',JSON.stringify(datos));
                 recargarHorarios();
+                ons.notification.alert('Datos guardados en el dispoistivo y en servidor');
             }
 
         },
@@ -445,5 +446,5 @@ function save(){
     });
 
 
-    ons.notification.alert('Datos guardados en el dispoistivo y en servidor');
+
 }

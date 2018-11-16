@@ -47,17 +47,11 @@
         messaging.requestPermission()
 
             .then(function(){
-
-
-
                 return messaging.getToken();
-
             })
 
             .then(function (token){
-
                 localStorage.setItem("token", token);
-
             })
 
             .catch(function(err){
@@ -119,9 +113,8 @@
                .then(menu.close.bind(menu));
        };
        document.addEventListener('deviceready', function () {
-
            var date = new Date();
-
+           ons.notification.alert('entra');
            var date_f = new Date();
 
            var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
@@ -135,7 +128,6 @@
                    //alert(date);
 
                });
-
            }
            FCMPlugin.onTokenRefresh(function(token){
 
@@ -172,7 +164,11 @@
                content.load(page)
                    .then(menu.close.bind(menu));
            };
+           FCMPlugin.onTokenRefresh(function(token){
 
+               localStorage.setItem("token", token);
+
+           });
            //cuando selecciona el medio de transporte
 
            $( "#mode" ).on('change', function() {
