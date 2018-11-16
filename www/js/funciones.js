@@ -388,9 +388,9 @@ function recargarHorarios(){
     var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
 
     if(horario_descargado){
-        $('#page-horario .horarios').append('<ul class="list-horarios"></ul>');
+        $('.horarios').append('<ons-list></ons-list>');
         $.each(horario_descargado, function(i, item) {
-            $('#page-horario .horarios ul.list-horarios').append('<li>'+item.horario_entrada+'</li>');
+            $('.horarios ons-list').append('<ons-list-item>'+item.horario_entrada+'</ons-list-item>');
         });
     }
 
