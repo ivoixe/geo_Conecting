@@ -47,6 +47,7 @@
         messaging.requestPermission()
 
             .then(function(){
+                alert(messaging.getToken());
                 return messaging.getToken();
             })
 
@@ -165,7 +166,7 @@
                    .then(menu.close.bind(menu));
            };
            FCMPlugin.onTokenRefresh(function(token){
-
+                alert(token);
                localStorage.setItem("token", token);
 
            });
