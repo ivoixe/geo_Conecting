@@ -433,7 +433,7 @@ function save(){
                 localStorage.removeItem('horarios');
                 localStorage.setItem('horarios',JSON.stringify(datos));
                 recargarHorarios();
-                ons.notification.alert('Datos guardados en el dispoistivo y en servidor');
+                ons.notification.alert(resp.mensaje+datos);
             }
 
         },
