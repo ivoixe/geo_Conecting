@@ -1,65 +1,140 @@
+s (288 sloc) 12.2 KB
+
 <!DOCTYPE html>
+
+
 
 <!--
 
+
+
     Copyright (c) ivonne . All rights reserved.
+
+
 
 -->
 
+
+
 <html>
 
+
+
 <head>
+
+
 
     <title>Geolocalización </title>
 
 
 
+
+
+
+
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+
+
 
     <script>
 
+
+
         // Initialize Firebase
+
+
 
         var config = {
 
+
+
             apiKey: "AIzaSyCzfZw9Vm9e8ztaumvTQsTX1qaBZSfr99U",
+
+
 
             authDomain: "connecting-e5377.firebaseapp.com",
 
+
+
             databaseURL: "https://connecting-e5377.firebaseio.com",
+
+
 
             projectId: "connecting-e5377",
 
+
+
             storageBucket: "connecting-e5377.appspot.com",
+
+
 
             messagingSenderId: "953842536904"
 
+
+
         };
+
+
 
         //token del server : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmaXJlYmFzZS1hZG1pbnNkay1xZjJzYkBjb25uZWN0aW5nLWU1Mzc3LmlhbS5nc2VydmljZWFjY291bnQuY29tIiwic3ViIjoiZmlyZWJhc2UtYWRtaW5zZGstcWYyc2JAY29ubmVjdGluZy1lNTM3Ny5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsImF1ZCI6Imh0dHBzOlwvXC9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb21cL2dvb2dsZS5pZGVudGl0eS5pZGVudGl0eXRvb2xraXQudjEuSWRlbnRpdHlUb29sa2l0IiwiaWF0IjoxNTQyMTE5MTc4LCJleHAiOjE1NDIxMjI3NzgsInVpZCI6Iml2b25uZUBwcmlzbWFjbS5jb20ifQ.4Y8QOD_YZ3LCk6zte21T5i6g4aTb3V_hCq4utsAl7RA
 
+
+
         var app=  firebase.initializeApp(config);
+
+
 
         var aut= app.auth();
 
+
+
         const messaging = firebase.messaging();
+
+
 
         messaging.requestPermission()
 
+
+
             .then(function(){
+
                 alert(messaging.getToken());
+
                 return messaging.getToken();
+
             })
 
+
+
             .then(function (token){
+
                 localStorage.setItem("token", token);
+
             })
+
+
 
             .catch(function(err){
 
+
+
                 alert('no hay permiso');
 
+
+
             })
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -75,385 +150,771 @@
 
 
 
+
+
+
+
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
+
+
     <script type="text/javascript" charset="utf-8" src="js/onsenui.min.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="js/jquery-1.12.4.min.js"></script>
+
+
 
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD6cz9NsGdNE_K-eXAsZedHCNEaZRku63s"></script>
 
+
+
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6cz9NsGdNE_K-eXAsZedHCNEaZRku63s"
+
+
 
       type="text/javascript"></script>-->
 
+
+
     <!-- <link  href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css"></link> -->
 
-     <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+
+
+    <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+
+
 
     <link rel="stylesheet" href="css/onsen/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
     <link rel="stylesheet" href="css/onsen/onsen-css-components.min.css">
+
     <link  href="css/onsen/onsenui.min.css" rel="stylesheet" type="text/css">
+
+
+
 
 
     <!--<script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script> -->
 
-   <script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>
 
-   <script type="text/javascript" charset="utf-8">
-       window.fn = {};
 
-       window.fn.open = function() {
-           var menu = document.getElementById('menu');
-           menu.open();
-       };
-
-       window.fn.load = function(page) {
-           var content = document.getElementById('content');
-           var menu = document.getElementById('menu');
-           content.load(page)
-               .then(menu.close.bind(menu));
-       };
-       document.addEventListener('deviceready', function () {
-           var date = new Date();
-           ons.notification.alert('entra');
-           var date_f = new Date();
-
-           var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
-
-           if(horario_descargado){
-
-               $.each(horario_descargado, function(i, item) {
-
-                   date = new Date(item.horario_entrada);
-
-                   //alert(date);
-
-               });
-           }
-           FCMPlugin.onTokenRefresh(function(token){
-
-               localStorage.setItem("token", token);
-
-           });
+    <script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>
 
 
 
+    <script type="text/javascript" charset="utf-8">
 
-       }, false);
+        window.fn = {};
 
-       $(document).ready(function() {
-         //  navigator.splashscreen.hide();
-           $("#ruta").click(function() {
 
-               var destino =  $('#sitio').val();
 
-               var mode =  $('#mode').val();
+        window.fn.open = function() {
 
-               calculateAndDisplayRoute(directionsService, directionsDisplay,destino,mode);
+            var menu = document.getElementById('menu');
 
-           });
-           window.fn = {};
+            menu.open();
 
-           window.fn.open = function() {
-               var menu = document.getElementById('menu');
-               menu.open();
-           };
+        };
 
-           window.fn.load = function(page) {
-               var content = document.getElementById('content');
-               var menu = document.getElementById('menu');
-               content.load(page)
-                   .then(menu.close.bind(menu));
-           };
-           FCMPlugin.onTokenRefresh(function(token){
+
+
+        window.fn.load = function(page) {
+
+            var content = document.getElementById('content');
+
+            var menu = document.getElementById('menu');
+
+            content.load(page)
+
+                .then(menu.close.bind(menu));
+
+        };
+
+        document.addEventListener('deviceready', function () {
+
+            var date = new Date();
+
+            ons.notification.alert('entra');
+
+            var date_f = new Date();
+
+
+
+            var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
+
+
+
+            if(horario_descargado){
+
+
+
+                $.each(horario_descargado, function(i, item) {
+
+
+
+                    date = new Date(item.horario_entrada);
+
+
+
+                    //alert(date);
+
+
+
+                });
+
+            }
+
+            FCMPlugin.onTokenRefresh(function(token){
+
+
+
+                localStorage.setItem("token", token);
+
+
+
+            });
+
+
+
+
+
+
+
+
+
+        }, false);
+
+
+
+        $(document).ready(function() {
+
+            //  navigator.splashscreen.hide();
+
+            $("#ruta").click(function() {
+
+
+
+                var destino =  $('#sitio').val();
+
+
+
+                var mode =  $('#mode').val();
+
+
+
+                calculateAndDisplayRoute(directionsService, directionsDisplay,destino,mode);
+
+
+
+            });
+
+            window.fn = {};
+
+
+
+            window.fn.open = function() {
+
+                var menu = document.getElementById('menu');
+
+                menu.open();
+
+            };
+
+
+
+            window.fn.load = function(page) {
+
+                var content = document.getElementById('content');
+
+                var menu = document.getElementById('menu');
+
+                content.load(page)
+
+                    .then(menu.close.bind(menu));
+
+            };
+
+            FCMPlugin.onTokenRefresh(function(token){
+
                 alert(token);
-               localStorage.setItem("token", token);
 
-           });
-           //cuando selecciona el medio de transporte
+                localStorage.setItem("token", token);
 
-           $( "#mode" ).on('change', function() {
 
-               var destino =  $('#sitio').val();
 
-               var mode =  $('#mode').val();
+            });
 
-               calculateAndDisplayRoute(directionsService, directionsDisplay,destino,mode);
+            //cuando selecciona el medio de transporte
 
-           });
 
-           //Cuando selecciona una distancia diferente
 
-           $( "#distancia" ).on('change', function() {
+            $( "#mode" ).on('change', function() {
 
-               cargar_mas_cercanos($(this).val());
 
-               $('#sitios_cercanos').removeClass('hidden');
 
-               $('#route').removeClass('hidden');
+                var destino =  $('#sitio').val();
 
-               if($(this).val() == "sel"){
 
-                   $('#sitios_cercanos').addClass('hidden');
 
-                   $('#route').addClass('hidden');
+                var mode =  $('#mode').val();
 
-               }
 
-           });
 
-           $('#fichar').click( function(){
+                calculateAndDisplayRoute(directionsService, directionsDisplay,destino,mode);
 
-               //$('#distancia').val('sel');
 
-               initialize(lat_actual,log_actual);
 
-               //	recargarHorarios();
+            });
 
-               guardarPosicion(lat_actual,log_actual);
 
-           });
 
-           $('#iniciar').click( function(e){
+            //Cuando selecciona una distancia diferente
 
-               //e.preventDefault();
 
-               opciones = {
 
-                   enableHighAccuracy: false,
+            $( "#distancia" ).on('change', function() {
 
-                   timeout: 10000,
 
-                   maximumAge: Infinity
 
-               };
+                cargar_mas_cercanos($(this).val());
 
-               var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
 
-           });
 
-           $('#pararProgress').click( function(e){
+                $('#sitios_cercanos').removeClass('hidden');
 
-               //e.preventDefault();
 
-               navigator.geolocation.clearWatch(watchID_P);
 
-           });
+                $('#route').removeClass('hidden');
 
-           // Options: throw an error if no update is received every 30 seconds.
 
-           //var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {maximumAge: 60000, timeout: 5000, enableHighAccuracy: true }); // esta me mira cada momento
 
-           //var watchID = navigator.geolocation.watchPosition(onSuccess, onError, 500000);
+                if($(this).val() == "sel"){
 
-           /*Con esta variable mirará la posicion cuando se lo indique*/
 
-           /*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
 
-         var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
+                    $('#sitios_cercanos').addClass('hidden');
 
-           var ahora = new Date();
 
-           var datetime = ahora.getDate() + "/"
 
-               + (ahora.getMonth()+1)  + "/"
+                    $('#route').addClass('hidden');
 
-               + ahora.getFullYear() + "  "
 
-               + ahora.getHours() + ":"
 
-               + ahora.getMinutes() + ":"
+                }
 
-               + ahora.getSeconds();
 
-           /*************limpia *************/
 
-          navigator.geolocation.clearWatch(watchID);
+            });
 
-           /*if(ahora.getHours() == 11 && ahora.getMinutes == 30){
 
-                    navigator.geolocation.clearWatch(watchID_P);
 
-           }*/
+            $('#fichar').click( function(){
 
-           document.addEventListener("deviceready", onDeviceReady, false);
 
-       });
 
-       function onDeviceReady() {
+                //$('#distancia').val('sel');
 
-           window.plugins.sim.getSimInfo(successCallback, errorCallback);
 
-       }
 
-       function successCallback(result) {
+                initialize(lat_actual,log_actual);
 
 
-           // document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
 
+                //	recargarHorarios();
 
 
-       }
 
-       function errorCallback(error) {
+                guardarPosicion(lat_actual,log_actual);
 
 
 
-       }
+            });
 
-   </script>
 
-   <style>
 
-       #map-canvas{
+            $('#iniciar').click( function(e){
 
-           height:500px;
 
-       }
 
-       .hidden{
+                //e.preventDefault();
 
-           display:none;
 
-       }
 
-       .datos-telefono{
+                opciones = {
 
-           float: left;
 
-           width: 100%;
 
-           overflow: scroll;
+                    enableHighAccuracy: false,
 
-       }
 
-   </style>
+
+                    timeout: 10000,
+
+
+
+                    maximumAge: Infinity
+
+
+
+                };
+
+
+
+                var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
+
+
+
+            });
+
+
+
+            $('#pararProgress').click( function(e){
+
+
+
+                //e.preventDefault();
+
+
+
+                navigator.geolocation.clearWatch(watchID_P);
+
+
+
+            });
+
+
+
+            // Options: throw an error if no update is received every 30 seconds.
+
+
+
+            //var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {maximumAge: 60000, timeout: 5000, enableHighAccuracy: true }); // esta me mira cada momento
+
+
+
+            //var watchID = navigator.geolocation.watchPosition(onSuccess, onError, 500000);
+
+
+
+            /*Con esta variable mirará la posicion cuando se lo indique*/
+
+
+
+            /*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
+
+
+
+            var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
+
+
+
+            var ahora = new Date();
+
+
+
+            var datetime = ahora.getDate() + "/"
+
+
+
+                + (ahora.getMonth()+1)  + "/"
+
+
+
+                + ahora.getFullYear() + "  "
+
+
+
+                + ahora.getHours() + ":"
+
+
+
+                + ahora.getMinutes() + ":"
+
+
+
+                + ahora.getSeconds();
+
+
+
+            /*************limpia *************/
+
+
+
+            navigator.geolocation.clearWatch(watchID);
+
+
+
+            /*if(ahora.getHours() == 11 && ahora.getMinutes == 30){
+
+
+
+                     navigator.geolocation.clearWatch(watchID_P);
+
+
+
+            }*/
+
+
+
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+
+
+        });
+
+
+
+        function onDeviceReady() {
+
+
+
+            window.plugins.sim.getSimInfo(successCallback, errorCallback);
+
+
+
+        }
+
+
+
+        function successCallback(result) {
+
+
+
+
+
+            // document.getElementById("phone").innerHTML=JSON.stringify(result.phoneNumber);
+
+
+
+
+
+
+
+        }
+
+
+
+        function errorCallback(error) {
+
+
+
+
+
+
+
+        }
+
+
+
+    </script>
+
+
+
+    <style>
+
+
+
+        #map-canvas{
+
+
+
+            height:500px;
+
+
+
+        }
+
+
+
+        .hidden{
+
+
+
+            display:none;
+
+
+
+        }
+
+
+
+        .datos-telefono{
+
+
+
+            float: left;
+
+
+
+            width: 100%;
+
+
+
+            overflow: scroll;
+
+
+
+        }
+
+
+
+    </style>
+
+
 
 </head>
 
+
+
 <body>
+
 <ons-splitter>
+
     <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+
         <ons-page>
+
             <ons-list>
+
                 <ons-list-item onclick="fn.load('home.html')" tappable>
+
                     Home
+
                 </ons-list-item>
+
                 <ons-list-item onclick="fn.load('horarios.html')" tappable>
-                   Temas de interés
+
+                    Temas de interés
+
                 </ons-list-item>
+
                 <ons-list-item onclick="fn.load('configuracion.html')" tappable>
+
                     Configuración
+
                 </ons-list-item>
+
             </ons-list>
+
         </ons-page>
+
     </ons-splitter-side>
+
     <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+
 </ons-splitter>
 
+
+
 <template id="home.html">
+
     <ons-page>
+
         <ons-toolbar>
+
             <div class="left">
+
                 <ons-toolbar-button onclick="fn.open()">
+
                     <ons-icon icon="md-menu"></ons-icon>
+
                 </ons-toolbar-button>
+
             </div>
+
             <div class="center">
+
                 Main
+
             </div>
+
         </ons-toolbar>
+
+
+
 
 
         <div  id="map-canvas">
 
+
+
             <!-- map loads here... -->
 
+
+
         </div>
+
         <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+
             Swipe right to open the menu!
+
         </p>
+
     </ons-page>
+
 </template>
 
+
+
 <template id="horarios.html">
+
     <ons-page>
+
         <ons-toolbar>
+
             <div class="left">
+
                 <ons-toolbar-button onclick="fn.open()">
+
                     <ons-icon icon="md-menu"></ons-icon>
+
                 </ons-toolbar-button>
+
             </div>
+
             <div class="center">Contenido de interés</div>
+
         </ons-toolbar>
+
+
 
         <ons-tabbar swipeable position="auto">
 
+
+
             <ons-tab page="tab1.html" label="Tab 1" icon="ion-home, material:md-home" badge="7" active>
+
             </ons-tab>
+
             <ons-tab page="tab2.html" label="Tab 2" icon="md-settings" active-icon="md-face">
+
             </ons-tab>
+
         </ons-tabbar>
+
+
+    </ons-page>
+
+</template>
+
+
+
+<template id="configuracion.html">
+
+    <ons-page>
+
+        <ons-toolbar>
+
+            <div class="left">
+
+                <ons-toolbar-button onclick="fn.open()">
+
+                    <ons-icon icon="md-menu"></ons-icon>
+
+                </ons-toolbar-button>
+
+            </div>
+
+            <div class="center">
+
+                Configuración
+
+            </div>
+
+        </ons-toolbar>
+
+
+
+        <div style="text-align: center; margin-top: 30px;">
+
+            <p>
+
+                <ons-input id="username" modifier="underbar" placeholder="Usuario" float></ons-input>
+
+            </p>
+
+            <p>
+
+                <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+
+            </p>
+
+            <p style="margin-top: 30px;">
+
+                <ons-button id="save"   onclick="save()" >guardar datos</ons-button>
+
+            </p>
+
+            <ons-button  onclick="ver_datos()" id="load">Ver datos</ons-button >
+
+            <ons-button  onclick="limpiar()" id="load">Borrar datos guardados</ons-button >
+
+            <p class="token_prov"></p>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </ons-page>
+
+</template>
+
+<template id="tab1.html">
+
+    <ons-page id="Tab1"  class="horarios">
+        <ons-button  onclick="recarga_horarios()" id="load">Recargar horarios</ons-button >
+
+
 
         <div data-role="content" class="horarios">
 
+
+
             <h2>Horarios de entrada</h2>
 
+
+
         </div>
     </ons-page>
+
 </template>
 
-<template id="configuracion.html">
-    <ons-page>
-        <ons-toolbar>
-            <div class="left">
-                <ons-toolbar-button onclick="fn.open()">
-                    <ons-icon icon="md-menu"></ons-icon>
-                </ons-toolbar-button>
-            </div>
-            <div class="center">
-              Configuración
-            </div>
-        </ons-toolbar>
 
-        <div style="text-align: center; margin-top: 30px;">
-            <p>
-                <ons-input id="username" modifier="underbar" placeholder="Usuario" float></ons-input>
-            </p>
-            <p>
-                <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
-            </p>
-            <p style="margin-top: 30px;">
-                <ons-button id="save"   onclick="save()" >guardar datos</ons-button>
-            </p>
-            <ons-button  onclick="ver_datos()" id="load">Ver datos</ons-button >
-            <ons-button  onclick="limpiar()" id="load">Borrar datos guardados</ons-button >
-            <p class="token_prov"></p>
-        </div>
-
-
-
-
-
-    </ons-page>
-</template>
-<template id="tab1.html">
-    <ons-page id="Tab1"  class="horarios">
-
-    </ons-page>
-</template>
 
 <template id="tab2.html">
+
     <ons-page id="Tab2">
+
         <p style="text-align: center;">
+
             This is the second page.
+
         </p>
+
     </ons-page>
+
 </template>
+
+
 
 </body>
 
+
+
 </html>
+
+
+
+
+
 
 
 
@@ -461,22 +922,43 @@
 <script type="text/javascript">
 
 
+
+
+
     function ver_datos(){
+
         var username = localStorage.getItem('username') || '<empty>';
+
+
 
         var password = localStorage.getItem('password') || '<empty>';
 
+
+
         var token_guardado = localStorage.getItem('token') || '<empty>';
+
+
 
         $('#username').val(username);
 
+
+
         $('#password').val(password);
 
+
+
         $('p.token_prov').text(token_guardado);
+
     }
+
     function limpiar(){
+
         localStorage.clear();
+
     }
+
+
+
 
 
 </script>
