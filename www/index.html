@@ -99,8 +99,11 @@
 
         document.addEventListener('deviceready', function () {
 
-            var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
+            FCMPlugin.onTokenRefresh(function(token){
 
+                localStorage.setItem("token", token);
+
+            });
 
         }, false);
 

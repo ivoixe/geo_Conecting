@@ -416,34 +416,7 @@ function ver_datos(){
     $('p.token_prov').text(token_guardado);
 
 }
-function pedir_token(){
-    FCMPlugin.onTokenRefresh(function(token){
-        localStorage.setItem("token", token);
-    });
-    var token_fmc = localStorage.getItem('token') || '';
-    $.ajax({
-        method: "POST",
-        url:'http://app-connecting.prismacm.com/salva_token.php',
-        data: ({usuario:username,password:pass,token_fmc:token_fmc}),
-        dataType: "json",
-        success: function(resp){
 
-            if(resp.error){
-                ons.notification.alert(resp.error);
-            }else{
-
-                ons.notification.alert(resp.mensaje);
-            }
-
-        },
-        error: function(e){
-            // ocultamos el select.
-            alert('error en la conexion?'+e.message);
-            $('#sitios_cercanos').addClass('hidden');
-            console.log('No nos conectamos con la nube.');
-        }
-    });
-}
 function save(){
     var username = $('#username').val();
 
@@ -472,7 +445,7 @@ function save(){
 
                 var last="";
 
-                    pedir_token();
+
 
 
                 $.each(resp.datas, function(i, item) {
