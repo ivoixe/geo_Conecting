@@ -110,6 +110,6 @@
     </plugin>
     <plugin name="cordova-plugin-fcm" spec="~2.1.2" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
-    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="3000" />
 </widget>

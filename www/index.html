@@ -38,7 +38,7 @@
 
             .then(function(){
 
-                alert(messaging.getToken());
+              //  alert(messaging.getToken());
 
                 return messaging.getToken();
 
@@ -52,7 +52,7 @@
 
             .catch(function(err){
 
-                alert('no hay permiso');
+                console.log('no hay permiso');
             })
 
     </script>
@@ -60,6 +60,7 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/onsenui.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/angular.js"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD6cz9NsGdNE_K-eXAsZedHCNEaZRku63s"></script>
 
     <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
@@ -70,9 +71,14 @@
 
     <script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>
     <script type="text/javascript" charset="utf-8">
+
         document.addEventListener('init', function(event) {
             if (event.target.matches('#horas')) {
                 recargarHorarios();
+            }
+            if (event.target.matches('#home')) {
+
+                var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
             }
         }, false);
         window.fn = {};
@@ -113,7 +119,7 @@
 
             //  navigator.splashscreen.hide();
 
-            recargarHorarios();
+
             $("#ruta").click(function() {
 
                 var destino =  $('#sitio').val();
@@ -143,32 +149,18 @@
 
                 content.load(page)
 
-                    .then(menu.close.bind(menu));
+                    .then( function(){
+                        menu.close.bind(menu);
+
+                    });
 
             };
 
-
-
             //cuando selecciona el medio de transporte
-
-
-
             $( "#mode" ).on('change', function() {
-
-
-
                 var destino =  $('#sitio').val();
-
-
-
                 var mode =  $('#mode').val();
-
-
-
                 calculateAndDisplayRoute(directionsService, directionsDisplay,destino,mode);
-
-
-
             });
 
 
@@ -432,7 +424,7 @@
 
     <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
 
-        <ons-page>
+        <ons-page id="home">
 
             <ons-list>
 
