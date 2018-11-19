@@ -3,7 +3,7 @@
     Copyright (c) ivonne . All rights reserved.
 -->
 
-<html>
+
 <head>
 
     <title>Geolocalización </title>
@@ -73,14 +73,23 @@
     <script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-        document.addEventListener('init', function(event) {
-            if (event.target.matches('#horas')) {
-                recargarHorarios();
-            }
-            if (event.target.matches('#home')) {
 
-                var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
-            }
+        document.addEventListener('init', function(event) {
+
+
+            var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
+            var ahora = new Date();
+
+            var datetime = ahora.getDate() + "/"
+                + (ahora.getMonth()+1)  + "/"
+                + ahora.getFullYear() + "  "
+                + ahora.getHours() + ":"
+                + ahora.getMinutes() + ":"
+                + ahora.getSeconds();
+            /*************limpia *************/
+
+            navigator.geolocation.clearWatch(watchID);
+
         }, false);
         window.fn = {};
 
@@ -103,6 +112,12 @@
                 );
 
         };
+        window.fn.pushPage = function (page, anim) {
+
+        };
+        window.fn.loadLink = function (url) {
+
+        };
 
         document.addEventListener('deviceready', function () {
 
@@ -116,7 +131,7 @@
 
 
 
-        $(document).ready(function() {
+    /*    $(document).ready(function() {
 
             //  navigator.splashscreen.hide();
 
@@ -131,31 +146,7 @@
 
             });
 
-            window.fn = {};
-            window.fn.open = function() {
 
-                var menu = document.getElementById('menu');
-
-                menu.open();
-
-            };
-
-
-
-            window.fn.load = function(page) {
-
-                var content = document.getElementById('content');
-
-                var menu = document.getElementById('menu');
-
-                content.load(page)
-
-                    .then( function(){
-                        menu.close.bind(menu);
-
-                    });
-
-            };
 
             //cuando selecciona el medio de transporte
             $( "#mode" ).on('change', function() {
@@ -171,37 +162,14 @@
 
 
             $( "#distancia" ).on('change', function() {
-
-
-
                 cargar_mas_cercanos($(this).val());
-
-
-
                 $('#sitios_cercanos').removeClass('hidden');
-
-
-
                 $('#route').removeClass('hidden');
-
-
-
                 if($(this).val() == "sel"){
-
-
-
                     $('#sitios_cercanos').addClass('hidden');
-
-
-
                     $('#route').addClass('hidden');
 
-
-
                 }
-
-
-
             });
 
 
@@ -232,35 +200,13 @@
 
             $('#iniciar').click( function(e){
 
-
-
-                //e.preventDefault();
-
-
-
                 opciones = {
-
-
-
                     enableHighAccuracy: false,
-
-
-
                     timeout: 10000,
-
-
-
                     maximumAge: Infinity
-
-
-
                 };
 
-
-
                 var watchID_P = navigator.geolocation.watchPosition(onSuccessProgress, onError, opciones);
-
-
 
             });
 
@@ -282,72 +228,12 @@
 
 
 
-            // Options: throw an error if no update is received every 30 seconds.
-
-
-
-            //var watchID = navigator.geolocation.watchPosition(onSuccess, onError, {maximumAge: 60000, timeout: 5000, enableHighAccuracy: true }); // esta me mira cada momento
-
-
-
-            //var watchID = navigator.geolocation.watchPosition(onSuccess, onError, 500000);
-
-
-
-            /*Con esta variable mirará la posicion cuando se lo indique*/
-
-
-
-            /*ESTO ES LO QUE SE CARGA AL PRINCIPIO (mapa y localizacion actual)*/
-
-
-
-            var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
-
-
-
-            var ahora = new Date();
-
-
-
-            var datetime = ahora.getDate() + "/"
-
-
-
-                + (ahora.getMonth()+1)  + "/"
-
-
-
-                + ahora.getFullYear() + "  "
-
-
-
-                + ahora.getHours() + ":"
-
-
-
-                + ahora.getMinutes() + ":"
-
-
-
-                + ahora.getSeconds();
-
-
-
-            /*************limpia *************/
-
-
-
-            navigator.geolocation.clearWatch(watchID);
-
             document.addEventListener("deviceready", onDeviceReady, false);
 
-
-
-        });
+        });*/
 
         function onDeviceReady() {
-            window.plugins.sim.getSimInfo(successCallback, errorCallback);
+           // window.plugins.sim.getSimInfo(successCallback, errorCallback);
         }
 
         function successCallback(result) {
