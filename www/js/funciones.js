@@ -412,46 +412,7 @@ function ver_datos(){
     var password = localStorage.getItem('password') || '';
     var token_guardado = localStorage.getItem('token') || '';
     if(!token_guardado){
-        var config = {
 
-            apiKey: "AIzaSyCzfZw9Vm9e8ztaumvTQsTX1qaBZSfr99U",
-
-            authDomain: "connecting-e5377.firebaseapp.com",
-
-            databaseURL: "https://connecting-e5377.firebaseio.com",
-
-            projectId: "connecting-e5377",
-
-            storageBucket: "connecting-e5377.appspot.com",
-
-            messagingSenderId: "953842536904"
-        };
-
-        var app=  firebase.initializeApp(config);
-        alert(app);
-        var aut= app.auth();
-        const messaging = firebase.messaging();
-
-        messaging.requestPermission()
-
-            .then(function(){
-
-                //  alert(messaging.getToken());
-
-                return messaging.getToken();
-
-            })
-
-            .then(function (token){
-
-                localStorage.setItem("token", token);
-
-            })
-
-            .catch(function(err){
-
-                console.log('no hay permiso');
-            })
     }
     $('#username').val(username);
     $('#password').val(password);

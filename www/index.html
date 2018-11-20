@@ -76,20 +76,20 @@
 
         document.addEventListener('init', function(event) {
 
+            recargarHorarios();
 
             var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
             var ahora = new Date();
 
             var datetime = ahora.getDate() + "/"
-                + (ahora.getMonth()+1)  + "/"
-                + ahora.getFullYear() + "  "
-                + ahora.getHours() + ":"
-                + ahora.getMinutes() + ":"
-                + ahora.getSeconds();
+            + (ahora.getMonth()+1)  + "/"
+            + ahora.getFullYear() + "  "
+            + ahora.getHours() + ":"
+            + ahora.getMinutes() + ":"
+            + ahora.getSeconds();
             /*************limpia *************/
 
             navigator.geolocation.clearWatch(watchID);
-            recargarHorarios();
         }, false);
         window.fn = {};
 
@@ -120,6 +120,13 @@
                 localStorage.setItem("token", token);
 
             });
+
+            if (typeof FCMPlugin != 'undefined') {
+
+                FCMPlugin.getToken(function (token) {
+                    alert(token);
+                });
+            }
 
         }, false);
 
