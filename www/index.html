@@ -89,7 +89,7 @@
             /*************limpia *************/
 
             navigator.geolocation.clearWatch(watchID);
-            recargarHorarios();
+
         }, false);
         window.fn = {};
 
@@ -107,15 +107,17 @@
 
             content.load(page)
 
-                .then(function () {
-                    menu.close.bind(menu);
-                    recargarHorarios();
-
-                    }
+                .then(
+                    menu.close.bind(menu)
                 );
 
         };
+        window.fn.pushPage = function (page, anim) {
 
+        };
+        window.fn.loadLink = function (url) {
+
+        };
 
         document.addEventListener('deviceready', function () {
 
@@ -129,7 +131,7 @@
 
 
 
-       $(document).ready(function() {
+    /* $(document).ready(function() {
 
             //  navigator.splashscreen.hide();
 
@@ -228,10 +230,10 @@
 
             document.addEventListener("deviceready", onDeviceReady, false);
 
-        });
+        });*/
 
         function onDeviceReady() {
-           // window.plugins.sim.getSimInfo(successCallback, errorCallback);
+            window.plugins.sim.getSimInfo(successCallback, errorCallback);
         }
 
         function successCallback(result) {
