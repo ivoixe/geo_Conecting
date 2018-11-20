@@ -36,10 +36,8 @@
     <platform name="android">
         <resource-file src="google-services.json" target="google-services.json" />
         <allow-intent href="market:*" />
-        <preference name="loadUrlTimeoutValue" value="700000" />
-        <feature name="Sim">
-            <param name="android-package" value="com.pbakondy.Sim" />
-        </feature>
+
+
         <preference name="SplashScreen" value="splash" />
         <icon qualifier="ldpi" src="res/icons/android/drawable-ldpi-icon.png" />
         <icon qualifier="mdpi" src="res/icons/android/drawable-mdpi-icon.png" />
