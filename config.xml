@@ -32,7 +32,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <plugin name="cordova-plugin-splashscreen" />
+   
     <platform name="android">
         <preference name="loadUrlTimeoutValue" value="700000" />
         <resource-file src="google-services.json" target="google-services.json" />
