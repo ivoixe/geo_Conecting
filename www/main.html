@@ -125,8 +125,14 @@
             FCMPlugin.onTokenRefresh(function(token){
 
                 localStorage.setItem("token", token);
+                if(!token){
+                    FCMPlugin.getToken(function(token){
+                        alert(token);
+                    });
+                }
 
             });
+
 
         }, false);
 
