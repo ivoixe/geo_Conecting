@@ -121,11 +121,7 @@
 
         document.addEventListener('deviceready', function () {
 
-            FCMPlugin.onTokenRefresh(function(token){
 
-                localStorage.setItem("token", token);
-
-            });
 
         }, false);
 
