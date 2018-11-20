@@ -53,6 +53,7 @@ function initialize(lat,log) {
     }
 
     map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions );
+    $('#map-canvas').css( 'height','500px');
     marker = new google.maps.Marker({
         position: latlng,
         icon: 'img/man.png',

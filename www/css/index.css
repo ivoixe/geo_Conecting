@@ -117,3 +117,7 @@ h1 {
     padding:0 15px;
     padding-top:20px;
 }
+.loading {
+    width: 100%;
+    text-align:center !important;
+}

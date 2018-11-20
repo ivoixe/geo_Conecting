@@ -58,6 +58,9 @@
     </script>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <link rel="stylesheet" href="css/onsen/material-design-iconic-font/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="css/onsen/onsen-css-components.min.css">
+    <link  href="css/onsen/onsenui.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" charset="utf-8" src="js/onsenui.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/angular.js"></script>
@@ -65,9 +68,7 @@
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD6cz9NsGdNE_K-eXAsZedHCNEaZRku63s"></script>
 
     <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/onsen/material-design-iconic-font/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="css/onsen/onsen-css-components.min.css">
-    <link  href="css/onsen/onsenui.min.css" rel="stylesheet" type="text/css">
+
     <link  href="css/index.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript" charset="utf-8" src="js/funciones.js"></script>
@@ -78,7 +79,7 @@
 
             recargarHorarios();
 
-            var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
+           var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
             var ahora = new Date();
 
             var datetime = ahora.getDate() + "/"
@@ -89,7 +90,7 @@
             + ahora.getSeconds();
             /*************limpia *************/
 
-            navigator.geolocation.clearWatch(watchID);
+           navigator.geolocation.clearWatch(watchID);
         }, false);
         window.fn = {};
 
@@ -123,7 +124,7 @@
 
             if (typeof FCMPlugin != 'undefined') {
 
-                FCMPlugin.getToken(function (token) {      
+                FCMPlugin.getToken(function (token) {
                     localStorage.setItem("token", token);
                 });
             }
@@ -254,15 +255,6 @@
 
 
 
-        #map-canvas{
-
-
-
-            height:500px;
-
-
-
-        }
 
 
 
@@ -370,7 +362,15 @@
 
         </ons-toolbar>
 
-
+        <ons-row align="center">
+            <ons-col class="loading" align="center">
+                <svg class="progress-circular progress-circular--indeterminate">
+                    <circle class="progress-circular__background"/>
+                    <circle class="progress-circular__primary progress-circular--indeterminate__primary"/>
+                    <circle class="progress-circular__secondary progress-circular--indeterminate__secondary"/>
+                </svg>
+            </ons-col>
+        </ons-row>
 
 
 
@@ -378,7 +378,7 @@
 
 
 
-            <!-- map loads here... -->
+
 
 
 
