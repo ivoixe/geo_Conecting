@@ -112,21 +112,16 @@
                 );
 
         };
-        window.fn.pushPage = function (page, anim) {
 
-        };
-        window.fn.loadLink = function (url) {
+        document.addEventListener('deviceready', function () {
 
-        };
-        ons.ready(function() {
             FCMPlugin.onTokenRefresh(function(token){
 
                 localStorage.setItem("token", token);
 
             });
 
-        });
-
+        }, false);
 
 
 
