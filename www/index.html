@@ -107,17 +107,15 @@
 
             content.load(page)
 
-                .then(
-                    menu.close.bind(menu)
+                .then(function () {
+                    menu.close.bind(menu);
+                    recargarHorarios();
+                    ons.notification('dese');
+                    }
                 );
 
         };
-        window.fn.pushPage = function (page, anim) {
 
-        };
-        window.fn.loadLink = function (url) {
-
-        };
 
         document.addEventListener('deviceready', function () {
 
