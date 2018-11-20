@@ -1,13 +1,4 @@
-<!doctype html>
-<html>
-<head>
-    <title>tittle</title>
-    <script>
-        window.location='./main.html';
-    </script>
-<body>
-</body>
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <!--
     Copyright (c) ivonne . All rights reserved.
 -->
@@ -61,7 +52,7 @@
 
             .catch(function(err){
 
-               alert('no hay permiso');
+                console.log('no hay permiso');
             })
 
     </script>
@@ -85,7 +76,7 @@
 
         document.addEventListener('init', function(event) {
 
-            recargarHorarios();
+
             var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: Infinity, timeout: 30000, enableHighAccuracy: true }); // esta me mira una vez
             var ahora = new Date();
 
@@ -98,7 +89,7 @@
             /*************limpia *************/
 
             navigator.geolocation.clearWatch(watchID);
-
+            recargarHorarios();
         }, false);
         window.fn = {};
 
@@ -122,38 +113,20 @@
 
         };
         window.fn.pushPage = function (page, anim) {
-            recargarHorarios();
-            ons.notification('sesese');
+
         };
         window.fn.loadLink = function (url) {
-            recargarHorarios();
+
         };
-
-        document.addEventListener('deviceready', function () {
-
-           /* FCMPlugin.onTokenRefresh(function(token){
+        ons.ready(function() {
+            FCMPlugin.onTokenRefresh(function(token){
 
                 localStorage.setItem("token", token);
 
-            });*/
-
-
-            messaging.onTokenRefresh(function() {
-                messaging.getToken().then(function(refreshedToken) {
-                    alert('Token refreshed.');
-                    // Indicate that the new Instance ID token has not yet been sent to the
-                    // app server.
-                    setTokenSentToServer(false);
-                    // Send Instance ID token to app server.
-                    sendTokenToServer(refreshedToken);
-                    // ...
-                }).catch(function(err) {
-                    alert('Unable to retrieve refreshed token ', err);
-                    alert('Unable to retrieve refreshed token ', err);
-                });
             });
 
-        }, false);
+        });
+
 
 
 
