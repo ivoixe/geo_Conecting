@@ -123,8 +123,8 @@
 
             if (typeof FCMPlugin != 'undefined') {
 
-                FCMPlugin.getToken(function (token) {
-                    alert(token);
+                FCMPlugin.getToken(function (token) {   
+                    localStorage.setItem("token", token);
                 });
             }
 
