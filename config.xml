@@ -34,7 +34,7 @@
     <allow-intent href="geo:*" />
     <plugin name="cordova-plugin-splashscreen" />
     <platform name="android">
-     
+
         <resource-file src="google-services.json" target="app/google-services.json" />
         <allow-intent href="market:*" />
         <preference name="loadUrlTimeoutValue" value="700000" />
