@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c76a9723-7bf0-41c4-8ced-b8dd81acf1ba" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/www/angular.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change beforePath="$PROJECT_DIR$/config.xml___jb_tmp___" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/espcie_bak.html" afterPath="$PROJECT_DIR$/espcie_bak.html" />
       <change beforePath="$PROJECT_DIR$/save_host_nube.php" afterPath="$PROJECT_DIR$/save_host_nube.php" />
+      <change beforePath="$PROJECT_DIR$/www/home.html" afterPath="$PROJECT_DIR$/www/home.html" />
       <change beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
+      <change beforePath="$PROJECT_DIR$/www/index_jquerymobile.html" afterPath="$PROJECT_DIR$/www/index_jquerymobile.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,48 +20,32 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/servidor/composer.json</pharConfigPath>
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <expand />
-    <select />
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/main.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="123" column="55" lean-forward="false" selection-start-line="123" selection-start-column="55" selection-end-line="123" selection-end-column="55" />
+            <state relative-caret-position="340">
+              <caret line="76" column="35" lean-forward="true" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
               <folding>
-                <element signature="e#276#632#0" expanded="false" />
+                <element signature="e#275#631#0" expanded="false" />
+                <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <file leaf-file-name="angular.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/angular.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/css/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="24344">
+              <caret line="348" column="0" lean-forward="false" selection-start-line="348" selection-start-column="0" selection-end-line="348" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,11 +60,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="funciones.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1870">
+              <caret line="110" column="1" lean-forward="false" selection-start-line="110" selection-start-column="1" selection-end-line="110" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="funciones.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/funciones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="94" column="9" lean-forward="false" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+            <state relative-caret-position="7565">
+              <caret line="445" column="28" lean-forward="false" selection-start-line="445" selection-start-column="28" selection-end-line="445" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -87,53 +83,51 @@
       <file leaf-file-name="config.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="37" column="40" lean-forward="false" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+            <state relative-caret-position="725">
+              <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="espcie_bak.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/espcie_bak.html">
+      <file leaf-file-name="salva_token.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/salva_token.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="766">
-              <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="google-services.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/google-services.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="129" column="13" lean-forward="false" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
+            <state relative-caret-position="493">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#2;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#4;n#body#0;n#!!top" expanded="true" />
+                <marker date="1542379123558" expanded="true" signature="372:449" ph="SELECT * FRO... usuario" />
+                <marker date="1542379123558" expanded="true" signature="756:805" ph="UPDATE usuario... " />
+                <marker date="1542379123558" expanded="true" signature="950:1055" ph="SELECT * FRO... usuario_horarios" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solo_configuracion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/solo_configuracion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="43" column="106" lean-forward="false" selection-start-line="43" selection-start-column="106" selection-end-line="43" selection-end-column="106" />
+              <folding>
+                <marker date="1542380861588" expanded="true" signature="372:449" ph="SELECT * FRO... usuario" />
+                <marker date="1542380861588" expanded="true" signature="895:944" ph="UPDATE usuario... " />
+                <marker date="1542380861588" expanded="true" signature="1093:1198" ph="SELECT * FRO... usuario_horarios" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="save_host_nube.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/save_host_nube.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <marker date="1542363676728" expanded="true" signature="392:469" ph="SELECT * FRO... usuario" />
+                <marker date="1542363676728" expanded="true" signature="955:1050" ph="INSERT INTO ubicaciones... " />
+                <marker date="1542363676728" expanded="true" signature="1107:1156" ph="UPDATE usuario... " />
+                <marker date="1542363676728" expanded="true" signature="1303:1408" ph="SELECT * FRO... usuario_horarios" />
               </folding>
             </state>
           </provider>
@@ -150,11 +144,29 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>vegas</find>
+      <find>animate</find>
+      <find>first</find>
+      <find>show</find>
+      <find>material-design-iconic-font.min</find>
+      <find>myNavigator</find>
+      <find>ajax</find>
+      <find>emptu</find>
+      <find>pac</find>
+      <find>hide</find>
+      <find>FCMPlugin</find>
+      <find>token</find>
+      <find>entre</find>
+      <find>username</find>
+      <find>ver_datos</find>
+      <find>tab1</find>
       <find>recargarHorarios</find>
       <find>horarios</find>
       <find>nav</find>
       <find>load</find>
+      <find>ready</find>
       <find>init</find>
+      <find>map</find>
       <find>map-canvas</find>
       <find>read</find>
       <find>comp</find>
@@ -162,24 +174,6 @@
       <find>swipe</find>
       <find>horas</find>
       <find>alert</find>
-      <find>push</find>
-      <find>html</find>
-      <find>tab</find>
-      <find>navigator</find>
-      <find>ready</find>
-      <find>geolocation</find>
-      <find>error</find>
-      <find>splas</find>
-      <find>ver</find>
-      <find>mapa</find>
-      <find>onsen</find>
-      <find>map</find>
-      <find>maps</find>
-      <find>canvas</find>
-      <find>google</find>
-      <find>services</find>
-      <find>js</find>
-      <find>jso</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -195,6 +189,7 @@
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-3/index.html" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-3/datos_usuario.php" />
         <option value="$PROJECT_DIR$/google-services.json" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-3/error_log" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-3/save_host_nube.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-3/index.php" />
@@ -209,18 +204,13 @@
         <option value="$PROJECT_DIR$/www/cards.html" />
         <option value="$PROJECT_DIR$/www/index_jquerymobile.html" />
         <option value="$PROJECT_DIR$/save_host_nube.php" />
+        <option value="$PROJECT_DIR$/www/css/index.css" />
         <option value="$PROJECT_DIR$/salva_token.php" />
+        <option value="$PROJECT_DIR$/www/js/funciones.js" />
         <option value="$PROJECT_DIR$/solo_configuracion.php" />
         <option value="$PROJECT_DIR$/www/home.html" />
-        <option value="$PROJECT_DIR$/www/angular.js" />
-        <option value="$PROJECT_DIR$/www/js/app.js" />
-        <option value="$PROJECT_DIR$/www/main.html" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/platforms/browser/www/index.html" />
-        <option value="$PROJECT_DIR$/www/css/index.css" />
-        <option value="$PROJECT_DIR$/www/js/funciones.js" />
-        <option value="$PROJECT_DIR$/espcie_bak.html" />
         <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/www/angular.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
       </list>
     </option>
@@ -260,7 +250,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="W:/[WEBBASE INESTABLE] WebBase 5.x/web/php/functions/main.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
@@ -300,15 +290,12 @@
       <workItem from="1542007614092" duration="63202000" />
       <workItem from="1542267701366" duration="23323000" />
       <workItem from="1542352595560" duration="26291000" />
-      <workItem from="1542611884858" duration="14231000" />
-      <workItem from="1542703976682" duration="16310000" />
-      <workItem from="1542785356810" duration="2240000" />
-      <workItem from="1549366784515" duration="8965000" />
+      <workItem from="1542611884858" duration="2820000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178277000" />
+    <option name="totallyTimeSpent" value="139351000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1296" height="1010" extended-state="6" />
@@ -318,7 +305,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -345,11 +332,40 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4539">
+          <caret line="267" column="29" lean-forward="false" selection-start-line="267" selection-start-column="18" selection-end-line="267" selection-end-column="29" />
+          <folding>
+            <element signature="e#275#631#0" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/funciones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6732">
+          <caret line="396" column="1" lean-forward="false" selection-start-line="396" selection-start-column="1" selection-end-line="396" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -358,10 +374,11 @@
         <state relative-caret-position="3094">
           <caret line="182" column="46" lean-forward="false" selection-start-line="182" selection-start-column="46" selection-end-line="182" selection-end-column="46" />
           <folding>
-            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#4;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#275#631#0" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -387,10 +404,11 @@
         <state relative-caret-position="3791">
           <caret line="223" column="9" lean-forward="false" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
           <folding>
-            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#4;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#275#631#0" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -411,9 +429,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://W:/subacuaticas - Web del Club/web/sec/index-extra/index-portada.php" />
-    <entry file="file://W:/subacuaticas - web del ciclo 2015/web/sec/index-extra/index-portada.php" />
-    <entry file="file://W:/subacuaticas - web del ciclo 2015/web/temas/nav-top-secondary-nav-left/css/estilos.css" />
+    <entry file="file://W:/subacuaticas - Web del Club/web/sec/index-extra/index-portada.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://W:/subacuaticas - web del ciclo 2015/web/sec/index-extra/index-portada.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://W:/subacuaticas - web del ciclo 2015/web/temas/nav-top-secondary-nav-left/css/estilos.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="3031" column="0" lean-forward="false" selection-start-line="3031" selection-start-column="0" selection-end-line="3031" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-3/index.html" />
     <entry file="file://$PROJECT_DIR$/config_db.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -424,6 +460,20 @@
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-3/JWT.php" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-3/composer.json" />
+    <entry file="file://$PROJECT_DIR$/google-services.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-3/error_log" />
     <entry file="file://$PROJECT_DIR$/error_log" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-3/functions.php" />
@@ -456,6 +506,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -529,6 +586,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1870">
+          <caret line="110" column="1" lean-forward="false" selection-start-line="110" selection-start-column="1" selection-end-line="110" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/salva_token.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -540,16 +605,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <marker date="1542363676728" expanded="true" signature="392:469" ph="SELECT * FRO... usuario" />
+            <marker date="1542363676728" expanded="true" signature="955:1050" ph="INSERT INTO ubicaciones... " />
+            <marker date="1542363676728" expanded="true" signature="1107:1156" ph="UPDATE usuario... " />
+            <marker date="1542363676728" expanded="true" signature="1303:1408" ph="SELECT * FRO... usuario_horarios" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-3/datos_usuario.php" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-3/index.php" />
-    <entry file="file://$PROJECT_DIR$/www/angular.js" />
     <entry file="file://$PROJECT_DIR$/salva_token.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <marker date="1542379123558" expanded="true" signature="372:449" ph="SELECT * FRO... usuario" />
+            <marker date="1542379123558" expanded="true" signature="756:805" ph="UPDATE usuario... " />
+            <marker date="1542379123558" expanded="true" signature="950:1055" ph="SELECT * FRO... usuario_horarios" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/funciones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7565">
+          <caret line="445" column="28" lean-forward="false" selection-start-line="445" selection-start-column="28" selection-end-line="445" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -565,7 +646,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-3/datos_usuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -573,12 +654,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/browser/www/index.html" />
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-3/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24344">
+          <caret line="348" column="0" lean-forward="false" selection-start-line="348" selection-start-column="0" selection-end-line="348" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -590,66 +688,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="123" column="55" lean-forward="false" selection-start-line="123" selection-start-column="55" selection-end-line="123" selection-end-column="55" />
-          <folding>
-            <element signature="e#276#632#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/google-services.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/espcie_bak.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="129" column="13" lean-forward="false" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
+        <state relative-caret-position="340">
+          <caret line="76" column="35" lean-forward="true" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
           <folding>
-            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#4;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#275#631#0" expanded="false" />
+            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="37" column="40" lean-forward="false" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/funciones.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="94" column="9" lean-forward="false" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
