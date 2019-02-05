@@ -112,4 +112,5 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="3000" />
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
 </widget>
