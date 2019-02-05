@@ -34,7 +34,8 @@
     <allow-intent href="geo:*" />
     <plugin name="cordova-plugin-splashscreen" />
     <platform name="android">
-        <resource-file src="google-services.json" target="google-services.json" />
+     
+        <resource-file src="google-services.json" target="app/google-services.json" />
         <allow-intent href="market:*" />
         <preference name="loadUrlTimeoutValue" value="700000" />
         <feature name="Sim">
@@ -101,7 +102,7 @@
     <plugin name="cordova-plugin-background-mode"  />
     <plugin name="cordova-background-geolocation-lt">
         <variable name="LICENSE" value="YOUR_LICENSE_KEY" />
-        <variable name="GOOGLE_API_VERSION" value="16.0.1" />
+        <variable name="GOOGLE_API_VERSION" value="15.0.1" />
         <variable name="APPCOMPAT_VERSION" value="27.1.1" />
         <variable name="LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION" value="Always use is required for background location tracking" />
         <variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Background location-tracking is required" />
@@ -112,6 +113,6 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="3000" />
-    <gap:plugin name="cordova-plugin-local-notification" source="npm" /> 
+    <gap:plugin name="cordova-plugin-local-notification" source="npm" />
 
 </widget>
