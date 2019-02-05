@@ -114,4 +114,4 @@
     <preference name="SplashScreenDelay" value="3000" />
 
     <gap:plugin name="cordova-plugin-local-notification" source="npm" />
-</widget> 
+</widget>
