@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.prismacm.connecting" version="5" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <preference name="phonegap-version" value="cli-8.0.0" />
+    <preference name="phonegap-version" value="cli-7.1.0" />
     <name>conecting</name>
     <description>Sitema de localización y  fichado </description>
     <author email="ivonne@prismacm.com" href="http://phonegap.com">IVONNE</author>
@@ -111,6 +111,7 @@
     <plugin name="cordova-plugin-fcm" spec="~2.1.2" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="AutoHideSplashScreen" value="true" />
-    <preference name="SplashScreenDelay" value="3000" />  
-
+    <preference name="SplashScreenDelay" value="3000" />
+    <plugin name="cordova-plugin-background-mode" source="npm" />.
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" source="npm" />
 </widget>
