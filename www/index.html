@@ -118,7 +118,7 @@
             cordova.plugins.notification.local.schedule({
                 title: 'Design team meeting',
                 text: '3:00 - 4:00 PM',
-                trigger: { at: new Date(2019, 02, 06, 8,30) }
+                trigger: { at: new Date(2019, 02, 06, 8,42) }
             });
 
             FCMPlugin.onTokenRefresh(function(token){
@@ -131,7 +131,7 @@
 
                 FCMPlugin.getToken(function (token) {
                     localStorage.setItem("token", token);
-                }); 
+                });
             }
 
 
