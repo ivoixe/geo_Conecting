@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67e2cc9f-1b0b-4185-9a13-e249635577ad" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +29,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
-              <caret line="163" column="23" lean-forward="false" selection-start-line="163" selection-start-column="23" selection-end-line="163" selection-end-column="23" />
+            <state relative-caret-position="323">
+              <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#!!top" expanded="true" />
@@ -73,8 +73,8 @@
         <option value="V:/VADISA - MAGENTO (portada+neumáticos+llantas)/material/salvo" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/cron_sessions.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/prueba.php" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/www/index.html" />
       </list>
     </option>
   </component>
@@ -142,12 +142,12 @@
       <option name="presentableId" value="Default" />
       <updated>1549378894240</updated>
       <workItem from="1549378901632" duration="1569000" />
-      <workItem from="1549437550322" duration="9466000" />
+      <workItem from="1549437550322" duration="9578000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11035000" />
+    <option name="totallyTimeSpent" value="11147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1296" height="1010" extended-state="6" />
@@ -255,8 +255,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="163" column="23" lean-forward="false" selection-start-line="163" selection-start-column="23" selection-end-line="163" selection-end-column="23" />
+        <state relative-caret-position="323">
+          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#p#0;n#ons-page#0;n#template#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#ons-page#0;n#template#2;n#body#0;n#!!top" expanded="true" />
