@@ -859,7 +859,7 @@
             // showToast('canceled: ' + notification.id);
         });
 
-        cordova.plugins.notification.local.on('clear', function (notification) { 
+        cordova.plugins.notification.local.on('clear', function (notification) {
             console.log('onclear', arguments);
             showToast('cleared: ' + notification.id);
         });
