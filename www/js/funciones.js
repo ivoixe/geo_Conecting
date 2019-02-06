@@ -477,3 +477,56 @@ function save(){
 
 
 }
+function ver_notificacion(){
+
+
+    /********************************************/
+    cordova.plugins.notification.local.hasPermission(function (granted) {
+        alert('sssss');
+        if( granted == false ) {
+
+            alert("No permission");
+// If app doesnt have permission request it
+            cordova.plugin.notification.local.registerPermission(function (granted) {
+
+                console.warn("Ask for permission");
+                if( granted == true ) {
+
+                    console.warn("Permission accepted");
+// If app is given permission try again
+                    testNotifications();
+
+                } else {
+                    alert("We need permission to show you notifications");
+                }
+
+            });
+        } else {
+
+            var pathArray = window.location.pathname.split( "/www/" ),
+                secondLevelLocation = window.location.protocol +"//"+ pathArray[0],
+                now = new Date();
+
+
+            alert("sending notification");
+
+            var isAndroid = false;
+
+            if ( device.platform === "Android" ) {
+                isAndroid = true;
+            }
+
+            cordova.plugin.notification.local.schedule({
+                id: 9,
+                title: "Test notification 9",
+                text: "This is a test notification",
+
+                at: new Date( new Date().getTime() + 10 )
+// data: { secret:key }
+            });
+
+        }
+    });
+
+    /************************************************/
+}
