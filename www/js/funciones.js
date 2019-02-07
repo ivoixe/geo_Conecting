@@ -516,10 +516,10 @@ function ver_notificacion(){
                 isAndroid = true;
             }
 
-            cordova.plugins.notification.local.schedule({   
+            cordova.plugins.notification.local.schedule({
                 id: 1,
                 text: 'Scheduled every WEEKDAY',
-                trigger: {every: {weekday:4, hour:9,minute:20}},
+                trigger: {every: {weekday:4, hour:9,minute:30}},
                 sound: sound,
                 icon: 'res://icon',
                 smallIcon: 'res://ic_popup_sync'
