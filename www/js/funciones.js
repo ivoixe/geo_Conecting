@@ -508,7 +508,7 @@ function ver_notificacion(){
                 now = new Date();
 
 
-            alert("sending notification");
+            //alert("sending notification");
 
             var isAndroid = false;
 
@@ -519,7 +519,7 @@ function ver_notificacion(){
             try{
                 cordova.plugins.notification.local.schedule({
                     id : "2",
-                    at: new Date(now + 10000),
+                    at: new Date(now + 100000),
                     text : "Testing 1..2..3"
                 });
             } catch (e) {
