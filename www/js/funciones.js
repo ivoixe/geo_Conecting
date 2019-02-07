@@ -507,13 +507,10 @@ function ver_notificacion(){
                 secondLevelLocation = window.location.protocol +"//"+ pathArray[0],
 
             momentOfTime = new Date(); // just for example, can be any other time
-            myTimeSpan = 2*60*1000; // 5 minutes in milliseconds
-            momentOfTime.setTime(momentOfTime.getTime() + myTimeSpan);
-            //despues
 
-            momentOfdos = new Date(); // just for example, can be any other time
-            myTimeSpan = 5*60*1000; // 5 minutes in milliseconds
-            momentOfdos.setTime(momentOfdos.getTime() + myTimeSpan);
+           var  myTimeSpan = 2*60*1000; // 5 minutes in milliseconds
+            momentOfTime.setTime(momentOfTime.getTime() + myTimeSpan);
+
 
             //alert("sending notification");
 
@@ -527,8 +524,7 @@ function ver_notificacion(){
                 cordova.plugins.notification.local.schedule({
                     id : "7",
                     at: momentOfTime,
-                    text : "k" + momentOfTime,
-                    trigger: {at: momentOfdos},
+                    text : "k" ,
                     foreground: true
                 });
             } catch (e) {
