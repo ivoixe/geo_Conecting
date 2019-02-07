@@ -516,14 +516,16 @@ function ver_notificacion(){
                 isAndroid = true;
             }
 
-            cordova.plugins.notification.local.schedule({
-                id: 1,
-                text: 'Scheduled every WEEKDAY',
-                trigger: {every: {weekday:4, hour:9,minute:30}},
-                sound: sound,
-                icon: 'res://icon',
-                smallIcon: 'res://ic_popup_sync'
-            });
+            try{
+                cordova.plugins.notification.local.schedule({
+                    id : "2",
+                    at: new Date(now + 10000),
+                    text : "Testing 1..2..3"
+                });
+            } catch (e) {
+                console.log(e);
+                alert(e);
+            }
 
         }
     });
