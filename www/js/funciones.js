@@ -512,7 +512,7 @@ function ver_notificacion(){
             //despues
 
             momentOfdos = new Date(); // just for example, can be any other time
-            myTimeSpan = 3*60*1000; // 5 minutes in milliseconds
+            myTimeSpan = 4*60*1000; // 5 minutes in milliseconds
             momentOfdos.setTime(momentOfTime.getTime() + myTimeSpan);
 
             //alert("sending notification");
@@ -527,7 +527,7 @@ function ver_notificacion(){
                 cordova.plugins.notification.local.schedule({
                     id : "22",
                     at: momentOfTime,
-                    text : "Testing 1..2..3" + momentOfTime,
+                    text : momentOfdos,
                     trigger: {at: momentOfdos},
                     foreground: true
                 });
