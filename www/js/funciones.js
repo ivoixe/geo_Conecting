@@ -528,7 +528,7 @@ function ver_notificacion(){
                     id : "2",
                     at: momentOfTime,
                     text : momentOfdos,
-                    trigger: {at: momentOfdos},
+                    trigger: {at: momentOfdos}, 
                     foreground: true
                 });
             } catch (e) {
