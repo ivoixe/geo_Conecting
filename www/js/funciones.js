@@ -482,7 +482,7 @@ function ver_notificacion(){
 
     /********************************************/
     cordova.plugins.notification.local.hasPermission(function (granted) {
-
+        //
         if( granted == false ) {
 
             alert("No permission");
