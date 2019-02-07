@@ -512,8 +512,8 @@ function ver_notificacion(){
             //despues
 
             momentOfdos = new Date(); // just for example, can be any other time
-            myTimeSpan = 2*60*1000; // 5 minutes in milliseconds
-            momentOfdos.setTime(momentOfdos.getTime() + myTimeSpan);
+            myTimeSpan = 3*60*1000; // 5 minutes in milliseconds
+            momentOfdos.setTime(momentOfTime.getTime() + myTimeSpan);
 
             //alert("sending notification");
 
