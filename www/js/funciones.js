@@ -562,14 +562,12 @@ this.localNotifications.schedule(this.localNotificationsArray);
                     /******************************************************/
                     dtTodap = new Date(item.horario_entrada);
                     localNotificationsArray.push({
-                        id : item.id,
+                        id : i,
                         at: dtTodap,
                         text : "Testing 1..2..3" + dtTodap,
                         foreground: true
 
                     });
-
-
 
                 });
                 alert(localNotificationsArray);
