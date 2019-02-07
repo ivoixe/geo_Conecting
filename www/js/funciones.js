@@ -478,11 +478,17 @@ function save(){
 
 }
 function ver_notificacion(){
+    var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
+    var   dtTodap = new Date();
+
+
 
 
     /********************************************/
     cordova.plugins.notification.local.hasPermission(function (granted) {
-        //
+        //obtenemos los horarios
+
+
         if( granted == false ) {
 
             alert("No permission");
@@ -494,7 +500,7 @@ function ver_notificacion(){
 
                     console.warn("Permission accepted");
 // If app is given permission try again
-                    testNotifications();
+                   // testNotifications();
 
                 } else {
                     alert("We need permission to show you notifications");
@@ -522,7 +528,7 @@ function ver_notificacion(){
             }
 
             try{
-                cordova.plugins.notification.local.schedule([{
+              /*  cordova.plugins.notification.local.schedule([{
                     id : "888",
                     at: momentOfTime,
                     text : "Testing 1..2..3" + momentOfTime,
@@ -532,7 +538,45 @@ function ver_notificacion(){
                     at: dtToday,
                     text : "T3" + dtToday,
                     foreground: true
-                }]);
+                }]);*/
+
+              /*
+              * this.localNotificationsArray = [];
+this.tempTaskList.forEach( data =>{
+    this.localNotificationsArray.push({
+       id: 1,
+       text: data.yourTask,
+       title: data.title,
+       icon: 'http://example.com/icon.png'
+       data: { secret:key }
+      }
+    });
+});
+this.localNotifications.schedule(this.localNotificationsArray);
+              *
+              *
+              *
+              * */
+                var localNotification =[];
+                $.each(horario_descargado, function(i, item) {
+                    /******************************************************/
+                    dtTodap = new Date(item.horario_entrada);
+                    localNotificationsArray.push({
+                        id : item.id,
+                        at: dtTodap,
+                        text : "Testing 1..2..3" + dtTodap,
+                        foreground: true
+
+                    });
+
+
+
+                });
+                alert(localNotificationsArray);
+                cordova.plugins.notification.local.schedule(localNotificationsArray);
+
+
+
             } catch (e) {
                 console.log(e);
                 alert(e);
