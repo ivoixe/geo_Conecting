@@ -114,24 +114,24 @@
 
         };
 
-        document.addEventListener('deviceready', function () {
+            document.addEventListener('deviceready', function () {
 
+                ver_notificacion();
+                FCMPlugin.onTokenRefresh(function(token){
 
-            FCMPlugin.onTokenRefresh(function(token){
-
-                localStorage.setItem("token", token);
-
-            });
-
-            if (typeof FCMPlugin != 'undefined') {
-
-                FCMPlugin.getToken(function (token) {
                     localStorage.setItem("token", token);
+
                 });
-            }
+
+                if (typeof FCMPlugin != 'undefined') {
+
+                    FCMPlugin.getToken(function (token) {
+                        localStorage.setItem("token", token);
+                    });
+                }
 
 
-        }, false);
+            }, false);
 
 
 
