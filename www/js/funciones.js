@@ -520,7 +520,7 @@ function ver_notificacion(){
                 cordova.plugins.notification.local.schedule({
                     id : "2",
                     at: new Date(now + 10000),
-                    text : "Testing 1..2..3"
+                    text : "Testing 1..2..3" +new Date(now + 10000)
                 });
             } catch (e) {
                 console.log(e);
