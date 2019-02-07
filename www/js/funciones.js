@@ -482,7 +482,7 @@ function ver_notificacion(){
 
     /********************************************/
     cordova.plugins.notification.local.hasPermission(function (granted) {
-        alert('sssss');
+
         if( granted == false ) {
 
             alert("No permission");
@@ -516,13 +516,13 @@ function ver_notificacion(){
                 isAndroid = true;
             }
 
-            cordova.plugin.notification.local.schedule({
-                id: 9,
-                title: "Test notification 9",
-                text: "This is a test notification",
-
-                at: new Date( new Date().getTime() + 10 )
-// data: { secret:key }
+            cordova.plugins.notification.local.schedule({
+                id: 1,
+                text: 'Scheduled every WEEKDAY',
+                trigger: {every: {weekday:4, hour:9,minute:20}},
+                sound: sound,
+                icon: 'res://icon',
+                smallIcon: 'res://ic_popup_sync'
             });
 
         }
