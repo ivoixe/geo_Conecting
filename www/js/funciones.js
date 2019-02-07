@@ -521,27 +521,12 @@ function ver_notificacion(){
 
             try{
                 cordova.plugins.notification.local.schedule({
-                    id : "98989898",
+                    id : "momentOfTime",
                     at: momentOfTime,
                     text : "una" + momentOfTime,
                     foreground: true
                 });
-                myTimeSpan = 4*60*1000; // 5 minutes in milliseconds
-                momentOfTime.setTime(momentOfTime.getTime() + myTimeSpan);
-                cordova.plugins.notification.local.schedule({
-                    id : "98989899",
-                    at: momentOfTime,
-                    text : "dos" + momentOfTime,
-                    foreground: true
-                });
-                myTimeSpan = 5*60*1000; // 5 minutes in milliseconds
-                momentOfTime.setTime(momentOfTime.getTime() + myTimeSpan);
-                cordova.plugins.notification.local.schedule({
-                    id : "98989999",
-                    at: momentOfTime,
-                    text : "tres" + momentOfTime,
-                    foreground: true
-                });
+
             } catch (e) {
                 console.log(e);
                 alert(e);
