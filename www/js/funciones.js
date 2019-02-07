@@ -520,12 +520,17 @@ function ver_notificacion(){
             }
 
             try{
-                cordova.plugins.notification.local.schedule({
-                    id : "2019",
+                cordova.plugins.notification.local.schedule([{
+                    id : "2021",
                     at: momentOfTime,
                     text : "Testing 1..2..3" + momentOfTime,
                     foreground: true
-                });
+                },{
+                    id : "2022",
+                    at: momentOfTime,
+                    text : "T3" + momentOfTime,
+                    foreground: true
+                }]);
             } catch (e) {
                 console.log(e);
                 alert(e);
