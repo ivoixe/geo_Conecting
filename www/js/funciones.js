@@ -525,10 +525,10 @@ function ver_notificacion(){
 
             try{
                 cordova.plugins.notification.local.schedule({
-                    id : "2",
+                    id : "7",
                     at: momentOfTime,
-                    text : momentOfdos,
-                    trigger: {at: momentOfdos}, 
+                    text : "k" + momentOfTime,
+                    trigger: {at: momentOfdos},
                     foreground: true
                 });
             } catch (e) {
