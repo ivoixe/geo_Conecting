@@ -505,7 +505,10 @@ function ver_notificacion(){
 
             var pathArray = window.location.pathname.split( "/www/" ),
                 secondLevelLocation = window.location.protocol +"//"+ pathArray[0],
-                now = new Date();
+
+            momentOfTime = new Date(); // just for example, can be any other time
+            myTimeSpan = 5*60*1000; // 5 minutes in milliseconds
+            momentOfTime.setTime(momentOfTime.getTime() + myTimeSpan);
 
 
             //alert("sending notification");
@@ -519,8 +522,8 @@ function ver_notificacion(){
             try{
                 cordova.plugins.notification.local.schedule({
                     id : "2",
-                    at:  new Date(now + 60*1000),
-                    text : "Testing 1..2..3" + new Date(now + 60*1000),
+                    at: momentOfTime,
+                    text : "Testing 1..2..3" + momentOfTime,
                     foreground: true
                 });
             } catch (e) {
