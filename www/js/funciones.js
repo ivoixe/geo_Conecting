@@ -501,7 +501,7 @@ function ver_notificacion(){
 
     /********************************************/
     cordova.plugins.notification.local.hasPermission(function (granted) {
-        //obtenemos los horarios
+        //obtenemos los horarios 
 
 
         if( granted == false ) {
