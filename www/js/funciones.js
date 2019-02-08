@@ -481,6 +481,20 @@ function save(){
 function ver_notificacion(){
     var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
     var   dtTodap = new Date();
+    var localNotificationsArray =[];
+    $.each(horario_descargado, function(i, item) {
+        /******************************************************/
+        dtTodap = new Date(item.horario_entrada);
+        localNotificationsArray.push({
+            id : i,
+            at: dtTodap,
+            text : "Testing 1..2..3" + dtTodap,
+            foreground: true
+
+        });
+
+    });
+
 
 
 
@@ -558,20 +572,7 @@ this.localNotifications.schedule(this.localNotificationsArray);
               *
               *
               * */
-                var localNotification =[];
-                $.each(horario_descargado, function(i, item) {
-                    /******************************************************/
-                    dtTodap = new Date(item.horario_entrada);
-                    localNotificationsArray.push({
-                        id : i,
-                        at: dtTodap,
-                        text : "Testing 1..2..3" + dtTodap,
-                        foreground: true
 
-                    });
-
-                });
-              alert(localNotificationsArray);
                 cordova.plugins.notification.local.schedule(localNotificationsArray);
 
 
