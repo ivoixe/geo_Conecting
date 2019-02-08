@@ -463,6 +463,7 @@ function save(){
                 localStorage.removeItem('horarios');
                 localStorage.setItem('horarios',JSON.stringify(datos));
                 ons.notification.alert(resp.mensaje);
+                ver_notificacion();
             }
 
         },
@@ -570,7 +571,7 @@ this.localNotifications.schedule(this.localNotificationsArray);
                     });
 
                 });
-                alert(localNotificationsArray);
+              alert(localNotificationsArray);
                 cordova.plugins.notification.local.schedule(localNotificationsArray);
 
 
