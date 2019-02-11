@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.prismacm.connecting" version="5" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <preference name="phonegap-version" value="cli-8.0.0" />
+    <preference name="phonegap-version" value="cli-7.1.0" />
     <name>conecting</name>
     <description>Sitema de localización y  fichado </description>
     <author email="ivonne@prismacm.com" href="http://phonegap.com">IVONNE</author>
@@ -35,7 +35,7 @@
     <plugin name="cordova-plugin-splashscreen" />
     <platform name="android">
 
-        <resource-file src="google-services.json" target="google-services.json" />
+        <resource-file src="app/google-services.json" target="app/google-services.json" />
         <allow-intent href="market:*" />
         <preference name="loadUrlTimeoutValue" value="700000" />
         <feature name="Sim">
@@ -115,5 +115,6 @@
     <preference name="SplashScreenDelay" value="3000" />
     <gap:plugin name="cordova-plugin-local-notification" source="npm" />
     <plugin name="cordova-plugin-fcm" source="npm" />
+
 
 </widget>
