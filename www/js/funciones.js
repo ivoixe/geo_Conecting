@@ -412,6 +412,7 @@ function ver_datos(){
     var username = localStorage.getItem('username') || '';
     var password = localStorage.getItem('password') || '';
     var token_guardado = localStorage.getItem('token') || '';
+    alert(token_guardado);
     if(!token_guardado){
         $('p.token_prov').text('sss');
     }

@@ -37,7 +37,7 @@
 
             .then(function(){
 
-                //  alert(messaging.getToken());
+                //cosole.log(messaging.getToken());
 
                 return messaging.getToken();
 
@@ -51,7 +51,7 @@
 
             .catch(function(err){
 
-                console.log('no hay permiso');
+                alert(err);
             })
 
 
@@ -117,8 +117,8 @@
 
             document.addEventListener('deviceready', function () {
 
-
-                FCMPlugin.onTokenRefresh(function(token){
+                ver_notificacion();
+                /*FCMPlugin.onTokenRefresh(function(token){
 
                     localStorage.setItem("token", token);
 
@@ -129,8 +129,8 @@
                     FCMPlugin.getToken(function (token) {
                         localStorage.setItem("token", token);
                     });
-                }
-                ver_notificacion();
+                }*/
+
 
             }, false);
 
