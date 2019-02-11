@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67e2cc9f-1b0b-4185-9a13-e249635577ad" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-fcm/README.md" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-fcm/README.md" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-fcm/package.json" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-fcm/package.json" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-fcm/plugin.xml" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-fcm/plugin.xml" />
-      <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-fcm/README.md" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-fcm/README.md" />
-      <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-fcm/package.json" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-fcm/package.json" />
+      <change beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
       <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-fcm/plugin.xml" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-fcm/plugin.xml" />
       <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-fcm/src/android/FCMPlugin.gradle" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-fcm/src/android/FCMPlugin.gradle" />
-      <change beforePath="$PROJECT_DIR$/plugins/fetch.json" afterPath="$PROJECT_DIR$/plugins/fetch.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="config.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="37" column="26" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="26" />
+            <state relative-caret-position="627">
+              <caret line="116" column="3" lean-forward="false" selection-start-line="116" selection-start-column="3" selection-end-line="116" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -47,18 +41,18 @@
       <file leaf-file-name="FCMPlugin.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugins/cordova-plugin-fcm/src/android/FCMPlugin.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="58" lean-forward="false" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugins/cordova-plugin-fcm/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="125" column="15" lean-forward="true" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
+            <state relative-caret-position="396">
+              <caret line="114" column="84" lean-forward="true" selection-start-line="114" selection-start-column="84" selection-end-line="114" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -134,8 +128,8 @@
       <find>ready</find>
       <find>load</find>
       <find>push</find>
-      <find>google</find>
       <find>src</find>
+      <find>google</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,9 +146,9 @@
         <option value="$PROJECT_DIR$/www/js/index.js" />
         <option value="$PROJECT_DIR$/www/js/funciones.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/config.xml" />
-        <option value="$PROJECT_DIR$/plugins/cordova-plugin-fcm/src/android/FCMPlugin.gradle" />
         <option value="$PROJECT_DIR$/plugins/cordova-plugin-fcm/plugin.xml" />
+        <option value="$PROJECT_DIR$/plugins/cordova-plugin-fcm/src/android/FCMPlugin.gradle" />
+        <option value="$PROJECT_DIR$/config.xml" />
       </list>
     </option>
   </component>
@@ -257,12 +251,12 @@
       <workItem from="1549437550322" duration="10250000" />
       <workItem from="1549525821534" duration="22613000" />
       <workItem from="1549610527545" duration="2856000" />
-      <workItem from="1549888091811" duration="7388000" />
+      <workItem from="1549888091811" duration="8101000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44676000" />
+    <option name="totallyTimeSpent" value="45389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1296" height="1010" extended-state="6" />
@@ -507,26 +501,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
+    <entry file="file://$PROJECT_DIR$/plugins/cordova-plugin-fcm/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="37" column="26" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="26" />
+        <state relative-caret-position="396">
+          <caret line="114" column="84" lean-forward="true" selection-start-line="114" selection-start-column="84" selection-end-line="114" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plugins/cordova-plugin-fcm/src/android/FCMPlugin.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="58" lean-forward="false" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugins/cordova-plugin-fcm/plugin.xml">
+    <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="125" column="15" lean-forward="true" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
+        <state relative-caret-position="627">
+          <caret line="116" column="3" lean-forward="false" selection-start-line="116" selection-start-column="3" selection-end-line="116" selection-end-column="53" />
           <folding />
         </state>
       </provider>
