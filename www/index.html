@@ -116,7 +116,7 @@
 
             document.addEventListener('deviceready', function () {
 
-                ver_notificacion();
+
                 FCMPlugin.onTokenRefresh(function(token){
 
                     localStorage.setItem("token", token);
@@ -129,7 +129,7 @@
                         localStorage.setItem("token", token);
                     });
                 }
-
+                ver_notificacion();
 
             }, false);
 
