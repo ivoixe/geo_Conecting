@@ -413,7 +413,7 @@ function ver_datos(){
     var password = localStorage.getItem('password') || '';
     var token_guardado = localStorage.getItem('token') || '';
     if(!token_guardado){
-
+        $('p.token_prov').text('sss');
     }
     $('#username').val(username);
     $('#password').val(password);
