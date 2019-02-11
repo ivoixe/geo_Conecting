@@ -40,7 +40,8 @@
   },
   "homepage": "https://github.com/fechanique/cordova-plugin-fcm#readme",
   "_id": "cordova-plugin-fcm@2.1.1",
-  "_shasum": "7123310b655f72b6ee20203d48662f0b50079dee",
-  "_from": "git+https://github.com/lp1bp/cordova-plugin-fcm.git",
-  "_resolved": "git+https://github.com/lp1bp/cordova-plugin-fcm.git#b6da5ea3d57b40dae4d720dfe886e408522f678e"
+  "_shasum": "457904504a83b6f65cf06b9c908c81640d93e173",
+  "_from": "plugins\\cordova-plugin-fcm",
+  "_resolved": "file:plugins\\cordova-plugin-fcm",
+  "scripts": {}
 }

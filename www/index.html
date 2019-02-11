@@ -105,6 +105,19 @@
         window.fn.load = function(page) {
             var content = document.getElementById('content');
             var menu = document.getElementById('menu');
+            FCMPlugin.onTokenRefresh(function(token){
+
+                localStorage.setItem("token", token);
+
+            });
+
+            if (typeof FCMPlugin != 'undefined') {
+
+                FCMPlugin.getToken(function (token) {
+                    alert(token);
+                    localStorage.setItem("token", token);
+                });
+            }
 
             content.load(page)
 
