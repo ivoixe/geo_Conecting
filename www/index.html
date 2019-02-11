@@ -27,6 +27,31 @@
             messagingSenderId: "953842536904"
         };
 
+        var app=  firebase.initializeApp(config);
+
+
+        var aut= app.auth();
+        const messaging = firebase.messaging();
+
+        messaging.requestPermission()
+
+            .then(function(){
+
+               alert(messaging.getToken());
+
+                return messaging.getToken();
+
+            })
+
+            .then(function (token){
+                alert(token);
+                localStorage.setItem("token", token);
+            })
+
+            .catch(function(err){
+
+                alert(err.message);
+            })
 
 
 
@@ -92,33 +117,7 @@
             document.addEventListener('deviceready', function () {
 
                 ver_notificacion();
-                var app=  firebase.initializeApp(config);
-
-
-                var aut= app.auth();
-                const messaging = firebase.messaging();
-
-                messaging.requestPermission()
-
-                    .then(function(){
-
-                        alert(messaging.getToken());
-
-                        return messaging.getToken();
-
-                    })
-
-                    .then(function (token){
-                        alert(token);
-                        localStorage.setItem("token", token);
-                    })
-
-                    .catch(function(err){
-
-                        alert(err.message);
-                    })
-
-                /*FCMPlugin.onTokenRefresh(function(token){
+                FCMPlugin.onTokenRefresh(function(token){
 
                     localStorage.setItem("token", token);
 
@@ -127,9 +126,10 @@
                 if (typeof FCMPlugin != 'undefined') {
 
                     FCMPlugin.getToken(function (token) {
+                        alert(token);
                         localStorage.setItem("token", token);
                     });
-                }*/
+                }
 
 
             }, false);
