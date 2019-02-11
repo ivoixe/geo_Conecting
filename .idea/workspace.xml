@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="67e2cc9f-1b0b-4185-9a13-e249635577ad" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-fcm/plugin.xml" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-fcm/plugin.xml" />
-      <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-fcm/src/android/FCMPlugin.gradle" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-fcm/src/android/FCMPlugin.gradle" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/config.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="627">
-              <caret line="116" column="3" lean-forward="false" selection-start-line="116" selection-start-column="3" selection-end-line="116" selection-end-column="53" />
+              <caret line="116" column="54" lean-forward="false" selection-start-line="116" selection-start-column="54" selection-end-line="116" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -251,12 +249,12 @@
       <workItem from="1549437550322" duration="10250000" />
       <workItem from="1549525821534" duration="22613000" />
       <workItem from="1549610527545" duration="2856000" />
-      <workItem from="1549888091811" duration="8101000" />
+      <workItem from="1549888091811" duration="8124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45389000" />
+    <option name="totallyTimeSpent" value="45412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1296" height="1010" extended-state="6" />
@@ -520,7 +518,7 @@
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
-          <caret line="116" column="3" lean-forward="false" selection-start-line="116" selection-start-column="3" selection-end-line="116" selection-end-column="53" />
+          <caret line="116" column="54" lean-forward="false" selection-start-line="116" selection-start-column="54" selection-end-line="116" selection-end-column="54" />
           <folding />
         </state>
       </provider>
