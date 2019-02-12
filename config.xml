@@ -118,6 +118,6 @@
 
     <plugin name="cordova-plugin-background-mode" source="npm" />
 
-    <gap:plugin name="cordova-plugin-local-notification" source="npm" />
+    <gap:plugin name="cordova-plugin-local-notification" source="npm" />  
 
 </widget>
