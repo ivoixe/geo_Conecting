@@ -412,9 +412,8 @@ function ver_datos(){
     var username = localStorage.getItem('username') || '';
     var password = localStorage.getItem('password') || '';
     var token_guardado = localStorage.getItem('token') || '';
-    alert(token_guardado);
     if(!token_guardado){
-        $('p.token_prov').text('sss');
+
     }
     $('#username').val(username);
     $('#password').val(password);
@@ -464,7 +463,6 @@ function save(){
                 localStorage.removeItem('horarios');
                 localStorage.setItem('horarios',JSON.stringify(datos));
                 ons.notification.alert(resp.mensaje);
-                ver_notificacion();
             }
 
         },
@@ -478,113 +476,4 @@ function save(){
 
 
 
-}
-function ver_notificacion(){
-    var horario_descargado = JSON.parse(localStorage.getItem("horarios"));
-    var   dtTodap = new Date();
-    var localNotificationsArray =[];
-    $.each(horario_descargado, function(i, item) {
-        /******************************************************/
-        dtTodap = new Date(item.horario_entrada);
-        localNotificationsArray.push({
-            id : i,
-            at: dtTodap,
-            text : "Testing 1..2..3" + dtTodap,
-            foreground: true
-
-        });
-
-    });
-
-
-
-
-
-    /********************************************/
-    cordova.plugins.notification.local.hasPermission(function (granted) {
-        //obtenemos los horarios
-
-
-        if( granted == false ) {
-
-            alert("No permission");
-// If app doesnt have permission request it
-            cordova.plugin.notification.local.registerPermission(function (granted) {
-
-                console.warn("Ask for permission");
-                if( granted == true ) {
-
-                    console.warn("Permission accepted");
-// If app is given permission try again
-                   // testNotifications();
-
-                } else {
-                    alert("We need permission to show you notifications");
-                }
-
-            });
-        } else {
-
-            var pathArray = window.location.pathname.split( "/www/" ),
-                secondLevelLocation = window.location.protocol +"//"+ pathArray[0],
-
-            momentOfTime = new Date(); // just for example, can be any other time
-            myTimeSpan = 3*60*1000; // 5 minutes in milliseconds
-            momentOfTime.setTime(momentOfTime.getTime() + myTimeSpan);
-          var   dtToday = new Date();
-             mas = 5*60*1000;
-            dtToday.setTime(dtToday.getTime() + mas);
-
-            //alert("sending notification");
-
-            var isAndroid = false;
-
-            if ( device.platform === "Android" ) {
-                isAndroid = true;
-            }
-
-            try{
-              /*  cordova.plugins.notification.local.schedule([{
-                    id : "888",
-                    at: momentOfTime,
-                    text : "Testing 1..2..3" + momentOfTime,
-                    foreground: true
-                },{
-                    id : "999",
-                    at: dtToday,
-                    text : "T3" + dtToday,
-                    foreground: true
-                }]);*/
-
-              /*
-              * this.localNotificationsArray = [];
-this.tempTaskList.forEach( data =>{
-    this.localNotificationsArray.push({
-       id: 1,
-       text: data.yourTask,
-       title: data.title,
-       icon: 'http://example.com/icon.png'
-       data: { secret:key }
-      }
-    });
-});
-this.localNotifications.schedule(this.localNotificationsArray);
-              *
-              *
-              *
-              * */
-
-                cordova.plugins.notification.local.schedule(localNotificationsArray);
-
-
-
-            } catch (e) {
-                console.log(e);
-                alert(e);
-            }
-
-        }
-    });
-
-    /************************************************/
 }

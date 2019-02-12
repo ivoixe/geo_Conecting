@@ -29,7 +29,6 @@
 
         var app=  firebase.initializeApp(config);
 
-
         var aut= app.auth();
         const messaging = firebase.messaging();
 
@@ -37,20 +36,21 @@
 
             .then(function(){
 
-               alert(messaging.getToken());
+                //  alert(messaging.getToken());
 
                 return messaging.getToken();
 
             })
 
             .then(function (token){
-                alert(token);
+
                 localStorage.setItem("token", token);
+
             })
 
             .catch(function(err){
 
-                alert(err.message);
+                console.log('no hay permiso');
             })
 
 
@@ -105,19 +105,6 @@
         window.fn.load = function(page) {
             var content = document.getElementById('content');
             var menu = document.getElementById('menu');
-            FCMPlugin.onTokenRefresh(function(token){
-
-                localStorage.setItem("token", token);
-
-            });
-
-            if (typeof FCMPlugin != 'undefined') {
-
-                FCMPlugin.getToken(function (token) {
-                    alert(token);
-                    localStorage.setItem("token", token);
-                });
-            }
 
             content.load(page)
 
@@ -127,25 +114,22 @@
 
         };
 
-            document.addEventListener('deviceready', function () {
+        document.addEventListener('deviceready', function () {
 
-                ver_notificacion();
-                FCMPlugin.onTokenRefresh(function(token){
+            FCMPlugin.onTokenRefresh(function(token){
 
+                localStorage.setItem("token", token);
+
+            });
+
+            if (typeof FCMPlugin != 'undefined') {
+
+                FCMPlugin.getToken(function (token) {
                     localStorage.setItem("token", token);
-
                 });
+            }
 
-                if (typeof FCMPlugin != 'undefined') {
-
-                    FCMPlugin.getToken(function (token) {
-                        alert(token);
-                        localStorage.setItem("token", token);
-                    });
-                }
-
-
-            }, false);
+        }, false);
 
 
 
@@ -377,7 +361,7 @@
             </div>
 
         </ons-toolbar>
-        <ons-button  onclick="ver_notificacion()" id="load">noti</ons-button >
+
         <ons-row align="center">
             <ons-col class="loading" align="center">
                 <svg class="progress-circular progress-circular--indeterminate">
@@ -529,7 +513,6 @@
         <ons-button  onclick="recarga_horarios()" id="load">Recargar horarios</ons-button >
 
 
-
         <div data-role="content">
 
             <h2>Horarios de entrada</h2>
@@ -576,3 +559,26 @@
 
 
 
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+
+    function limpiar(){
+
+        localStorage.clear();
+
+    }
+
+
+
+
+
+</script>
