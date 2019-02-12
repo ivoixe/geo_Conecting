@@ -35,13 +35,13 @@
 <plugin name="cordova-plugin-splashscreen" />
 <platform name="android">
 
-    <resource-file src="google-services.json" target="google-services.json" />
+    <resource-file src="app/google-services.json" target="google-services.json" />
     <allow-intent href="market:*" />
     <preference name="loadUrlTimeoutValue" value="700000" />
     <feature name="Sim">
         <param name="android-package" value="com.pbakondy.Sim" />
     </feature>
-    <preference name="SplashScreen" value="splash" />  
+    <preference name="SplashScreen" value="splash" />
     <icon qualifier="ldpi" src="res/icons/android/drawable-ldpi-icon.png" />
     <icon qualifier="mdpi" src="res/icons/android/drawable-mdpi-icon.png" />
     <icon qualifier="hdpi" src="res/icons/android/drawable-hdpi-icon.png" />
@@ -110,9 +110,14 @@
     <variable name="MOTION_USAGE_DESCRIPTION" value="Using the accelerometer increases battery-efficiency by intelligently toggling location-tracking only when the device is detected to be moving" />
 </plugin>
 
-<preference name="SplashShowOnlyFirstTime" value="false" />
-<preference name="AutoHideSplashScreen" value="true" />
-<preference name="SplashScreenDelay" value="3000" />
-<gap:plugin name="cordova-plugin-local-notification" source="npm" />
+    <preference name="SplashShowOnlyFirstTime" value="false" />
+
+    <preference name="AutoHideSplashScreen" value="true" />
+
+    <preference name="SplashScreenDelay" value="3000" />
+
+    <plugin name="cordova-plugin-background-mode" source="npm" />
+
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
 
 </widget>
